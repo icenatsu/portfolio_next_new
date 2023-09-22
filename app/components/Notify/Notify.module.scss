@@ -1,0 +1,122 @@
+@use "../../styles/utils/functions.scss" as fct;
+@use "../../styles/utils/variables.scss" as var;
+@use "../../styles/utils/mixins.scss";
+
+.notify {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 330px;
+  height: 100px;
+  box-shadow: 0 0 5px
+    fct.map-deep-get(var.$notify, "colors", "notify--boxShadow--desktop");
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: fct.map-deep-get(
+    var.$notify,
+    "colors",
+    "notify--background--desktop"
+  );
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    width: 320px;
+    height: 95px;
+    align-self: center;
+  }
+
+  @media screen and (max-width: var.$breakpoint-mobile) {
+    width: 300px;
+    height: 90px;
+  }
+
+  & p {
+    flex: 4;
+    color: fct.map-deep-get(
+      var.$notify,
+      "colors",
+      "notifyParagraphe--color--desktop"
+    );
+    padding: 5px 5px 0px 5px;
+    font-size: fct.map-deep-get(
+      var.$notify,
+      "fontSize",
+      "notifyParagraphe--desktop"
+    );
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      font-size: fct.map-deep-get(
+        var.$notify,
+        "fontSize",
+        "notifyParagraphe--tablette"
+      );
+    }
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      font-size: fct.map-deep-get(
+        var.$notify,
+        "fontSize",
+        "notifyParagraphe--mobile"
+      );
+    }
+  }
+
+  .close {
+    flex: 1.5;
+    align-self: flex-end;
+    padding-top: 2px;
+    padding-right: 5px;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &--error {
+      color: fct.map-deep-get(
+        var.$notify,
+        "colors",
+        "close--error--color--desktop"
+      );
+    }
+
+    &--success {
+      color: fct.map-deep-get(
+        var.$notify,
+        "colors",
+        "close--success--color--desktop"
+      );
+    }
+  }
+
+  .bar {
+    flex: 1;
+    width: 100%;
+    animation: SlideLeft 5s forwards;
+
+    &--error {
+      background-color: fct.map-deep-get(
+        var.$notify,
+        "colors",
+        "bar--error--background--desktop"
+      );
+    }
+
+    &--success {
+      background-color: fct.map-deep-get(
+        var.$notify,
+        "colors",
+        "bar--success--background--desktop"
+      );
+    }
+  }
+}
+
+@keyframes SlideLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}

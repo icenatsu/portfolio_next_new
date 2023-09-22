@@ -1,0 +1,39 @@
+@use "./styles/utils/functions.scss" as fct;
+@use "./styles/utils/variables.scss" as var;
+@use "./styles/utils/mixins.scss" as mix;
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: fct.map-deep-get(
+      var.$global--light,
+      "colors",
+      "background--desktop"
+    );
+    color: fct.map-deep-get(var.$global--light, "colors", "color--desktop");
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: fct.map-deep-get(
+      var.$global--dark,
+      "colors",
+      "background--desktop"
+    );
+    color: fct.map-deep-get(var.$global--dark, "colors", "color--desktop");
+  }
+}

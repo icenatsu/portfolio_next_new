@@ -1,0 +1,28 @@
+@use "./variables.scss" as var;
+
+@mixin largeScreen {
+  // max-width: variables.$maxWidth;
+  margin: 0px auto 0px auto;
+  padding: 0 20px;
+}
+
+@mixin mediumScreen {
+  max-width: var.$mediumWidth;
+  margin: 0px auto 0px auto;
+  padding: 0 10px;
+  width: 97%;
+}
+
+@mixin smallScreen {
+  max-width: var.$minWidth;
+  margin: 0px auto 20px auto;
+  padding: 0px 0px;
+  width: 98%;
+}
+
+@mixin AbsolutCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

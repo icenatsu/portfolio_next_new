@@ -1,0 +1,129 @@
+@use "../../styles/utils/functions.scss" as fct;
+@use "../../styles/utils/variables.scss" as var;
+
+.container {
+  position: fixed;
+  filter: drop-shadow(0px 3px 3px #858ae3);
+  z-index: 3;
+  width: 100vw;
+  height: 60px;
+  background-color: #858ae3;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  transition: min-height 0.8s ease-in-out;
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    padding-top: 10px;
+    align-items: self-start;
+  }
+
+  .list {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    font-size: 17px;
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      opacity: 0;
+      transition: opacity 0.8s 1s ease;
+      flex-direction: column;
+      transform: translateY(80px);
+      width: 100vw;
+      flex: 10;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__item {
+      padding: 0 20px;
+
+      @media screen and (max-width: var.$breakpoint-tablette) {
+        padding: 5px 0;
+      }
+
+      &:before {
+        content: "\269D";
+        margin-right: 10px;
+      }
+
+      &:hover {
+        animation: wobble-horizontal 1s ease-in-out 1;
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+    font-size: 35px;
+    padding: 5px 20px;
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      display: block;
+      color: black;
+    }
+  }
+
+  &--dark {
+    .list {
+      &__item {
+        &:before {
+          color: fct.map-deep-get(
+            var.$navbar--dark,
+            "colors",
+            "navbar__item-before--color--desktop"
+          );
+          text-shadow: 0px 0px 1px
+            fct.map-deep-get(
+              var.$navbar--dark,
+              "colors",
+              "navbar__item-before--text-shadow--desktop"
+            );
+        }
+
+        &:hover {
+          &:before {
+            color: fct.map-deep-get(
+              var.$navbar--dark,
+              "colors",
+              "navbar__item-hover-before--color--desktop"
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes wobble-horizontal {
+  16.65% {
+    transform: translateX(8px);
+  }
+
+  33.3% {
+    transform: translateX(-6px);
+  }
+
+  49.95% {
+    transform: translateX(4px);
+  }
+
+  66.6% {
+    transform: translateX(-2px);
+  }
+
+  83.25% {
+    transform: translateX(1px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

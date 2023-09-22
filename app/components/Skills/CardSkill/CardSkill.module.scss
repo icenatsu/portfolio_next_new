@@ -1,0 +1,288 @@
+@charset "UTF-8";
+@use "../../../styles/utils/functions.scss" as fct;
+@use "../../../styles/utils/variables.scss" as var;
+
+@mixin CardSkillStyle($class, $technos, $colors) {
+  .#{$class} {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 5px #97dffc);
+    // : 1px solid #97dffc;
+    background-color: var.$dark-color;
+    width: 400px;
+    max-height: 80px;
+    transition: max-height 0.8s ease-in-out;
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      max-height: 70px;
+      width: 355px;
+      font-size: fct.map-deep-get(
+        var.$cardSkill,
+        "fontSize",
+        "technoSkill--tablette"
+      );
+    }
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      width: 90%;
+      margin: auto;
+      max-height: 65px;
+      font-size: fct.map-deep-get(
+        var.$cardSkill,
+        "fontSize",
+        "technoSkill--mobile"
+      );
+    }
+
+    .container {
+      display: flex;
+      padding-bottom: 5px;
+      align-items: center;
+      justify-content: space-between;
+      height: auto;
+
+      .slideToBottom {
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      &__icones {
+        display: flex;
+        align-items: center;
+
+        @for $i from 1 through length($technos) {
+          &:nth-child(#{$i}) {
+            &::after {
+              content: nth($technos, $i);
+              font-size: fct.map-deep-get(
+                var.$cardSkill,
+                "fontSize",
+                "container__icone--nthChild-after--desktop"
+              );
+              padding-left: 5px;
+              padding-right: 10px;
+              // font-family: var.$container__icone-nthChild-after-fontFamily-desktop--cardSkill;
+
+              @media screen and (max-width: var.$breakpoint-tablette) {
+                padding-left: 15px;
+                font-size: fct.map-deep-get(
+                  var.$cardSkill,
+                  "fontSize",
+                  "container__icone--nthChild-after--tablette"
+                );
+              }
+
+              @media screen and (max-width: var.$breakpoint-mobile) {
+                font-size: fct.map-deep-get(
+                  var.$cardSkill,
+                  "fontSize",
+                  "container__icone--nthChild-after--mobile"
+                );
+              }
+            }
+          }
+        }
+
+        .icone {
+          padding: 0 5px 5px 0px;
+          font-size: fct.map-deep-get(
+            var.$cardSkill,
+            "fontSize",
+            "icone--desktop"
+          );
+
+          @media screen and (max-width: var.$breakpoint-tablette) {
+            font-size: fct.map-deep-get(
+              var.$cardSkill,
+              "fontSize",
+              "icone--tablette"
+            );
+          }
+
+          @media screen and (max-width: var.$breakpoint-mobile) {
+            padding-left: 5px;
+            font-size: fct.map-deep-get(
+              var.$cardSkill,
+              "fontSize",
+              "icone--mobile"
+            );
+          }
+        }
+      }
+    }
+
+    .paragraphs {
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+
+      .tilt {
+        z-index: -1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .tilt svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 80px;
+        transform: rotateY(180deg);
+      }
+
+      .tilt .tilt-fill {
+        fill: #b6adad;
+        opacity: 0.2;
+      }
+    }
+
+    & p {
+      padding-left: 5px;
+
+      &:first-of-type {
+        padding: 10px 0px 0px 5px;
+      }
+
+      &::before {
+        content: "\2BB1";
+        padding-right: 5px;
+        font-size: fct.map-deep-get(
+          var.$cardSkill,
+          "fontSize",
+          "technoSkill--paragraph-before--desktop"
+        );
+      }
+    }
+
+    &--dark {
+      background-color: var.$dark-color;
+
+      color: fct.map-deep-get(
+        var.$cardSkill--dark,
+        "colors",
+        "technoSkill--color--desktop"
+      );
+
+      & p {
+        &:first-of-type {
+          border-top: 1px solid
+            fct.map-deep-get(
+              var.$cardSkill--dark,
+              "colors",
+              "technoSkill-paragraph-firstOfType--borderTop-desktop"
+            );
+        }
+        &::before {
+          color: fct.map-deep-get(
+            var.$cardSkill--dark,
+            "colors",
+            "technoSkill-paragraph-before--color--desktop"
+          );
+        }
+      }
+
+      .container__icones {
+        @for $i from 1 through length($technos) {
+          &:nth-child(#{$i}) {
+            color: nth($colors, $i);
+
+            &::after {
+              color: fct.map-deep-get(
+                var.$cardSkill--dark,
+                "colors",
+                "container__icone-after-color-desktop"
+              );
+            }
+          }
+        }
+      }
+    }
+
+    &--light {
+      font-weight: 500;
+      background-color: fct.map-deep-get(
+        var.$cardSkill--light,
+        "colors",
+        "technoSkill--background--desktop"
+      );
+      color: fct.map-deep-get(
+        var.$cardSkill--light,
+        "colors",
+        "technoSkill--color--desktop"
+      );
+
+      & p {
+        &:first-of-type {
+          border-top: 1px solid
+            fct.map-deep-get(
+              var.$cardSkill--light,
+              "colors",
+              "technoSkill-paragraph-firstOfType--borderTop-desktop"
+            );
+        }
+        &::before {
+          color: fct.map-deep-get(
+            var.$cardSkill--light,
+            "colors",
+            "technoSkill-paragraph-before--color--desktop"
+          );
+        }
+      }
+
+      & .container__icone {
+        @for $i from 1 through length($technos) {
+          &:nth-child(#{$i}) {
+            color: fct.map-deep-get(
+              var.$cardSkill--light,
+              "colors",
+              "container__icone-nthChild--color--desktop"
+            );
+
+            &::after {
+              color: fct.map-deep-get(
+                var.$cardSkill--light,
+                "colors",
+                "container__icone-after--color--desktop"
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include CardSkillStyle("html-css", ("html", "css"), (var.$html, var.$css));
+@include CardSkillStyle("css", ("css", "sass"), (var.$css, var.$sass));
+@include CardSkillStyle("github", ("Github"), var.$github);
+@include CardSkillStyle("seo", ("SEO"), var.$seo);
+@include CardSkillStyle("javascript", ("Javascript"), var.$javascript);
+@include CardSkillStyle(
+  "nodejs",
+  ("Nodejs", "mongodb"),
+  (var.$nodejs, var.$mongodb)
+);
+@include CardSkillStyle(
+  "react",
+  ("React", "nextjs"),
+  (var.$react, var.$nextjs)
+);
+@include CardSkillStyle("typescript", ("Typescript"), var.$typescript);
+
+.visible {
+  max-height: 350px;
+}
+
+.opacity {
+  opacity: 1 !important;
+}

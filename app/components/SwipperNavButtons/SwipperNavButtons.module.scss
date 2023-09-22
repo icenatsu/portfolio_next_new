@@ -1,0 +1,37 @@
+@use "../../styles/utils/variables.scss" as var;
+
+.arrow {
+  font-size: 40px;
+  z-index: 90000;
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    display: none;
+  }
+
+  &--dark {
+    color: white;
+  }
+
+  &--light {
+    color: var.$primary-color;
+  }
+}
+
+.prev {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  display: inline-block;
+  transform: translateY(-50%);
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    display: none;
+  }
+}
+
+.next {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

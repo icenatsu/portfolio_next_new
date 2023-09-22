@@ -1,0 +1,27 @@
+@use "../../styles/utils/variables.scss" as var;
+@use "../../styles/utils/mixins.scss" as mix;
+
+.bubble {
+  position: absolute;
+  top: -250px;
+  left: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.2;
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  @media screen and (max-width: var.$breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.blob-motion {
+  width: 800px;
+}

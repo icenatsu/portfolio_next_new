@@ -1,0 +1,205 @@
+@use "../../../styles/utils/variables.scss" as var;
+
+.flip-card {
+  background-color: transparent;
+  width: 355px;
+  height: 258px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  font-size: 15.5px;
+  border-radius: 10px;
+  overflow: hidden;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+
+  @media screen and (max-width: "1320px") {
+    width: 300px;
+    height: 240px;
+  }
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    width: 300px;
+    height: 240px;
+  }
+
+  @media screen and (max-width: var.$breakpoint-mobile) {
+    width: 100%;
+    height: 368px;
+  }
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.flip-card-front {
+  // background-color: white;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #797dd4;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    gap: 10px;
+  }
+
+  @media screen and (max-width: var.$breakpoint-mobile) {
+    gap: 30px;
+  }
+
+  &__sourcesAndTitle {
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+
+    &__sources {
+      & a {
+        padding-right: 5px;
+        font-size: 30px;
+
+        @media screen and (max-width: var.$breakpoint-mobile) {
+          padding-right: 15px;
+          font-size: 32px;
+        }
+      }
+    }
+
+    &__title {
+      border-radius: 5px;
+      background-color: black;
+      padding: 5px;
+      opacity: 0.9;
+      font-size: 25px;
+      font-family: var(--font--archivo);
+
+      @media screen and (max-width: 1400px) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        font-size: 32px;
+      }
+    }
+  }
+
+  &__description {
+    padding: 10px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-family: var(--font--inter);
+    background-color: white;
+    opacity: 0.8;
+    margin: 10px 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    @media screen and (max-width: 1400px) {
+      margin: 0 0;
+      font-size: 15px;
+    }
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      font-size: 15px;
+    }
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      font-size: 18px;
+    }
+  }
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+
+    .technologies {
+      &__icones {
+        font-size: 30px;
+
+        @media screen and (max-width: var.$breakpoint-tablette) {
+          font-size: 25px;
+        }
+
+        @media screen and (max-width: var.$breakpoint-mobile) {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
+
+.go-back {
+  position: absolute;
+  font-size: 20px;
+  top: 5px;
+  right: 5px;
+  color: rgb(36, 34, 34);
+  cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.curve {
+  opacity: 0.2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.curve svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 230px;
+}
+
+.curve .shape-fill {
+  fill: #ffffff;
+}
+
+// .slide {
+//   transform: scale(0.5);
+//   transition: transform 300ms;
+//   opacity: 0.5;
+//   // margin-left: 20px;
+//   // margin-right: 20px;
+// }
+
+// .activeSlide {
+//   transform: scale(1);
+//   opacity: 1;
+//   // margin-left: 20px;
+//   // margin-right: 20px;
+// }

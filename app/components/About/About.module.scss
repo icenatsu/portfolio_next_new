@@ -1,0 +1,58 @@
+@use "../../styles/utils/functions.scss" as fct;
+@use "../../styles/utils/variables.scss" as var;
+
+.container {
+  background-color: #858ae3;
+  display: flex;
+  padding: 100px 200px;
+
+  @media screen and (max-width: 1400px) {
+    padding: 100px 100px;
+  }
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    flex-direction: column;
+    padding: 100px 50px;
+  }
+
+  .about {
+    flex: 1;
+    color: black;
+    font-family: var(--font--instrumentSherif);
+    font-size: 48px;
+    font-weight: 400;
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      font-size: 32px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .presentation {
+    flex: 1;
+    font-family: var(--font--archivo);
+    font-size: 20px;
+    // background-color: #4e148c;
+    background-color: white;
+    border: 1px solid black;
+    color: #4e148c;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+    border-radius: 5px;
+    padding: 40px 20px;
+
+    & p {
+      max-width: 95%;
+      margin: auto;
+      font-size: 20px;
+
+      @media screen and (max-width: var.$breakpoint-tablette) {
+        margin: 0;
+        max-width: 100%;
+      }
+
+      &:nth-child(1) {
+        padding: 10px 0;
+      }
+    }
+  }
+}

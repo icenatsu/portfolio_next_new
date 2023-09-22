@@ -1,0 +1,83 @@
+[
+    {
+        "id": "1",
+        "title": "Booki",
+        "description": "Pendant la formation j'ai pu découvrir le langage HTML et CSS au travers d'une mise en oeuvre d'un site Web à partir de maquettes graphiques aux formats desktop et mobile.",
+        "cover": {
+            "mobile" :"./img/projects_img/covers/mobile/booki_mob.webp",
+            "tablette" :"./img/projects_img/covers/tablette/booki_tab.svg",
+            "desktop" :"./img/projects_img/covers/desktop/booki.svg"
+        },
+        "technologies": {
+            "HTML": "icomoon-free:html-five",
+            "CSS": "uiw:css3"
+        },
+        "site": "https://icenatsu.github.io/projet2_booki/",
+        "code": "https://github.com/icenatsu/projet2_booki"  
+    },
+    {
+        "id": "2",
+        "title": "Oh my Food",
+        "description": "En formation nous avons eu à réaliser un site Web à partir de maquettes graphiques ciblé principalement pour l'utilisation mobile en y intégrant des animations CSS.",
+        "cover": {
+            "mobile" :"./img/projects_img/covers/mobile/ohmyfood_mob.webp",
+            "tablette" :"./img/projects_img/covers/tablette/ohmyfood_tab.svg",
+            "desktop" :"./img/projects_img/covers/desktop/ohmyfood.svg"
+        },
+        "technologies": {
+            "HTML": "icomoon-free:html-five",
+            "CSS": "uiw:css3",
+            "SASS": "fa6-brands:sass"
+        },
+        "site": "https://icenatsu.github.io/projet3_ohmyfood/",
+        "code": "https://github.com/icenatsu/projet3_ohmyfood"    
+    },
+    {
+        "id": "3",
+        "title": "Piiquante",
+        "description": "Lors de la formation il a fallut construire une API sécurisée pour une application d'avis gastronomiques. J'ai pu découvrir NodeJS associé à la base de données noSQL MongoDB.",
+        "cover": {
+            "mobile" :"./img/projects_img/covers/mobile/piquante_mob.webp",
+            "tablette" :"./img/projects_img/covers/tablette/piquante_tab.svg",
+            "desktop" :"./img/projects_img/covers/desktop/piquante.svg"
+        },
+        "technologies":{ 
+            "NODEJS": "mdi:nodejs",
+            "MongoDB": "bxl:mongodb"
+        },
+        "code": "https://github.com/icenatsu/projet6_piquante"      
+    },
+    {
+        "id": "4",
+        "title": "Kasa",
+        "description": "Le dernier projet de la formation consistait à créer une application web de location immobilière en utilisant la bibliothèque React.",
+        "cover": {
+            "mobile" :"./img/projects_img/covers/mobile/kasa_mob.webp",
+            "tablette" :"./img/projects_img/covers/tablette/kasa_tab.svg",
+            "desktop" :"./img/projects_img/covers/desktop/kasa.svg"
+        },
+        "technologies": {
+            "REACT": "akar-icons:react-fill",
+            "SASS":"fa6-brands:sass"
+        },
+        "site": "https://projet7-kasa.vercel.app/",
+        "code": "https://github.com/icenatsu/projet7_kasa"  
+    },
+    {
+        "id": "5",
+        "title": "Portfolio",
+        "description": "Création de mon portfolio en React, j'ai découvert l'utilisation de Typescript qui m'a permis de rendre le code plus robuste. Je l'ai ensuite migré sur NextJS.",
+        "cover": {
+            "mobile" :"./img/projects_img/covers/mobile/portfolio_mob.webp",
+            "tablette" :"./img/projects_img/covers/tablette/portfolio_tab.svg",
+            "desktop" :"./img/projects_img/covers/desktop/portfolio.svg"
+        },
+        "technologies": {
+            "NextJS": "teenyicons:nextjs-outline",
+            "SASS":"fa6-brands:sass",
+            "Typescript": "akar-icons:typescript-fill"
+        },
+        "site": "https://portfolio-next-icenatsu.vercel.app/",
+        "code": "https://github.com/icenatsu/portfolio_next"  
+    }
+]

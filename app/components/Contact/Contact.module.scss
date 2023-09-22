@@ -1,0 +1,346 @@
+@use "../../styles//utils/functions.scss" as fct;
+@use "../../styles/utils/variables.scss" as var;
+
+.contact {
+  display: flex;
+  // align-items: center;
+  padding: 50px 200px 100px 200px;
+
+  @media screen and (max-width: 1400px) {
+    padding: 100px 100px 0px 100px;
+  }
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    flex-direction: column;
+    padding: 100px 50px 30px 50px;
+  }
+
+  @media screen and (max-width: var.$breakpoint-mobile) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-formulaire {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex: 3;
+    position: relative;
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      justify-content: center;
+      flex-direction: column;
+      font-size: fct.map-deep-get(
+        var.$contact,
+        "fontSize",
+        "infos--background--tablette"
+      );
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: 400;
+      color: #97dffc;
+      font-family: var(--font--instrumentSherif);
+
+      @media screen and (max-width: var.$breakpoint-tablette) {
+        font-size: 35px;
+      }
+    }
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      font-size: fct.map-deep-get(
+        var.$contact,
+        "fontSize",
+        "infos--background--mobile"
+      );
+    }
+
+    // .boxinfoscontact {
+    //   display: flex;
+    //   flex-direction: column;
+    //   padding: 10px;
+    //   font-size: fct.map-deep-get(
+    //     var.$contact,
+    //     "fontSize",
+    //     "boxinfoscontact--desktop"
+    //   );
+
+    //   @media screen and (max-width: var.$breakpoint-tablette) {
+    //     margin-top: 20px;
+    //     margin-bottom: 30px;
+    //     align-self: center;
+    //     font-size: fct.map-deep-get(
+    //       var.$contact,
+    //       "fontSize",
+    //       "boxinfoscontact--tablette"
+    //     );
+    //   }
+
+    //   @media screen and (max-width: var.$breakpoint-mobile) {
+    //     width: 100%;
+    //     align-items: center;
+    //     font-size: fct.map-deep-get(
+    //       var.$contact,
+    //       "fontSize",
+    //       "boxinfoscontact--mobile"
+    //     );
+    //   }
+
+    //   .infos {
+    //     padding: 5px;
+    //     background-color: fct.map-deep-get(
+    //       var.$contact,
+    //       "colors",
+    //       "infos--background--desktop"
+    //     );
+
+    //     @media screen and (max-width: var.$breakpoint-tablette) {
+    //       display: flex;
+    //       justify-content: center;
+    //       align-items: center;
+    //       flex-direction: column;
+    //     }
+
+    //     &__item {
+    //       background-color: fct.map-deep-get(
+    //         var.$contact,
+    //         "colors",
+    //         "infos__item--background--desktop"
+    //       );
+    //       padding: 5px;
+    //       &:nth-child(2) {
+    //         font-size: fct.map-deep-get(
+    //           var.$contact,
+    //           "fontSize",
+    //           "infos__item--desktop"
+    //         );
+
+    //         @media screen and (max-width: var.$breakpoint-tablette) {
+    //           font-size: fct.map-deep-get(
+    //             var.$contact,
+    //             "fontSize",
+    //             "infos__item--tablette"
+    //           );
+    //         }
+
+    //         @media screen and (max-width: var.$breakpoint-mobile) {
+    //           font-size: fct.map-deep-get(
+    //             var.$contact,
+    //             "fontSize",
+    //             "infos__item--mobile"
+    //           );
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+    .form__contact {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      grid-area: form-contact;
+      grid-template-areas:
+        "lastname firstname"
+        "email tel"
+        "entilted entilted"
+        "message message"
+        "send send";
+
+      padding: 20px;
+      border-radius: var.$radius--10;
+      justify-items: center;
+      align-items: center;
+      z-index: 1;
+      width: 750px;
+
+      @media screen and (max-width: var.$breakpoint-tablette) {
+        width: 90%;
+      }
+
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        width: 100%;
+        grid-template-columns: repeat(1, minmax(200px, 370px));
+        grid-template-rows: 7fr;
+        gap: 20px;
+        grid-template-areas:
+          "lastname"
+          "firstname"
+          "email"
+          "tel"
+          "entilted"
+          "message"
+          "send";
+      }
+
+      @mixin gridAreaLabels($gridAreaNames) {
+        @for $i from 1 through length($gridAreaNames) {
+          &:nth-child(#{$i}) {
+            grid-area: nth($gridAreaNames, $i);
+            width: 100%;
+          }
+        }
+      }
+
+      .label {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-family: var(--font--archivo);
+        font-size: 20px;
+        gap: 5px;
+        color: fct.map-deep-get(
+          var.$contact,
+          "colors",
+          "label--color--desktop"
+        );
+
+        @media screen and (max-width: var.$breakpoint-tablette) {
+          font-size: 18px;
+        }
+
+        @include gridAreaLabels(
+          (lastname, firstname, email, tel, entilted, message)
+        );
+
+        .errors {
+          margin-bottom: 10px;
+          font-size: fct.map-deep-get(
+            var.$contact,
+            "fontSize",
+            "errors--desktop"
+          );
+          color: fct.map-deep-get(
+            var.$contact,
+            "colors",
+            "errors--color--desktop"
+          );
+          font-style: italic;
+        }
+      }
+
+      .input {
+        border-radius: var.$radius--10;
+        width: 100%;
+        height: 30px;
+        padding: 20px;
+        background-color: fct.map-deep-get(
+          var.$contact,
+          "colors",
+          "input--background--desktop"
+        );
+        border: none;
+
+        // &::placeholder {
+        //   color: black;
+        //   // opacity: 0.9;
+        // }
+      }
+
+      .textarea {
+        padding: 10px;
+        resize: none;
+        border-radius: var.$radius--10;
+        width: 100%;
+        border: none;
+        background-color: #242424;
+        height: 170px;
+        margin-bottom: 10px;
+
+        // &::placeholder {
+        //   color: black;
+        //   // opacity: 0.9;
+        // }
+      }
+
+      .send {
+        width: 30%;
+        height: 40px;
+        font-family: var(--font--archivo);
+        font-size: 20px;
+        border-radius: var.$radius--10;
+        background-color: fct.map-deep-get(
+          var.$contact,
+          "colors",
+          "send--background--desktop"
+        );
+        color: fct.map-deep-get(var.$contact, "colors", "send--color--desktop");
+        margin-top: 10px;
+        cursor: pointer;
+        grid-area: send;
+      }
+    }
+
+    &--dark {
+      .boxinfoscontact {
+        color: fct.map-deep-get(
+          var.$contact--dark,
+          "colors",
+          "boxinfoscontact--color--desktop"
+        );
+
+        .reseaux {
+          &__item {
+            background: fct.map-deep-get(
+              var.$contact--dark,
+              "colors",
+              "reseaux__item--backgroundLinearGradient--desktop"
+            );
+          }
+        }
+      }
+    }
+
+    &--light {
+      .boxinfoscontact {
+        .infos {
+          &__item {
+            color: fct.map-deep-get(
+              var.$contact--light,
+              "colors",
+              "infos__item--color--desktop"
+            );
+            font-weight: 500;
+          }
+        }
+
+        .reseaux {
+          &__item {
+            color: fct.map-deep-get(
+              var.$contact--light,
+              "colors",
+              "reseaux__item--color--desktop"
+            );
+            background: fct.map-deep-get(
+              var.$contact--light,
+              "colors",
+              "reseaux__item--backgroundLinearGradient--desktop"
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+.elipse {
+  position: absolute;
+  z-index: -1;
+  top: -60px;
+  left: -30px;
+  width: 200px; /* Largeur */
+  height: 650px; /* Hauteur */
+  border-radius: 50%; /* Utilisation de border-radius pour créer une ellipse */
+  // background-color: #3498db; /* Couleur de fond (modifiable selon vos besoins) */
+  transform: rotate(
+    -30deg
+  ); /* Rotation de 45 degrés (modifiable selon l'inclinaison souhaitée) */
+  border: 1px solid white;
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    display: none;
+  }
+}

@@ -1,0 +1,126 @@
+@use "../../../styles/utils/functions.scss" as fct;
+@use "../../../styles/utils/variables.scss" as var;
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  padding: 100px 200px 0px 200px;
+
+  @media screen and (max-width: 1400px) {
+    padding: 100px 100px 0px 100px;
+  }
+
+  @media screen and (max-width: var.$breakpoint-tablette) {
+    flex-direction: column;
+    padding: 100px 50px 0px 50px;
+  }
+
+  .title {
+    font-size: 48px;
+    font-family: var(--font--instrumentSherif);
+    font-weight: 400;
+    color: #97dffc;
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      font-size: 35px;
+    }
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      font-size: 30px;
+    }
+  }
+
+  &__Accordeons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    min-height: 500px;
+    height: auto;
+    gap: 20px;
+
+    @media screen and (max-width: 1400px) {
+      min-height: 450px;
+    }
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      justify-content: center;
+      min-height: 350px;
+    }
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      min-height: 700px;
+      height: auto;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .dataAccordeon {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: auto;
+    }
+  }
+}
+
+// .wave {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   overflow: hidden;
+//   line-height: 0;
+//   z-index: -999;
+//   border-radius: 10px;
+// }
+
+// .wave svg {
+//   position: relative;
+//   display: block;
+//   width: calc(100% + 1.3px);
+//   height: 110px;
+//   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+// }
+
+// &--dark {
+//   color: fct.map-deep-get(
+//     var.$skills--dark,
+//     "colors",
+//     "container-color--desktop"
+//   );
+
+//   .wave svg {
+//     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+//   }
+
+//   .wave .shape-fill {
+//     fill: fct.map-deep-get(
+//       var.$skills--dark,
+//       "colors",
+//       "wave--fill--desktop"
+//     );
+//   }
+// }
+
+// &--light {
+//   color: fct.map-deep-get(
+//     var.$skills--light,
+//     "colors",
+//     "container-color--desktop"
+//   );
+
+//   .wave svg {
+//     filter: drop-shadow(5px 5px 5px white);
+//   }
+
+//   .wave .shape-fill {
+//     fill: fct.map-deep-get(
+//       var.$skills--light,
+//       "colors",
+//       "wave--fill--desktop"
+//     );
+//   }
+// }
