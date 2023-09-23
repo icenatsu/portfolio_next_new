@@ -20,6 +20,8 @@ interface CardProjectProps {
 }
 
 const CardProject = ({ inData }: CardProjectProps): JSX.Element => {
+
+
     return (
         <article className={styles["flip-card"]}>
             <div className={styles["flip-card-inner"]}>
@@ -27,8 +29,7 @@ const CardProject = ({ inData }: CardProjectProps): JSX.Element => {
                     <picture className={styles["flip-card-front__image"]}>
                         <source media={`(max-width: 768px)`} srcSet={inData.cover.mobile} />
                         <source media={`(min-width: 769px)`} srcSet={inData.cover.tablette} />
-                        {/* <source media={`(min-width: 992px)`} srcSet={inData.cover.desktop} width="330px" /> */}
-                        <Image src={inData.cover.desktop} alt={inData.title} layout="fill" objectFit='cover'
+                        <Image src={inData.cover.tablette} alt={inData.title} fill={true} priority={true} style={{ objectFit: 'cover' }}
                         />
                     </picture>
                     <Icon className={styles["go-back"]} icon="pepicons-pop:arrow-spin" rotate={2} />

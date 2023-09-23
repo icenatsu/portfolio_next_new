@@ -9,7 +9,7 @@ const About = (): JSX.Element => {
 
     // Animations gsap
     useEffect(() => {
-        animationSlideScrollToBottom("about", 3, 1.5, 0)
+        animationSlideScrollToBottom("about", 0.5, 0.5, 0)
     }, []);
 
     useEffect(() => {

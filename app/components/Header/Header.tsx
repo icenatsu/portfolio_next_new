@@ -35,7 +35,7 @@ const Header = (): JSX.Element => {
     /******************/
 
     useEffect(() => {
-        animationSlideToBottom("header", 0.4, 0.6, 40)
+        animationSlideToBottom("header", 0.4, 0.6, 100)
     }, []);
 
     useEffect(() => {

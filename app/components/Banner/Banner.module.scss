@@ -16,7 +16,7 @@
     height: 80px;
     z-index: 3;
     margin-bottom: 50px;
-    animation: jug 1.5s ease-in-out forwards;
+    animation: jug 1.5s 0.5s ease-in-out forwards;
     filter: brightness(1.4);
 
     @media screen and (max-width: var.$breakpoint-mobile) {
@@ -37,7 +37,7 @@
 
   .rain {
     opacity: 0;
-    animation: rain 1.5s 1.2s ease-in forwards infinite;
+    animation: rain 2s 1.2s ease-in forwards infinite;
     width: 89px;
     height: 550px;
 
@@ -64,13 +64,38 @@
 
 @keyframes jug {
   0% {
-    transform: rotate(0);
+    transform: rotate(0deg);
   }
+
+  // 10% {
+  //   transform: rotate(30deg);
+  // }
+  // 20% {
+  //   transform: rotate(40deg);
+  // }
+  // 30% {
+  //   transform: rotate(30deg);
+  // }
+  // 40% {
+  //   transform: rotate(20deg);
+  // }
+  // 50% {
+  //   transform: rotate(30deg);
+  // }
+  // 60% {
+  //   transform: rotate(40deg);
+  // }
+  // 70% {
+  //   transform: rotate(20deg);
+  // }
   // 80% {
-  //   transform: rotate(60deg);
+  //   transform: rotate(30deg);
+  // }
+  // 90% {
+  //   transform: rotate(40deg);
   // }
   100% {
-    transform: rotate(40deg);
+    transform: rotate(35deg);
   }
 }
 

@@ -18,6 +18,7 @@ const typeOfElementDetect = (elem: HTMLElement | string) => {
 
 
 export const animationSlideScrollToBottom = (elem: HTMLElement | string, delay: number, duration: number, yfrom: number) => {
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     const typeOfElem = typeOfElementDetect(elem);
 

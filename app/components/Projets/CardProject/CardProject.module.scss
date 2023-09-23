@@ -52,8 +52,14 @@
 }
 
 .flip-card-front {
-  // background-color: white;
   color: black;
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  // filter: grayscale(100%);
 }
 
 .flip-card-back {
