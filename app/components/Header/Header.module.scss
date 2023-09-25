@@ -52,7 +52,8 @@
 
     .title {
       display: flex;
-      font-family: fct.map-deep-get(var.$header, "fontSize", "title");
+      font-family: fct.map-deep-get(var.$header, "fontFamily", "title");
+      font-weight: fct.map-deep-get(var.$header, "fontWeight", "title");
       font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
       flex-wrap: wrap;
 
