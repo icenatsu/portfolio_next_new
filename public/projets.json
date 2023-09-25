@@ -20,7 +20,7 @@
         "title": "Oh my Food",
         "description": "En formation nous avons eu à réaliser un site Web à partir de maquettes graphiques ciblé principalement pour l'utilisation mobile en y intégrant des animations CSS.",
         "cover": {
-            "mobile" :"./img/projects_img/covers/mobile/ohmyfood_mob.webp",
+            "mobile" :"./img/projects_img/covers/mobile/ohmyfood_mob.svg",
             "tablette" :"./img/projects_img/covers/tablette/ohmyfood_tab.svg",
             "desktop" :"./img/projects_img/covers/desktop/ohmyfood.svg"
         },
@@ -37,7 +37,7 @@
         "title": "Piiquante",
         "description": "Lors de la formation il a fallut construire une API sécurisée pour une application d'avis gastronomiques. J'ai pu découvrir NodeJS associé à la base de données noSQL MongoDB.",
         "cover": {
-            "mobile" :"./img/projects_img/covers/mobile/piquante_mob.webp",
+            "mobile" :"./img/projects_img/covers/mobile/piquante_mob.svg",
             "tablette" :"./img/projects_img/covers/tablette/piquante_tab.svg",
             "desktop" :"./img/projects_img/covers/desktop/piquante.svg"
         },
@@ -52,7 +52,7 @@
         "title": "Kasa",
         "description": "Le dernier projet de la formation consistait à créer une application web de location immobilière en utilisant la bibliothèque React.",
         "cover": {
-            "mobile" :"./img/projects_img/covers/mobile/kasa_mob.webp",
+            "mobile" :"./img/projects_img/covers/mobile/kasa_mob.svg",
             "tablette" :"./img/projects_img/covers/tablette/kasa_tab.svg",
             "desktop" :"./img/projects_img/covers/desktop/kasa.svg"
         },
@@ -68,7 +68,7 @@
         "title": "Portfolio",
         "description": "Création de mon portfolio en React, j'ai découvert l'utilisation de Typescript qui m'a permis de rendre le code plus robuste. Je l'ai ensuite migré sur NextJS.",
         "cover": {
-            "mobile" :"./img/projects_img/covers/mobile/portfolio_mob.webp",
+            "mobile" :"./img/projects_img/covers/mobile/portfolio_mob.svg",
             "tablette" :"./img/projects_img/covers/tablette/portfolio_tab.svg",
             "desktop" :"./img/projects_img/covers/desktop/portfolio.svg"
         },
