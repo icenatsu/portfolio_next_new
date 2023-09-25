@@ -83,6 +83,7 @@ const Project = () => {
                 <div id="caroussel" className={styles["projects__caroussel"]} ref={caroussel}>
                     {items ? (
                         <Swiper
+                            watchSlidesProgress={true}
                             onResize={(swiper) => swiper.slideTo(1)}
                             modules={[Navigation, Pagination, EffectCoverflow, Scrollbar, A11y]}
                             scrollbar={{ draggable: true }}
