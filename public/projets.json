@@ -4,7 +4,7 @@
         "title": "Booki",
         "description": "Pendant la formation j'ai pu découvrir le langage HTML et CSS au travers d'une mise en oeuvre d'un site Web à partir de maquettes graphiques aux formats desktop et mobile.",
         "cover": {
-            "mobile" :"./img/projects_img/covers/mobile/booki_mob.webp",
+            "mobile" :"./img/projects_img/covers/mobile/booki_mob.svg",
             "tablette" :"./img/projects_img/covers/tablette/booki_tab.svg",
             "desktop" :"./img/projects_img/covers/desktop/booki.svg"
         },
