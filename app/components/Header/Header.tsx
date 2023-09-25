@@ -57,9 +57,9 @@ const Header = (): JSX.Element => {
                 <p id="headerProfession" className={styles.profession}>Développeuse Web</p>
                 <h1 id="headerTitle" className={styles.title}>Gaëlle Blanchard</h1>
                 <div id="headerLink" className={styles.link}>
-                    <Link onClick={scrollToAnchor} href="/#projets" scroll={false}><button className={styles.button}>Voir projets</button></Link>
-                    <Link href="https://www.linkedin.com/in/icenatsu/"><button className={styles.button}><Icon className={styles.icon} icon={"bi:linkedin"}></Icon>Linkedin</button></Link>
-                    <Link href="https://github.com/icenatsu"><button className={styles.button}><Icon className={styles.icon} icon={"uil:github"}></Icon>Github</button></Link>
+                    <Link className={styles.button} onClick={scrollToAnchor} href="/#projets" scroll={false}>Voir projets</Link>
+                    <Link className={styles.button} href="https://www.linkedin.com/in/icenatsu/" ><Icon className={styles.icon} icon={"bi:linkedin"}></Icon>Linkedin</Link>
+                    <Link className={styles.button} href="https://github.com/icenatsu" ><Icon className={styles.icon} icon={"uil:github"}></Icon>Github</Link>
                 </div>
                 <Shape />
             </div>
