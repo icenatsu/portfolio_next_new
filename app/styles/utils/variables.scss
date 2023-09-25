@@ -12,7 +12,7 @@ $white-color: white;
 // FontFamily
 /**************/
 $archivo: var(--font--archivo);
-$instrumentSerif: var(--inter);
+$instrumentSerif: var(--font--instrumentSerif);
 $inter: var(--font--inter);
 
 // global.scss
@@ -111,6 +111,10 @@ $header: (
     profession: $archivo,
     title: $instrumentSerif,
   ),
+  fontWeight: (
+    button: bold,
+    title: 400,
+  ),
 );
 
 $header--dark: (
@@ -145,6 +149,9 @@ $about: (
   fontFamily: (
     about: $instrumentSerif,
     presentation: $archivo,
+  ),
+  fontWeight: (
+    about: 400,
   ),
 );
 
