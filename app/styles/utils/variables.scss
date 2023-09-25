@@ -109,6 +109,7 @@ $header: (
   fontFamily: (
     button: $archivo,
     profession: $archivo,
+    title: $instrumentSerif,
   ),
 );
 
@@ -175,6 +176,9 @@ $projets: (
     title--mobile: 30px,
     touch: 30px,
     error: 25px,
+  ),
+  fontFamily: (
+    title: $instrumentSerif,
   ),
 );
 

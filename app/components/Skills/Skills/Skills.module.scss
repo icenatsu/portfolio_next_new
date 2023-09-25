@@ -18,7 +18,7 @@
 
   .title {
     font-size: fct.map-deep-get(var.$skills, "fontSize", "title--desktop");
-    font-family: var(--font--instrumentSerif);
+    font-family: fct.map-deep-get(var.$skills, "fontFamily", "title");
     font-weight: fct.map-deep-get(var.$skills, "fontWeight", "title");
 
     @media screen and (max-width: var.$breakpoint-tablette) {

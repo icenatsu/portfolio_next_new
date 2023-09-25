@@ -26,7 +26,7 @@
 
   &__title {
     font-size: fct.map-deep-get(var.$projets, "fontSize", "title--desktop");
-    font-family: var(--font--instrumentSerif);
+    font-family: fct.map-deep-get(var.$projets, "fontSize", "title");
     font-weight: 400;
     padding: 0px 0 50px 0px;
 
