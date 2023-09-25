@@ -72,34 +72,37 @@
       justify-content: center;
       z-index: 2;
 
-      button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: fct.map-deep-get(var.$header, "fontFamily", "button");
-        font-size: fct.map-deep-get(var.$header, "fontSize", "button");
-        font-weight: bold;
-        color: fct.map-deep-get(var.$header, "colors", "button");
-        background-color: fct.map-deep-get(var.$header, "colors", "button--bg");
-        border-radius: var.$radius--30;
-        border: none;
-        width: 190px;
-        height: 55px;
-        margin: 20px 10px;
-        transition: filter 0.6s;
+      & a {
+        display: block;
 
-        &:hover {
-          filter: brightness(140%);
-        }
-
-        .icon {
-          font-size: fct.map-deep-get(var.$header, "fontSize", "button-icon");
-          margin-left: 30px;
-        }
-
-        & a {
-          width: 100%;
+        button {
           cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          font-family: fct.map-deep-get(var.$header, "fontFamily", "button");
+          font-size: fct.map-deep-get(var.$header, "fontSize", "button");
+          font-weight: bold;
+          color: fct.map-deep-get(var.$header, "colors", "button");
+          background-color: fct.map-deep-get(
+            var.$header,
+            "colors",
+            "button--bg"
+          );
+          border-radius: var.$radius--30;
+          border: none;
+          width: 190px;
+          height: 55px;
+          margin: 20px 10px;
+          transition: filter 0.6s;
+
+          &:hover {
+            filter: brightness(140%);
+          }
+
+          .icon {
+            font-size: fct.map-deep-get(var.$header, "fontSize", "button-icon");
+          }
         }
       }
     }
