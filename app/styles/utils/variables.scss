@@ -12,9 +12,8 @@ $white-color: white;
 // FontFamily
 /**************/
 $archivo: var(--font--archivo);
-$instrumentSerif: var(--font--oswald);
+$oswald: var(--font--oswald);
 $inter: var(--font--inter);
-// $oswald: var(--font--oswald);
 
 // global.scss
 /**************/
@@ -110,11 +109,11 @@ $header: (
   fontFamily: (
     button: $archivo,
     profession: $archivo,
-    title: $instrumentSerif,
+    title: $oswald,
   ),
   fontWeight: (
     button: bold,
-    title: 400,
+    title: 300,
   ),
 );
 
@@ -148,11 +147,11 @@ $about: (
     presentation: 20px,
   ),
   fontFamily: (
-    about: $instrumentSerif,
+    about: $oswald,
     presentation: $archivo,
   ),
   fontWeight: (
-    about: 400,
+    about: 300,
   ),
 );
 
@@ -186,7 +185,10 @@ $projets: (
     error: 25px,
   ),
   fontFamily: (
-    title: $instrumentSerif,
+    title: $oswald,
+  ),
+  fontWeight: (
+    title: 300,
   ),
 );
 
@@ -291,10 +293,10 @@ $skills: (
     title--mobile: 30px,
   ),
   fontFamily: (
-    title: $instrumentSerif,
+    title: $oswald,
   ),
   fontWeight: (
-    title: 400,
+    title: 300,
   ),
 );
 
@@ -416,10 +418,10 @@ $contact: (
     errors: 16px,
   ),
   fontWeight: (
-    title: 400,
+    title: 300,
   ),
   fontFamily: (
-    title: $instrumentSerif,
+    title: $oswald,
     send: $archivo,
   ),
 );

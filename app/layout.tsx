@@ -12,16 +12,9 @@ export const metadata: Metadata = {
 }
 
 const oswald = Oswald({
-  weight: "400",
   subsets: ["latin"],
   variable: "--font--oswald",
 })
-
-// const instrumentserif = Instrument_Serif({
-//   weight: "400",
-//   subsets: ["latin"],
-//   variable: "--font--instrumentSerif",
-// })
 
 const inter = Inter({
   subsets: ["latin"],
