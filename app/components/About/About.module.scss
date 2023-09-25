@@ -18,7 +18,7 @@
     flex: 1;
     font-family: fct.map-deep-get(var.$about, "fontFamily", "about");
     font-size: fct.map-deep-get(var.$about, "fontSize", "about--desktop");
-    font-weight: 400;
+    font-weight: fct.map-deep-get(var.$about, "fontFamily", "about");
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       font-size: fct.map-deep-get(var.$about, "fontSize", "about--tablet");
