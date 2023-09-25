@@ -120,6 +120,7 @@ const Project = () => {
                                             inId={item.title}
                                             inData={item}
                                             inStyleSlider={isActive ? 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(0%)' : 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(100%)'}
+                                            inBool={isActive ? true : false}
                                         />
                                     )}
                                 </SwiperSlide>

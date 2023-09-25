@@ -20,9 +20,10 @@ interface CardProjectProps {
     inData: IntData,
     inId: string,
     inStyleSlider: string
+    inBool: boolean
 }
 
-const CardProject = ({ inData, inStyleSlider }: CardProjectProps): JSX.Element => {
+const CardProject = ({ inData, inStyleSlider, inBool }: CardProjectProps): JSX.Element => {
 
     const themeContext = useContext(ThemeContext);
     const isDarkMode = themeContext!.isDarkMode;
@@ -50,7 +51,7 @@ const CardProject = ({ inData, inStyleSlider }: CardProjectProps): JSX.Element =
                     <picture className={styles["flip-card-front__image"]}>
                         <source media={`(max-width: 768px)`} srcSet={inData.cover.mobile} />
                         <source media={`(min-width: 769px)`} srcSet={inData.cover.tablette} />
-                        <Image src={inData.cover.tablette} alt={inData.title} fill={true} loading="lazy" style={{ objectFit: 'cover' }}
+                        <Image src={inData.cover.tablette} alt={inData.title} fill={true} {...(inBool ? { priority: true } : { loading: "lazy" })} style={{ objectFit: 'cover' }}
                         />
                     </picture>
                     <Icon className={styles["go-back"]} icon="pepicons-pop:arrow-spin" rotate={2} />
