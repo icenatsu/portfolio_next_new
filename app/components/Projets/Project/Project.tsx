@@ -115,12 +115,12 @@ const Project = () => {
                         >
                             {items.map((item: IntItems, index: number) => (
                                 <SwiperSlide className={styles["swiper__slide"]} key={index}>
-                                    {({ isActive }) => (
+                                    {({ isActive, isVisible }) => (
                                         <CardProject
                                             inId={item.title}
                                             inData={item}
                                             inStyleSlider={isActive ? 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(0%)' : 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(100%)'}
-                                            inBool={isActive ? true : false}
+                                            inBool={isVisible ? true : false}
                                         />
                                     )}
                                 </SwiperSlide>
