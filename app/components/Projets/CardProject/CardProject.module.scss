@@ -1,14 +1,18 @@
+@use "../../../styles/utils/functions.scss" as fct;
 @use "../../../styles/utils/variables.scss" as var;
 
 .flip-card {
-  background-color: transparent;
   width: 355px;
   height: 258px;
-  border: 1px solid #f1f1f1;
   perspective: 1000px;
-  font-size: 15.5px;
-  border-radius: 10px;
+  border-radius: var.$radius--10;
   overflow: hidden;
+  font-size: fct.map-deep-get(var.$cardProject, "fontSize", "flip-card");
+  background-color: fct.map-deep-get(
+    var.$cardProject,
+    "colors",
+    "flip-card--bg"
+  );
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
 
   @media screen and (max-width: "1320px") {
@@ -25,13 +29,43 @@
     width: 100%;
     height: 368px;
   }
+
+  &--dark {
+    border: 1px solid
+      fct.map-deep-get(var.$cardProject--dark, "colors", "flip-card--border");
+
+    .flip-card-back {
+      background-color: fct.map-deep-get(
+        var.$cardProject--dark,
+        "colors",
+        "flip-card-back--bg"
+      );
+    }
+  }
+
+  &--light {
+    border: 1px solid
+      fct.map-deep-get(var.$cardProject--light, "colors", "flip-card--border");
+
+    .flip-card-back {
+      background-color: fct.map-deep-get(
+        var.$cardProject--light,
+        "colors",
+        "flip-card-back--bg"
+      );
+    }
+  }
 }
 
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: fct.map-deep-get(
+    var.$cardProject,
+    "colors",
+    "flip-card--bg"
+  );
   border-radius: 10px;
   transition: transform 0.8s;
   transform-style: preserve-3d;
@@ -52,18 +86,16 @@
 }
 
 .flip-card-front {
-  color: black;
+  color: fct.map-deep-get(var.$cardProject, "colors", "flip-card-front");
 
   &__image {
     position: absolute;
     width: 100%;
     height: 100%;
   }
-  // filter: grayscale(100%);
 }
 
 .flip-card-back {
-  background-color: #797dd4;
   color: white;
   transform: rotateY(180deg);
   display: flex;
@@ -87,55 +119,97 @@
     &__sources {
       & a {
         padding-right: 5px;
-        font-size: 30px;
+        font-size: fct.map-deep-get(
+          var.$cardProject,
+          "fontSize",
+          "source--desktop"
+        );
 
         @media screen and (max-width: var.$breakpoint-mobile) {
           padding-right: 15px;
-          font-size: 32px;
+          font-size: fct.map-deep-get(
+            var.$cardProject,
+            "fontSize",
+            "source--mobile"
+          );
         }
       }
     }
 
     &__title {
       border-radius: 5px;
-      background-color: black;
+      background-color: fct.map-deep-get(
+        var.$cardProject,
+        "colors",
+        "title--bg"
+      );
       padding: 5px;
       opacity: 0.9;
-      font-size: 25px;
+      font-size: fct.map-deep-get(
+        var.$cardProject,
+        "fontSize",
+        "title--desktop"
+      );
       font-family: var(--font--archivo);
 
       @media screen and (max-width: 1400px) {
-        font-size: 20px;
+        font-size: fct.map-deep-get(
+          var.$cardProject,
+          "fontSize",
+          "title--1400"
+        );
       }
 
       @media screen and (max-width: var.$breakpoint-mobile) {
-        font-size: 32px;
+        font-size: fct.map-deep-get(
+          var.$cardProject,
+          "fontSize",
+          "title--mobile"
+        );
       }
     }
   }
 
   &__description {
     padding: 10px;
-    font-size: 18px;
-    color: rgb(0, 0, 0);
-    font-family: var(--font--inter);
-    background-color: white;
+    font-family: fct.map-deep-get(
+      var.$cardProject,
+      "fontFamily",
+      "description"
+    );
+    font-size: fct.map-deep-get(
+      var.$cardProject,
+      "fontSize",
+      "description--desktop"
+    );
+    color: fct.map-deep-get(var.$cardProject, "colors", "description");
+    background-color: fct.map-deep-get(
+      var.$cardProject,
+      "colors",
+      "description--bg"
+    );
     opacity: 0.8;
     margin: 10px 0;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid
+      fct.map-deep-get(var.$cardProject, "colors", "description--borderTop");
+    border-bottom: 1px solid
+      fct.map-deep-get(var.$cardProject, "colors", "description--borderBottom");
 
     @media screen and (max-width: 1400px) {
       margin: 0 0;
-      font-size: 15px;
-    }
-
-    @media screen and (max-width: var.$breakpoint-tablette) {
-      font-size: 15px;
+      font-size: fct.map-deep-get(
+        var.$cardProject,
+        "fontSize",
+        "description--1400"
+      );
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
-      font-size: 18px;
+      font-size: fct.map-deep-get(
+        var.$cardProject,
+        "fontSize",
+        "description--mobile"
+      );
     }
   }
 
@@ -148,14 +222,26 @@
 
     .technologies {
       &__icones {
-        font-size: 30px;
+        font-size: fct.map-deep-get(
+          var.$cardProject,
+          "fontSize",
+          "technologies--desktop"
+        );
 
         @media screen and (max-width: var.$breakpoint-tablette) {
-          font-size: 25px;
+          font-size: fct.map-deep-get(
+            var.$cardProject,
+            "fontSize",
+            "technologies--tablet"
+          );
         }
 
         @media screen and (max-width: var.$breakpoint-mobile) {
-          font-size: 32px;
+          font-size: fct.map-deep-get(
+            var.$cardProject,
+            "fontSize",
+            "technologies--mobile"
+          );
         }
       }
     }
@@ -164,13 +250,13 @@
 
 .go-back {
   position: absolute;
-  font-size: 20px;
+  font-size: fct.map-deep-get(var.$cardProject, "fontSize", "go-back");
   top: 5px;
   right: 5px;
-  color: rgb(36, 34, 34);
+  color: fct.map-deep-get(var.$cardProject, "colors", "go-back");
   cursor: pointer;
   background-color: white;
-  border-radius: 50%;
+  border-radius: var.$radius--circle;
 }
 
 .curve {
@@ -192,20 +278,5 @@
 }
 
 .curve .shape-fill {
-  fill: #ffffff;
+  fill: fct.map-deep-get(var.$cardProject, "colors", "curve");
 }
-
-// .slide {
-//   transform: scale(0.5);
-//   transition: transform 300ms;
-//   opacity: 0.5;
-//   // margin-left: 20px;
-//   // margin-right: 20px;
-// }
-
-// .activeSlide {
-//   transform: scale(1);
-//   opacity: 1;
-//   // margin-left: 20px;
-//   // margin-right: 20px;
-// }

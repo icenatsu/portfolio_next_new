@@ -1,12 +1,20 @@
 // Repeated Color
 /**************/
-$primary-color: #13589f;
-$light-color: #dddddd;
-$dark-color: #000000;
-$white-color: white;
+$primary-color: #858ae3;
+$second-color: #4e148c;
+$third-color: #97dffc;
+$four-color: #2c0735;
+$light-color: white;
+$dark-color: black;
 $transparent-color: transparent;
+$white-color: white;
 
-// global.scss#DDDDDDwh
+// FontFamily
+/**************/
+$archivo: var(--font--archivo);
+$instrumentSerif: var(--font--instrumentSerif);
+
+// global.scss
 /**************/
 $global--dark: (
   colors: (
@@ -23,73 +31,35 @@ $global--light: (
 );
 
 /**************************************************************************************
-// Layout header
-/***************/
-$header: (
-  colors: (
-    autotext--background--desktop: transparent,
-    autotext-after--background--desktop: transparent,
-    autotext-animation--border--start--desktop: transparent,
-    autotext-animation--border--end--desktop: rgb(233, 129, 233),
-  ),
-  fontSize: (
-    autotext--desktop: 14px,
-    burger--desktop: 40px,
-  ),
-);
-
-$header--dark: (
-  colors: (
-    header-color--desktop: $light-color,
-    autotext-color--desktop: rgb(233, 129, 233),
-    autotext-color--tablette: rgb(233, 129, 233),
-    autotext-borderRight--desktop: rgb(49, 38, 79),
-    burger--color--mobile: $light_color,
-  ),
-);
-
-$header--light: (
-  colors: (
-    autotext-color--desktop: rgb(32, 163, 137),
-    autotext-color--tablette: rgb(8, 77, 92),
-    autotext-borderRight--desktop: rgb(184, 236, 186),
-    burger--color--mobile: $primary_color,
-  ),
-);
-
-/**************************************************************************************
 // Component navBar
 /*******************/
 $navbar: (
-  colors: (
-    navbar__item-background--desktop: transparent,
-  ),
   fontSize: (
-    navbar--desktop: 16px,
-    navbar__item--tablette: 16px,
-    navbar__item--mobile: 25px,
+    container: 16px,
+    list: 17px,
+  ),
+  fontWeight: (
+    container: bold,
   ),
 );
 
 $navbar--dark: (
   colors: (
-    navbar__item-before--color--desktop: rgb(255, 255, 255),
-    navbar__item-before--text-shadow--desktop: rgb(255, 255, 255),
-    navbar__item-hover-before--color--desktop: rgb(255, 255, 255),
-    navbar__item-background--mobile: $primary-color,
-    navbar__item-border--mobile: $dark-color,
-    links--desktop: $light-color,
+    container: $dark-color,
+    container--bg: $primary-color,
+    container--filter: $primary-color,
+    list__item--before: $light-color,
+    burger: $dark-color,
   ),
 );
 
 $navbar--light: (
   colors: (
-    navbar__item-before--color--desktop: rgb(32, 163, 137),
-    navbar__item-hover-before--color--desktop: rgb(160, 85, 149),
-    navbar__item-background--mobile: $primary-color,
-    navbar__item-border--mobile: $primary-color,
-    links--desktop: $primary-color,
-    links--mobile: $light-color,
+    container: $light-color,
+    container--bg: $four-color,
+    container--filter: $four-color,
+    list__item--before: $third-color,
+    burger: $light-color,
   ),
 );
 
@@ -99,274 +69,300 @@ $navbar--light: (
 
 $switch: (
   colors: (
-    sunmoon-before--background--desktop: rgb(7, 33, 110),
+    sunmoon: $dark-color,
   ),
   fontSize: (
-    slider-icone--mobile: 14px,
+    icone--mobile: 14px,
   ),
 );
 
 $switch--dark: (
   colors: (
-    sunmoon--icone--color--desktop: rgb(8, 8, 154),
-    sunmoon--background--desktop: $light-color,
+    sunmoon--bg: $light-color,
+    sunmoon--icone: rgb(8, 8, 154),
   ),
 );
 
 $switch--light: (
   colors: (
-    sunmoon--background--desktop: #1c76d3,
-    sunmoon-before--background--desktop: #fff,
-    sunmoon--icone--color--desktop: white,
+    sunmoon--bg: $light-color,
+    sunmoon--icone: $four-color,
   ),
 );
 
 /**************************************************************************************
-// Component ThumbailProject
-/***************************/
-
-$thumbailproject: (
-  colors: (
-    container--color--desktop: $primary-color,
-    container--background--desktop: rgb(56, 82, 117),
-    container__sources--color--desktop: white,
-    container__description--color--desktop: $light-color,
-    container__technologies--color--desktop: $light-color,
-  ),
-  fontSize: (
-    container--desktop: 16px,
-    container--tablette: 15px,
-    container--mobile: 14px,
-    container_sources--desktop: 30px,
-    container_sources--tablette: 28px,
-    container_sources--mobile: 26px,
-    container_title--desktop: 30px,
-    container_title--tablette: 28px,
-    container_title--mobile: 26px,
-  ),
-  imgSize: (
-    container_icones-widthHeight--desktop: 45px,
-    container_icones-widthHeight--tablette: 40px,
-    container_icones-widthHeight--mobile: 30px,
-  ),
-);
-
-$thumbailproject--dark: (
-  colors: (
-    container__title--color--desktop: rgba(35, 14, 77, 0.773)
-      // rgba(62, 231, 40, 0.773),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-  ),
-);
-
-$thumbailproject--light: (
-  colors: (
-    container__title--color--desktop: rgba(35, 14, 77, 0.773)
-      // rgb(38, 187, 158),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-  ),
-);
-
-/**************************************************************************************
-// Components Slider
+// Composant header
 /*******************/
-
-$slider: (
+$header: (
+  colors: (
+    button--bg: $second-color,
+    button: $light-color,
+  ),
   fontSize: (
-    slider__chevron-icone--desktop: 35px,
-    slider__chevron-icone--tablette: 30px,
-    slider__chevron-icone--mobile: 30px,
-    scroll--desktop: 40.5px,
-    scroll--mobile: 25px,
+    profession: 16px,
+    title--desktop: 80px,
+    title--tablette: 64px,
+    button: 20px,
+    button-icon: 30px,
   ),
-  absolutPosition: (
-    slider__chevron__prevANDnext--leftANDright--desktop: -90px,
-    slider__chevron__prevANDnext--leftANDright--tablette: -85px,
-    slider__chevron__prevANDnext--leftANDright--mobile: -40px,
-    scroll--top--desktop: 305px,
-    scroll--left--desktop: 220px,
-    scroll--top--tablette: 290px,
-    scroll--left--tablette: 180px,
-    scroll--top--mobile: 338px,
-    scroll--left--mobile: 87px,
-    device--top--desktop: -33px,
-    device--left--desktop: -14px,
-    device--top--tablette: -10px,
-    device--left--tablette: -34px,
-    device--top--mobile: -49px,
-    device--left--mobile: -5px,
-  ),
-  imgSize: (
-    img_cover_slider--width--desktop: 460px,
-    img_cover_slider--height--desktop: 233px,
-    img_cover_slider--width--tablette: 388px,
-    img_cover_slider--height--tablette: 280px,
-    img_cover_slider--width--mobile: 200px,
-    img_cover_slider--height--mobile: 332px,
-    device--width--desktop: 490px,
-    device--height--desktop: 338px,
-    device--width--tablette: 457px,
-    device--height--tablette: 295px,
-    device--width--mobile: 209px,
-    device--height--mobile: 430px,
+  fontFamily: (
+    button: $archivo,
+    profession: $archivo,
   ),
 );
 
-$slider--dark: (
+$header--dark: (
   colors: (
-    slider__chevron-icone--color--desktop: $white-color,
-    slider__chevron-icone-active--color--desktop: black,
+    header--bg: $dark-color,
+    title: $primary-color,
+    profession--color: $primary-color,
+    profession--border: $primary-color,
+    wave: $primary-color,
   ),
 );
 
-$slider--light: (
+$header--light: (
   colors: (
-    slider__chevron-icone--color--desktop: rgb(21, 56, 81),
-    slider__chevron-icone-active--color--desktop: $primary-color,
-    scroll--color--mobile: white,
+    header--bg: $light-color,
+    title: $dark-color,
+    profession--color: $dark-color,
+    profession--border: $dark-color,
+    wave: $second-color,
   ),
 );
 
 /**************************************************************************************
-// page Contact
-/***************/
+// Composant About
+/*****************/
+$about: (
+  fontSize: (
+    about--desktop: 48px,
+    about--tablet: 32px,
+    presentation: 20px,
+  ),
+  fontFamily: (
+    about: $instrumentSerif,
+    presentation: $archivo,
+  ),
+);
 
-$contact: (
+$about--dark: (
   colors: (
-    infos--background--desktop: $transparent-color,
-    infos__item--background--desktop: $transparent-color,
-    reseaux--background--desktop: $transparent-color,
-    form__contact--background--desktop: rgb(56, 82, 117),
-    input--background--desktop: #242424,
-    input--border--desktop: grey,
-    label--color--desktop: #97dffc,
-    errors--color--desktop: white,
-    send--background--desktop: #97dffc,
-    send--color--desktop: $dark-color,
-    send--border--desktop: $white-color,
+    container--bg: $primary-color,
+    about: $dark-color,
+    presentation: $second-color,
+    presentation--bg: $light-color,
+    presentation--border: $dark-color,
+  ),
+);
+
+$about--light: (
+  colors: (
+    container--bg: $four-color,
+    about: $light-color,
+    presentation: $third-color,
+  ),
+);
+
+/***************************************************************************************/
+// Composant Projets
+/******************/
+$projets: (
+  fontSize: (
+    title--desktop: 48px,
+    title--tablet: 35px,
+    title--mobile: 30px,
+    touch: 30px,
+    error: 20px,
+  ),
+);
+
+$projets--dark: (
+  colors: (
+    projects--bg: $dark-color,
+    title: $primary-color,
+    touch: $light-color,
+    error: $light-color,
+  ),
+);
+
+$projets--light: (
+  colors: (
+    projects--bg: $light-color,
+    title: $second-color,
+    touch: $second-color,
+    error: $primary-color,
+  ),
+);
+/**************************************************************************************
+// Component CardProject
+/************************/
+
+$cardProject: (
+  colors: (
+    flip-card--bg: $transparent-color,
+    flip-card-inner--bg: $light-color,
+    flip-card-front: $dark-color,
+    flip-card-back: $light-color,
+    title--bg: $dark-color,
+    description: $dark-color,
+    description--bg: $light-color,
+    description--borderTop: $dark-color,
+    description--borderBottom: $dark-color,
+    go-back: rgb(36, 34, 34),
+    curve: #ffffff,
   ),
   fontSize: (
-    container-formulaire--tablette: 15px,
-    container-formulaire--mobile: 14px,
-    boxinfoscontact--desktop: 30px,
-    boxinfoscontact--tablette: 25px,
-    boxinfoscontact--mobile: 20px,
-    infos__item--desktop: 25px,
-    infos__item--tablette: 20px,
-    infos__item--mobile: 15px,
-    reseaux--desktop: 30px,
-    linkedinGithub--desktop: 30px,
-    linkedinGithub--tablette: 25px,
-    linkedinGithub--mobile: 18px,
-    linkedinGithub--icone--desktop: 30px,
-    linkedinGithub--icone--tablette: 25px,
-    linkedinGithub--icone--mobile: 25px,
-    errors--desktop: 15px,
+    flip-card: 15.5px,
+    source--desktop: 30px,
+    source--mobile: 32px,
+    title--desktop: 25px,
+    title--1400: 20px,
+    title--mobile: 32px,
+    description--desktop: 18px,
+    description--1400: 15px,
+    description--mobile: 18px,
+    technologies--desktop: 30px,
+    technologies--tablet: 30px,
+    technologies--mobile: 30px,
+    go-back: 20px,
+  ),
+  fontFamily: (
+    description: var(--font--inter),
   ),
 );
 
-$contact--dark: (
+$cardProject--dark: (
   colors: (
-    boxinfoscontact--color--desktop: white,
-    reseaux__item--backgroundLinearGradient--desktop:
-      linear-gradient(
-        90deg,
-        rgba(19, 88, 159, 0.6671918767507004) 35%,
-        rgba(77, 72, 72, 1) 100%
-      ),
+    flip-card--border: $light-color,
+    flip-card-back--bg: $second-color,
   ),
 );
 
-$contact--light: (
+$cardProject--light: (
   colors: (
-    infos__item--color--desktop: #13589f,
-    reseaux__item--color--desktop: white,
-    reseaux__item--backgroundLinearGradient--desktop:
-      linear-gradient(
-        90deg,
-        rgba(19, 88, 159, 0.6671918767507004) 35%,
-        rgba(36, 36, 36, 1) 100%
-      ),
+    flip-card--border: $second-color,
+    flip-card-back--bg: $four-color,
   ),
 );
 
-/**************************************************************************************
-// Components Notify
+/***************************************************************************************/
+// Component Loader
 /*******************/
-// -- All mode
-
-$notify: (
+$loader: (
   colors: (
-    notify--boxShadow--desktop:
-      rgba(
-        $color: #000000,
-        $alpha: 0.4,
-      ),
-    notify--background--desktop: white,
-    notifyParagraphe--color--desktop: $dark-color,
-    close--error--color--desktop: tomato,
-    close--success--color--desktop: green,
-    bar--error--background--desktop: tomato,
-    bar--success--background--desktop: green,
+    anim--color--desktop: rgb(255, 255, 255),
+    number-nthChild2--color--desktop: rgb(255, 255, 255),
+    secondeanim--desktop: rgb(30, 117, 204),
   ),
   fontSize: (
-    notifyParagraphe--desktop: 15px,
-    notifyParagraphe--tablette: 14px,
-    notifyParagraphe--mobile: 13px,
+    anim--desktop: 10px,
+    number-nthChild2--desktop: 50px,
+    number-nthChild2--tablette: 15px,
+    number-nthChild2--mobile: 10px,
+    secondeanim--desktop: 24px,
   ),
 );
 
 /***************************************************************************************
-// page Compétence
-/******************/
+// Composant Skills
+/*******************/
+
+$skills: (
+  fontSize: (
+    title--desktop: 48px,
+    title--tablet: 35px,
+    title--mobile: 30px,
+  ),
+  fontFamily: (
+    title: $instrumentSerif,
+  ),
+  fontWeight: (
+    title: 400,
+  ),
+);
 
 $skills--dark: (
   colors: (
-    container-color--desktop: $light-color,
-    wave--fill--desktop: #141212,
+    container--bg: $primary-color,
+    title: $dark-color,
   ),
 );
 
 $skills--light: (
   colors: (
-    container--color--desktop: $dark-color,
-    wave--fill--desktop: #ffffff,
+    container--bg: $four-color,
+    title: $light-color,
+  ),
+);
+
+/***************************************************************************************/
+// Components DownloadButton
+/***************************/
+$downloadbutton: (
+  colors: (
+    button--bg: transparent,
+  ),
+  fontSize: (
+    button: 20px,
+    icone: 40px,
+  ),
+);
+
+$downloadbutton--dark: (
+  colors: (
+    button: $dark-color,
+    icone: $dark-color,
+  ),
+);
+
+$downloadbutton--light: (
+  colors: (
+    button: $primary-color,
+    icone: $primary-color,
   ),
 );
 
 /***************************************************************************************
 // Components CardSkill
-/***************************/
+/***********************/
 
 $cardSkill: (
   fontSize: (
-    technoSkill--tablette: 15px,
-    technoSkill--mobile: 14px,
-    container__icone--nthChild-after--desktop: 18px,
-    container__icone--nthChild-after--tablette: 14px,
-    container__icone--nthChild-after--mobile: 13px,
-    icone--desktop: 55px,
-    icone--tablette: 50px,
-    icone--mobile: 40px,
-    technoSkill--paragraph-before--desktop: 25px,
+    nameTechno--desktop: 18px,
+    nameTechno--tablet: 14px,
+    nameTechno--mobile: 13px,
+    iconTechno--desktop: 55px,
+    iconTechno--tablet: 50px,
+    iconTechno--mobile: 40px,
+    descriptionTechno--tablet: 15px,
+    descriptionTechno--mobile: 14px,
+    iconArrow: 25px,
   ),
 );
 
 $cardSkill--dark: (
   colors: (
-    technoSkill--color--desktop: $light-color,
-    technoSkill-paragraph-firstOfType--borderTop-desktop: white,
-    technoSkill-paragraph-before--color--desktop: #858ae3,
-    container__icone-after-color-desktop: white,
+    techno--bg: #242424,
+    techno--dropShadow: #97dffc,
+    chevron: $light-color,
+    dividingBorder: $light-color,
+    descriptionTechno: $light-color,
+    iconArrow: $primary-color,
+    iconTechno: $third-color,
+    nameTechno: $light-color,
   ),
 );
 
 $cardSkill--light: (
   colors: (
-    technoSkill--background--desktop: white,
-    technoSkill--color--desktop: $primary-color,
-    technoSkill-paragraph-firstOfType--borderTop-desktop: $primary-color,
-    technoSkill-paragraph-before--color--desktop: rgb(38, 187, 158),
-    container__icone-nthChild--color--desktop: $primary-color,
-    container__icone-after--color--desktop: $primary-color,
+    techno--bg: $light-color,
+    chevron: $primary-color,
+    dividingBorder: $primary-color,
+    descriptionTechno: $primary-color,
+    iconArrow: rgb(38, 187, 158),
+    iconTechno: $primary-color,
+    nameTechno: $primary-color,
   ),
 );
 
@@ -382,30 +378,79 @@ $typescript: rgb(60, 147, 218);
 $mongodb: #228a66;
 $nextjs: #64b297;
 
-/***************************************************************************************/
-// Components DownloadButton
-/***************************/
-$downloadbutton: (
+/**************************************************************************************
+// Composant Contact
+/*******************/
+
+$contact: (
   colors: (
-    button--background--desktop: transparent,
+    send: $dark-color,
+    send--bg: #97dffc,
   ),
   fontSize: (
-    button--desktop: 20px,
-    icone--desktop: 40px,
+    title--desktop: 48px,
+    title--tablet: 35px,
+    label--desktop: 20px,
+    label--tablet: 18px,
+    send--desktop: 20px,
+    send--mobile: 16px,
+    errors: 16px,
+  ),
+  fontWeight: (
+    title: 400,
+  ),
+  fontFamily: (
+    title: var(--font--instrumentSerif),
+    send: var(--font--archivo),
   ),
 );
 
-$downloadbutton--dark: (
+$contact--dark: (
   colors: (
-    button--color--desktop: white,
-    icone--color--desktop: white,
+    contact--bg: $dark-color,
+    title: $third-color,
+    label: #97dffc,
+    errors: $light-color,
+    input--bg: $light-color,
+    elipse: $light-color,
+    wave: $primary-color,
   ),
 );
 
-$downloadbutton--light: (
+$contact--light: (
   colors: (
-    button--color--desktop: $primary-color,
-    icone--color--desktop: $primary-color,
+    contact--bg: $light-color,
+    title: $second-color,
+    label: $dark-color,
+    errors: $dark-color,
+    input--bg: #242424,
+    elipse: $second-color,
+    wave: $second-color,
+  ),
+);
+
+/**************************************************************************************
+// Components Notify
+/*******************/
+
+$notify: (
+  colors: (
+    notify--boxShadow:
+      rgba(
+        $color: #000000,
+        $alpha: 0.4,
+      ),
+    notify--bg: $light-color,
+    text: $dark-color,
+    close--error: tomato,
+    close--success: green,
+    bar--error--bg: tomato,
+    bar--success--bg: green,
+  ),
+  fontSize: (
+    text--desktop: 15px,
+    text--tablet: 14px,
+    text--mobile: 13px,
   ),
 );
 
@@ -434,84 +479,6 @@ $notfound--light: (
 );
 
 /***************************************************************************************/
-// Page Projets
-/***************/
-$projets: (
-  fontSize: (
-    error--desktop: 20px,
-  ),
-);
-
-$projets--dark: (
-  colors: (
-    error--desktop: $light-color,
-  ),
-);
-
-$projets--light: (
-  colors: (
-    error--desktop: $primary-color,
-  ),
-);
-
-/***************************************************************************************/
-// Component Loader
-/*******************/
-$loader: (
-  colors: (
-    anim--color--desktop: rgb(255, 255, 255),
-    number-nthChild2--color--desktop: rgb(255, 255, 255),
-    secondeanim--desktop: rgb(30, 117, 204),
-  ),
-  fontSize: (
-    anim--desktop: 10px,
-    number-nthChild2--desktop: 50px,
-    number-nthChild2--tablette: 15px,
-    number-nthChild2--mobile: 10px,
-    secondeanim--desktop: 24px,
-  ),
-);
-
-/***************************************************************************************/
-// Page Home
-/***********/
-$home: (
-  colors: (
-    secondeanim--desktop: rgb(30, 117, 204),
-  ),
-  fontSize: (
-    container--desktop: 20px,
-    h1--tablette: 40px,
-    h1--mobile: 30px,
-    paragraph--tablette: 20px,
-    paragraph--mobile: 17px,
-  ),
-);
-
-$home--dark: (
-  colors: (
-    container--color--desktop: $light-color,
-  ),
-);
-
-$home--light: (
-  colors: (
-    container--color--desktop: $primary-color,
-  ),
-);
-
-/***************************************************************************************/
-
-// -- Fonts -- //
-/***************/
-$container__icone-nthChild-after-fontFamily-desktop--thumbailskills: var(
-    --font--karla
-  ),
-  sans-serif;
-$text-font: var(--font--karla), sans-serif;
-$container__title-fontFamily-desktop--thumbail: var(--font--kalam), cursive,
-  sans-serif;
-
 // -- Radius -- //
 /****************/
 $radius--5: 5px;

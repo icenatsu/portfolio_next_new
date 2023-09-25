@@ -3,7 +3,6 @@
 @use "../../styles/utils/mixins.scss" as mix;
 
 .header {
-  background: black;
   height: 100vh;
   display: flex;
   padding: 150px 200px 70px 200px;
@@ -39,11 +38,9 @@
     }
 
     .profession {
-      font-size: 16px;
-      font-family: var(--font--archivo);
-      color: #858ae3;
-      border: 1px solid #858ae3;
-      border-radius: 30px;
+      font-size: fct.map-deep-get(var.$header, "fontSize", "profession");
+      font-family: fct.map-deep-get(var.$header, "fontFamily", "profession");
+      border-radius: var.$radius--30;
       width: 200px;
       padding: 15px;
       display: flex;
@@ -54,12 +51,11 @@
     .title {
       display: flex;
       font-family: var(--font--instrumentSerif);
-      color: #858ae3;
-      font-size: 80px;
+      font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
       flex-wrap: wrap;
 
       @media screen and (max-width: var.$breakpoint-tablette) {
-        font-size: 64px;
+        font-size: fct.map-deep-get(var.$header, "fontSize", "title--tablette");
       }
 
       @media screen and (max-width: var.$breakpoint-mobile) {
@@ -73,23 +69,28 @@
       align-items: center;
       justify-content: center;
       z-index: 2;
+
       button {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: var(--font--archivo);
-        font-size: 20px;
-        color: white;
+        font-family: fct.map-deep-get(var.$header, "fontFamily", "button");
+        font-size: fct.map-deep-get(var.$header, "fontSize", "button");
         font-weight: bold;
-        background-color: #4e148c;
-        border-radius: 30px;
+        color: fct.map-deep-get(var.$header, "colors", "button");
+        background-color: fct.map-deep-get(var.$header, "colors", "button--bg");
+        border-radius: var.$radius--30;
         border: none;
         width: 190px;
         height: 55px;
         margin: 20px 10px;
 
+        &:hover {
+          filter: brightness(110%);
+        }
+
         .icon {
-          font-size: 30px;
+          font-size: fct.map-deep-get(var.$header, "fontSize", "button-icon");
           margin-left: 20px;
         }
 
@@ -101,7 +102,79 @@
     }
   }
 
-  .image {
-    border: 1px solid green;
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    opacity: 0.2;
+  }
+
+  .wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 90px;
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      width: calc(100% + 1.3px);
+      height: 70px;
+    }
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      width: calc(180% + 1.3px);
+      height: 60px;
+    }
+  }
+
+  &--dark {
+    background-color: fct.map-deep-get(
+      var.$header--dark,
+      "colors",
+      "header--bg"
+    );
+
+    .title {
+      color: fct.map-deep-get(var.$header--dark, "colors", "title");
+    }
+
+    .profession {
+      color: fct.map-deep-get(var.$header--dark, "colors", "profession--color");
+      border: 1px solid
+        fct.map-deep-get(var.$header--dark, "colors", "profession--border");
+    }
+
+    .wave .shape-fill {
+      fill: fct.map-deep-get(var.$header--dark, "colors", "wave");
+    }
+  }
+
+  &--light {
+    background-color: fct.map-deep-get(
+      var.$header--light,
+      "colors",
+      "header--bg"
+    );
+
+    .title {
+      color: fct.map-deep-get(var.$header--light, "colors", "title");
+    }
+
+    .profession {
+      color: fct.map-deep-get(
+        var.$header--light,
+        "colors",
+        "profession--color"
+      );
+      border: 1px solid
+        fct.map-deep-get(var.$header--light, "colors", "profession--border");
+    }
+
+    .wave .shape-fill {
+      fill: fct.map-deep-get(var.$header--light, "colors", "wave");
+    }
   }
 }

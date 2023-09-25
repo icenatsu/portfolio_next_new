@@ -8,67 +8,43 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  padding: 100px 0 20px 0;
+  padding: 50px 0 20px 0;
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     padding: 50px 0 0 0;
   }
 
   .button {
+    border: none;
     background-color: fct.map-deep-get(
       var.$downloadbutton,
       "colors",
-      "button--background--desktop"
+      "button--bg"
     );
-    border: none;
-    font-size: fct.map-deep-get(
-      var.$downloadbutton,
-      "fontSize",
-      "button--desktop"
-    );
+    font-size: fct.map-deep-get(var.$downloadbutton, "fontSize", "button");
   }
 
   .icone {
-    font-size: fct.map-deep-get(
-      var.$downloadbutton,
-      "fontSize",
-      "icone--desktop"
-    );
+    font-size: fct.map-deep-get(var.$downloadbutton, "fontSize", "icone");
   }
 
   &--dark {
     .button {
-      color: fct.map-deep-get(
-        var.$downloadbutton--dark,
-        "colors",
-        "button--color--desktop"
-      );
+      color: fct.map-deep-get(var.$downloadbutton--dark, "colors", "button");
     }
 
     .icone {
-      color: fct.map-deep-get(
-        var.$downloadbutton--dark,
-        "colors",
-        "button--color--desktop"
-      );
+      color: fct.map-deep-get(var.$downloadbutton--dark, "colors", "icone");
     }
   }
 
   &--light {
     .button {
-      color: fct.map-deep-get(
-        var.$downloadbutton--light,
-        "colors",
-        "button--color--desktop"
-      );
+      color: fct.map-deep-get(var.$downloadbutton--light, "colors", "button");
     }
 
     .icone {
-      color: fct.map-deep-get(
-        var.$downloadbutton--light,
-        "colors",
-        "button--color--desktop"
-      );
+      color: fct.map-deep-get(var.$downloadbutton--light, "colors", "icone");
     }
   }
 }

@@ -26,7 +26,6 @@ interface IntItems {
     code: string
 }
 
-
 const Project = () => {
 
     const themeContext = useContext(ThemeContext);
@@ -126,10 +125,14 @@ const Project = () => {
                     {items ? (
                         items.map((item: IntItems, index: number) => (
                             <SwiperSlide className={styles["swiper__slide"]} key={index}>
-                                <CardProject
-                                    inId={item.title}
-                                    inData={item}
-                                />
+                                {({ isActive }) => (
+                                    <CardProject
+                                        inId={item.title}
+                                        inData={item}
+                                        inStyleSlider={isActive ? 'grayscale(0%)' : 'grayscale(100%)'}
+                                    />
+                                )}
+
                             </SwiperSlide>
                         ))
                     ) : (

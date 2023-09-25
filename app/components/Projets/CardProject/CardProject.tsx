@@ -2,6 +2,8 @@ import styles from "./CardProject.module.scss"
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
 import Link from "next/link";
+import { useContext, useEffect, useRef } from "react";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 interface IntData {
     id: number,
@@ -17,13 +19,32 @@ interface IntData {
 interface CardProjectProps {
     inData: IntData,
     inId: string,
+    inStyleSlider: string
 }
 
-const CardProject = ({ inData }: CardProjectProps): JSX.Element => {
+const CardProject = ({ inData, inStyleSlider }: CardProjectProps): JSX.Element => {
 
+    const themeContext = useContext(ThemeContext);
+    const isDarkMode = themeContext!.isDarkMode;
+
+    const article = useRef<HTMLElement>(null);
+
+    // Gestion du Dark/Light mode
+    useEffect(() => {
+        if (article.current !== null) {
+            const componentForCssChange = [
+                {
+                    htmlElement: article.current,
+                    name: 'flip-card',
+                    scss: styles
+                },
+            ]
+            themeContext?.changeDarkLightMode(componentForCssChange)
+        }
+    }, [themeContext, isDarkMode])
 
     return (
-        <article className={styles["flip-card"]}>
+        <article ref={article} className={styles["flip-card"]} style={{ filter: `${inStyleSlider}` }}>
             <div className={styles["flip-card-inner"]}>
                 <div className={styles["flip-card-front"]}>
                     <picture className={styles["flip-card-front__image"]}>
@@ -34,8 +55,6 @@ const CardProject = ({ inData }: CardProjectProps): JSX.Element => {
                     </picture>
                     <Icon className={styles["go-back"]} icon="pepicons-pop:arrow-spin" rotate={2} />
                 </div>
-                {/* <div>
-                </div> */}
                 <div className={styles["flip-card-back"]}>
                     <div className={styles["flip-card-back__sourcesAndTitle"]}>
                         <h2 className={styles["flip-card-back__sourcesAndTitle__title"]}>{inData.title}</h2>

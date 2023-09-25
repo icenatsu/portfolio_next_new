@@ -164,12 +164,12 @@ const Skills = (): JSX.Element => {
 
 
     return (
-        <section id="skills" className={styles.container}>
+        <section id="skills" className={styles.container} ref={container} >
             <h2 id="skillsTitle" className={styles.title}>
                 Mes compétences
             </h2>
             <DownloadButton />
-            <div ref={container} className={styles["container__Accordeons"]}>
+            <div className={styles["container__Accordeons"]}>
                 <div className={styles.dataAccordeon}>
                     {dataFirstBlockAccordeon.map(([key, value]) => {
                         return (

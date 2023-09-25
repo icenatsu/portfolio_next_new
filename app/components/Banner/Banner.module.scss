@@ -37,7 +37,7 @@
 
   .rain {
     opacity: 0;
-    animation: rain 2s 1.2s ease-in forwards infinite;
+    animation: rain 2s 1.2s ease-in both infinite;
     width: 89px;
     height: 550px;
 
@@ -103,6 +103,10 @@
 
 @keyframes rain {
   0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  25% {
     opacity: 0.5;
     transform: translateY(-90px);
   }
@@ -112,7 +116,7 @@
   }
   100% {
     opacity: 0.5;
-    transform: translateY(200px);
+    transform: translateY(180px);
   }
 }
 

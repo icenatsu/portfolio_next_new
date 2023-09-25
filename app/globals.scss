@@ -16,6 +16,24 @@ a {
   color: inherit;
 }
 
+.light {
+  background-color: fct.map-deep-get(
+    var.$global--light,
+    "colors",
+    "background--desktop"
+  );
+  color: fct.map-deep-get(var.$global--light, "colors", "color--desktop");
+}
+
+.dark {
+  background-color: fct.map-deep-get(
+    var.$global--dark,
+    "colors",
+    "background--desktop"
+  );
+  color: fct.map-deep-get(var.$global--dark, "colors", "color--desktop");
+}
+
 @media (prefers-color-scheme: light) {
   body {
     background-color: fct.map-deep-get(

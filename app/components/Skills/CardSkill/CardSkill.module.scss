@@ -4,39 +4,25 @@
 
 @mixin CardSkillStyle($class, $technos, $colors) {
   .#{$class} {
+    position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
     overflow: hidden;
-    z-index: 1;
-    padding: 10px;
-    border-radius: 10px;
-    filter: drop-shadow(2px 2px 5px #97dffc);
-    // : 1px solid #97dffc;
-    background-color: var.$dark-color;
     width: 400px;
     max-height: 80px;
     transition: max-height 0.8s ease-in-out;
+    border-radius: 10px;
+    padding: 10px;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       max-height: 70px;
       width: 355px;
-      font-size: fct.map-deep-get(
-        var.$cardSkill,
-        "fontSize",
-        "technoSkill--tablette"
-      );
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       width: 90%;
       margin: auto;
       max-height: 65px;
-      font-size: fct.map-deep-get(
-        var.$cardSkill,
-        "fontSize",
-        "technoSkill--mobile"
-      );
     }
 
     .container {
@@ -59,21 +45,20 @@
           &:nth-child(#{$i}) {
             &::after {
               content: nth($technos, $i);
+              padding-left: 5px;
+              padding-right: 10px;
               font-size: fct.map-deep-get(
                 var.$cardSkill,
                 "fontSize",
-                "container__icone--nthChild-after--desktop"
+                "nameTechno--desktop"
               );
-              padding-left: 5px;
-              padding-right: 10px;
-              // font-family: var.$container__icone-nthChild-after-fontFamily-desktop--cardSkill;
 
               @media screen and (max-width: var.$breakpoint-tablette) {
                 padding-left: 15px;
                 font-size: fct.map-deep-get(
                   var.$cardSkill,
                   "fontSize",
-                  "container__icone--nthChild-after--tablette"
+                  "nameTechno--tablet"
                 );
               }
 
@@ -81,7 +66,7 @@
                 font-size: fct.map-deep-get(
                   var.$cardSkill,
                   "fontSize",
-                  "container__icone--nthChild-after--mobile"
+                  "nameTechno--mobile"
                 );
               }
             }
@@ -93,14 +78,14 @@
           font-size: fct.map-deep-get(
             var.$cardSkill,
             "fontSize",
-            "icone--desktop"
+            "iconTechno--desktop"
           );
 
           @media screen and (max-width: var.$breakpoint-tablette) {
             font-size: fct.map-deep-get(
               var.$cardSkill,
               "fontSize",
-              "icone--tablette"
+              "iconTechno--tablet"
             );
           }
 
@@ -109,7 +94,7 @@
             font-size: fct.map-deep-get(
               var.$cardSkill,
               "fontSize",
-              "icone--mobile"
+              "iconTechno--mobile"
             );
           }
         }
@@ -119,6 +104,19 @@
     .paragraphs {
       opacity: 0;
       transition: opacity 1.5s ease-in-out;
+      font-size: fct.map-deep-get(
+        var.$cardSkill,
+        "fontSize",
+        "descriptionTechno--tablet"
+      );
+
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        font-size: fct.map-deep-get(
+          var.$cardSkill,
+          "fontSize",
+          "descriptionTechno--mobile"
+        );
+      }
 
       .tilt {
         z-index: -1;
@@ -156,52 +154,61 @@
       &::before {
         content: "\2BB1";
         padding-right: 5px;
-        font-size: fct.map-deep-get(
-          var.$cardSkill,
-          "fontSize",
-          "technoSkill--paragraph-before--desktop"
-        );
+        font-size: fct.map-deep-get(var.$cardSkill, "fontSize", "iconArrow");
       }
     }
 
     &--dark {
-      background-color: var.$dark-color;
-
-      color: fct.map-deep-get(
+      // filter: drop-shadow(
+      //   2px 2px 5px
+      //     fct.map-deep-get(var.$cardSkill--dark, "colors", "techno--dropShadow")
+      // );
+      background-color: fct.map-deep-get(
         var.$cardSkill--dark,
         "colors",
-        "technoSkill--color--desktop"
+        "techno--bg"
       );
+
+      .paragraphs {
+        color: fct.map-deep-get(
+          var.$cardSkill--dark,
+          "colors",
+          "descriptionTechno"
+        );
+      }
 
       & p {
         &:first-of-type {
           border-top: 1px solid
-            fct.map-deep-get(
-              var.$cardSkill--dark,
-              "colors",
-              "technoSkill-paragraph-firstOfType--borderTop-desktop"
-            );
+            fct.map-deep-get(var.$cardSkill--dark, "colors", "dividingBorder");
         }
         &::before {
-          color: fct.map-deep-get(
-            var.$cardSkill--dark,
-            "colors",
-            "technoSkill-paragraph-before--color--desktop"
-          );
+          color: fct.map-deep-get(var.$cardSkill--dark, "colors", "iconArrow");
         }
       }
 
-      .container__icones {
-        @for $i from 1 through length($technos) {
-          &:nth-child(#{$i}) {
-            color: nth($colors, $i);
+      .container {
+        .slideToBottom {
+          color: fct.map-deep-get(var.$cardSkill--dark, "colors", "chevron");
+        }
 
-            &::after {
+        &__icones {
+          @for $i from 1 through length($technos) {
+            &:nth-child(#{$i}) {
+              // color: nth($colors, $i);
               color: fct.map-deep-get(
                 var.$cardSkill--dark,
                 "colors",
-                "container__icone-after-color-desktop"
+                "iconTechno"
               );
+
+              &::after {
+                color: fct.map-deep-get(
+                  var.$cardSkill--dark,
+                  "colors",
+                  "nameTechno"
+                );
+              }
             }
           }
         }
@@ -213,47 +220,48 @@
       background-color: fct.map-deep-get(
         var.$cardSkill--light,
         "colors",
-        "technoSkill--background--desktop"
+        "techno--bg"
       );
-      color: fct.map-deep-get(
-        var.$cardSkill--light,
-        "colors",
-        "technoSkill--color--desktop"
-      );
+
+      .paragraphs {
+        color: fct.map-deep-get(
+          var.$cardSkill--light,
+          "colors",
+          "descriptionTechno"
+        );
+      }
 
       & p {
         &:first-of-type {
           border-top: 1px solid
-            fct.map-deep-get(
-              var.$cardSkill--light,
-              "colors",
-              "technoSkill-paragraph-firstOfType--borderTop-desktop"
-            );
+            fct.map-deep-get(var.$cardSkill--light, "colors", "dividingBorder");
         }
         &::before {
-          color: fct.map-deep-get(
-            var.$cardSkill--light,
-            "colors",
-            "technoSkill-paragraph-before--color--desktop"
-          );
+          color: fct.map-deep-get(var.$cardSkill--light, "colors", "iconArrow");
         }
       }
 
-      & .container__icone {
-        @for $i from 1 through length($technos) {
-          &:nth-child(#{$i}) {
-            color: fct.map-deep-get(
-              var.$cardSkill--light,
-              "colors",
-              "container__icone-nthChild--color--desktop"
-            );
+      .container {
+        .slideToBottom {
+          color: fct.map-deep-get(var.$cardSkill--light, "colors", "chevron");
+        }
 
-            &::after {
+        &__icones {
+          @for $i from 1 through length($technos) {
+            &:nth-child(#{$i}) {
               color: fct.map-deep-get(
                 var.$cardSkill--light,
                 "colors",
-                "container__icone-after--color--desktop"
+                "iconTechno"
               );
+
+              &::after {
+                color: fct.map-deep-get(
+                  var.$cardSkill--light,
+                  "colors",
+                  "nameTechno"
+                );
+              }
             }
           }
         }

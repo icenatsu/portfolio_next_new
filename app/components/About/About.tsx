@@ -1,16 +1,35 @@
 'use client'
 
 import styles from "./About.module.scss"
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 import { animationSlideScrollToRight, animationSlideScrollToBottom } from "@animation/gsapAnimation"
 
 
 const About = (): JSX.Element => {
 
-    // Animations gsap
+    const themeContext = useContext(ThemeContext);
+    const isDarkMode = themeContext!.isDarkMode;
+
+    // Gestion du Dark/Light mode
     useEffect(() => {
-        animationSlideScrollToBottom("about", 0.5, 0.5, 0)
-    }, []);
+        if (document.getElementById("header") !== null) {
+            const componentForCssChange = [
+                {
+                    htmlElement: document.getElementById("about"),
+                    name: 'container',
+                    scss: styles
+                },
+            ]
+            themeContext?.changeDarkLightMode(componentForCssChange)
+        }
+    }, [themeContext, isDarkMode])
+
+
+    // Animations gsap
+    // useEffect(() => {
+    //     animationSlideScrollToBottom("about", 0.5, 0.5, 0)
+    // }, []);
 
     useEffect(() => {
         animationSlideScrollToRight("aboutTitle", 0.5, 0.5, 100)
