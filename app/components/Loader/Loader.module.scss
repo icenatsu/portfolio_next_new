@@ -3,168 +3,23 @@
 
 .loader {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100dvw;
-  height: 100dvh;
-  backdrop-filter: blur(30px);
-  opacity: 1;
-  z-index: 3;
+  align-items: center;
+  width: 100%;
 
-  .firstanim {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .anim {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: fct.map-deep-get(var.$loader, "colors", "anim--color--desktop");
-      position: relative;
-      backdrop-filter: blur(30px);
-      letter-spacing: 10px;
-      font-size: fct.map-deep-get(var.$loader, "fontSize", "anim--desktop");
+  .icon {
+    font-size: fct.map-deep-get(var.$loader, "fontSize", "icon");
+  }
 
-      @media screen and (max-width: var.$breakpoint-tablette) {
-        letter-spacing: 0px;
-      }
-
-      .number {
-        &:nth-child(1) {
-          animation: disappear 1s forwards ease-in-out;
-        }
-        &:nth-child(2) {
-          animation: appear 1s 1s forwards ease-in-out;
-          color: fct.map-deep-get(
-            var.$loader,
-            "colors",
-            "number-nthChild2--color--desktop"
-          );
-          opacity: 0;
-          transform: scale(0);
-          font-size: fct.map-deep-get(
-            var.$loader,
-            "fontSize",
-            "number-nthChild2--desktop"
-          );
-
-          @media screen and (max-width: var.$breakpoint-tablette) {
-            font-size: fct.map-deep-get(
-              var.$loader,
-              "fontSize",
-              "number-nthChild2--tablette"
-            );
-          }
-
-          @media screen and (max-width: var.$breakpoint-mobile) {
-            font-size: fct.map-deep-get(
-              var.$loader,
-              "fontSize",
-              "number-nthChild2--mobile"
-            );
-          }
-        }
-        &:nth-child(3) {
-          animation: disappear2 1s ease-in-out forwards;
-        }
-      }
+  &--dark {
+    .icon {
+      color: fct.map-deep-get(var.$loader--dark, "colors", "icon");
     }
   }
 
-  .secondanim {
-    z-index: -1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    letter-spacing: 20px;
-    display: flex;
-    flex-direction: column;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: fct.map-deep-get(
-      var.$loader,
-      "fontSize",
-      "secondeanim--desktop"
-    );
-    white-space: nowrap;
-    color: fct.map-deep-get(var.$loader, "colors", "secondeanim--desktop");
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
-
-    :nth-child(odd) {
-      opacity: 0;
-      animation: rain 3s 2s infinite linear;
+  &--light {
+    .icon {
+      color: fct.map-deep-get(var.$loader--light, "colors", "icon");
     }
-
-    :nth-child(even) {
-      opacity: 0;
-      animation: rain 3s 2s infinite linear reverse;
-    }
-  }
-}
-
-@keyframes rain {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(100%);
-    opacity: 1;
-  }
-}
-
-@keyframes rain2 {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 1;
-  }
-}
-
-@keyframes reveal {
-  0% {
-    font-size: 0;
-  }
-  100% {
-    font-size: 30px;
-  }
-}
-
-@keyframes disappear {
-  0% {
-    transform: translateX(-100%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0%);
-    opacity: 0;
-  }
-}
-
-@keyframes disappear2 {
-  0% {
-    transform: translateX(100%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 0;
   }
 }

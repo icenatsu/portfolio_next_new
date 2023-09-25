@@ -46,6 +46,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 1;
+      transition: filter 1s;
     }
 
     .title {
@@ -84,14 +86,15 @@
         width: 190px;
         height: 55px;
         margin: 20px 10px;
+        transition: filter 0.6s;
 
         &:hover {
-          filter: brightness(110%);
+          filter: brightness(140%);
         }
 
         .icon {
           font-size: fct.map-deep-get(var.$header, "fontSize", "button-icon");
-          margin-left: 20px;
+          margin-left: 30px;
         }
 
         & a {
@@ -145,6 +148,10 @@
       color: fct.map-deep-get(var.$header--dark, "colors", "profession--color");
       border: 1px solid
         fct.map-deep-get(var.$header--dark, "colors", "profession--border");
+
+      &:hover {
+        filter: brightness(160%);
+      }
     }
 
     .wave .shape-fill {

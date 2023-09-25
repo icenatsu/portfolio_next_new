@@ -103,11 +103,17 @@
 
     .paragraphs {
       opacity: 0;
-      transition: opacity 1.5s ease-in-out;
+      transition: opacity 1s ease-in-out;
       font-size: fct.map-deep-get(
         var.$cardSkill,
         "fontSize",
         "descriptionTechno--tablet"
+      );
+
+      font-family: fct.map-deep-get(
+        var.$cardSkill,
+        "fontFamily",
+        "descriptionTechno"
       );
 
       @media screen and (max-width: var.$breakpoint-mobile) {

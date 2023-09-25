@@ -14,7 +14,7 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import { NextArrow, PrevArrow } from "@components/SwipperNavButtons/SwipperNavButtons";
 import { animationSlideScrollToRight, animationSlideScrollToBottom } from "@animation/gsapAnimation"
-import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize"
+
 
 interface IntItems {
     id: number,
@@ -30,7 +30,6 @@ const Project = () => {
 
     const themeContext = useContext(ThemeContext);
     const isDarkMode = themeContext!.isDarkMode;
-    const { windowWidth } = useWindowSizeResize();
 
     const { items, error } = useFetch<IntItems[]>();
 
@@ -77,77 +76,71 @@ const Project = () => {
     }, []);
 
 
-    if (error !== undefined) {
-        return (
-            <div ref={errors} className={styles["error"]}>
-                <p>Une erreur est survenue. Veuillez réessayer ultérieurement.</p>
-            </div>
-        )
-    }
-
-
     return (
         <section id="projets" className={styles.projects} ref={project}>
             <h2 id="projetTitle" className={styles["projects__title"]}> Mes projets</h2>
-            <div id="caroussel" className={styles["projects__caroussel"]} ref={caroussel}>
-                <Swiper
-                    onResize={(swiper) => swiper.slideTo(1)}
-                    modules={[Navigation, Pagination, EffectCoverflow, Scrollbar]}
-                    scrollbar={{ draggable: true }}
-                    className={styles.swiper}
-                    spaceBetween={2}
-                    slidesPerView={1}
-                    centeredSlides={true}
-                    effect={"coverflow"}
-                    coverflowEffect={{
-                        rotate: 50,
-                        stretch: 0,
-                        depth: 50,
-                        modifier: 1,
-                        slideShadows: false,
-                    }}
-
-                    breakpoints={{
-                        768: {
-                            slidesPerView: 2,
-                            spaceBetween: 0,
-                            centeredSlides: false,
-                        },
-                        992: {
-                            slidesPerView: 3,
-                            spaceBetween: 10,
-                            centeredSlides: true,
-                        },
-                    }}
-                    pagination={false}
-                    loop={true}
-                >
+            {error === undefined ? (
+                <div id="caroussel" className={styles["projects__caroussel"]} ref={caroussel}>
                     {items ? (
-                        items.map((item: IntItems, index: number) => (
-                            <SwiperSlide className={styles["swiper__slide"]} key={index}>
-                                {({ isActive }) => (
-                                    <CardProject
-                                        inId={item.title}
-                                        inData={item}
-                                        inStyleSlider={isActive ? 'grayscale(0%)' : 'grayscale(100%)'}
-                                    />
-                                )}
-
-                            </SwiperSlide>
-                        ))
+                        <Swiper
+                            onResize={(swiper) => swiper.slideTo(1)}
+                            modules={[Navigation, Pagination, EffectCoverflow, Scrollbar, A11y]}
+                            scrollbar={{ draggable: true }}
+                            className={styles.swiper}
+                            spaceBetween={2}
+                            slidesPerView={1}
+                            centeredSlides={true}
+                            effect={"coverflow"}
+                            coverflowEffect={{
+                                rotate: 50,
+                                stretch: 0,
+                                depth: 50,
+                                modifier: 1,
+                                slideShadows: false,
+                            }}
+                            breakpoints={{
+                                768: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 0,
+                                    centeredSlides: false,
+                                },
+                                992: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 10,
+                                    centeredSlides: true,
+                                },
+                            }}
+                            pagination={false}
+                            loop={true}
+                        >
+                            {items.map((item: IntItems, index: number) => (
+                                <SwiperSlide className={styles["swiper__slide"]} key={index}>
+                                    {({ isActive }) => (
+                                        <CardProject
+                                            inId={item.title}
+                                            inData={item}
+                                            inStyleSlider={isActive ? 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(0%)' : 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(100%)'}
+                                        />
+                                    )}
+                                </SwiperSlide>
+                            ))}
+                            <PrevArrow />
+                            <NextArrow />
+                            <div className={styles["touch"]}>
+                                <Icon icon="icon-park-solid:move" aria-label="touch" />
+                            </div>
+                        </Swiper>
                     ) : (
                         <Loader />
                     )}
-                    <PrevArrow />
-                    <NextArrow />
-                </Swiper>
-            </div>
-            <div className={styles["touch"]}>
-                <Icon icon="icon-park-solid:move" aria-label="touch" />
-            </div>
+                </div>
+            ) : (
+                <div ref={errors} className={styles["error"]}>
+                    <p>Une erreur est survenue. Veuillez réessayer ultérieurement.</p>
+                </div>
+            )}
         </section>
-    )
-
+    );
 };
 
 export default Project;

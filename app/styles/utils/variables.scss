@@ -13,6 +13,7 @@ $white-color: white;
 /**************/
 $archivo: var(--font--archivo);
 $instrumentSerif: var(--font--instrumentSerif);
+$inter: var(--font--inter);
 
 // global.scss
 /**************/
@@ -103,7 +104,7 @@ $header: (
     title--desktop: 80px,
     title--tablette: 64px,
     button: 20px,
-    button-icon: 30px,
+    button-icon: 40px,
   ),
   fontFamily: (
     button: $archivo,
@@ -173,7 +174,7 @@ $projets: (
     title--tablet: 35px,
     title--mobile: 30px,
     touch: 30px,
-    error: 20px,
+    error: 25px,
   ),
 );
 
@@ -204,7 +205,6 @@ $cardProject: (
     flip-card-inner--bg: $light-color,
     flip-card-front: $dark-color,
     flip-card-back: $light-color,
-    title--bg: $dark-color,
     description: $dark-color,
     description--bg: $light-color,
     description--borderTop: $dark-color,
@@ -250,17 +250,21 @@ $cardProject--light: (
 // Component Loader
 /*******************/
 $loader: (
-  colors: (
-    anim--color--desktop: rgb(255, 255, 255),
-    number-nthChild2--color--desktop: rgb(255, 255, 255),
-    secondeanim--desktop: rgb(30, 117, 204),
-  ),
+  colors: (),
   fontSize: (
-    anim--desktop: 10px,
-    number-nthChild2--desktop: 50px,
-    number-nthChild2--tablette: 15px,
-    number-nthChild2--mobile: 10px,
-    secondeanim--desktop: 24px,
+    icon: 80px,
+  ),
+);
+
+$loader--dark: (
+  colors: (
+    icon: $light-color,
+  ),
+);
+
+$loader--light: (
+  colors: (
+    icon: $primary-color,
   ),
 );
 
@@ -338,6 +342,9 @@ $cardSkill: (
     descriptionTechno--tablet: 15px,
     descriptionTechno--mobile: 14px,
     iconArrow: 25px,
+  ),
+  fontFamily: (
+    descriptionTechno: $inter,
   ),
 );
 

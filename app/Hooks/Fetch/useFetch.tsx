@@ -18,6 +18,7 @@ export const useFetch = <T,>(): {
 
         } catch (e: any) {
             setError(e);
+            setloading(false);
         }
     };
 
