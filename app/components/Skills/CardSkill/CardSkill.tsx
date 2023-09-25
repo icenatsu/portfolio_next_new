@@ -38,7 +38,7 @@ const CardSkill = ({ inParagraphs, inIcones, inClassList }: CardSkill): JSX.Elem
             ]
             themeContext?.changeDarkLightMode(componentForCssChange)
         }
-    }, [themeContext, isDarkMode])
+    }, [themeContext, isDarkMode, inClassList])
 
     // Gestion des états controlés par chaque évenements selon le format destinée à l'affichage des descriptions des compétences
     const addEventdependingOnTheMedia = () => {
