@@ -12,7 +12,7 @@ $white-color: white;
 // FontFamily
 /**************/
 $archivo: var(--font--archivo);
-$instrumentSerif: var(--font--instrumentSerif);
+$instrumentSerif: var(--inter);
 $inter: var(--font--inter);
 
 // global.scss
@@ -411,8 +411,8 @@ $contact: (
     title: 400,
   ),
   fontFamily: (
-    title: var(--font--instrumentSerif),
-    send: var(--font--archivo),
+    title: $instrumentSerif,
+    send: $archivo,
   ),
 );
 
