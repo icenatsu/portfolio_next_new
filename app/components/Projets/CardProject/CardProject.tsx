@@ -2,7 +2,7 @@ import styles from "./CardProject.module.scss"
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
 import Link from "next/link";
-import { useContext, useEffect, useRef } from "react";
+import { lazy, useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 interface IntData {
@@ -50,7 +50,7 @@ const CardProject = ({ inData, inStyleSlider }: CardProjectProps): JSX.Element =
                     <picture className={styles["flip-card-front__image"]}>
                         <source media={`(max-width: 768px)`} srcSet={inData.cover.mobile} />
                         <source media={`(min-width: 769px)`} srcSet={inData.cover.tablette} />
-                        <Image src={inData.cover.tablette} alt={inData.title} fill={true} priority={true} style={{ objectFit: 'cover' }}
+                        <Image src={inData.cover.tablette} alt={inData.title} fill={true} loading="lazy" style={{ objectFit: 'cover' }}
                         />
                     </picture>
                     <Icon className={styles["go-back"]} icon="pepicons-pop:arrow-spin" rotate={2} />
