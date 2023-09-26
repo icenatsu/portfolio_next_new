@@ -4,7 +4,6 @@
 
 .header {
   height: 100vh;
-  height: -webkit-fill-available;
   display: flex;
   padding: 15rem 20rem 7rem 20rem;
   justify-content: space-between;
@@ -23,6 +22,7 @@
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    height: -webkit-fill-available;
   }
 
   .text {
