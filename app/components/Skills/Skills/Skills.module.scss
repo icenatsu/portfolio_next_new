@@ -16,6 +16,10 @@
     padding: 10rem 5rem 1rem 5rem;
   }
 
+  @media screen and (max-width: var.$breakpoint-mobile) {
+    padding: 10rem 0 3rem 0;
+  }
+
   .title {
     font-size: fct.map-deep-get(var.$skills, "fontSize", "title--desktop");
     font-family: fct.map-deep-get(var.$skills, "fontFamily", "title");
@@ -27,6 +31,7 @@
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       font-size: fct.map-deep-get(var.$skills, "fontSize", "title--mobile");
+      text-align: center;
     }
   }
 

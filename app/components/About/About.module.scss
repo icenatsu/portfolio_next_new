@@ -24,6 +24,10 @@
       font-size: fct.map-deep-get(var.$about, "fontSize", "about--tablet");
       padding-bottom: 2rem;
     }
+
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      text-align: center;
+    }
   }
 
   .presentation {

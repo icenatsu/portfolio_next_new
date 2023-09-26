@@ -22,6 +22,7 @@
   @media screen and (max-width: var.$breakpoint-mobile) {
     flex-direction: column;
     max-height: 70rem;
+    padding: 10rem 1rem;
   }
 
   &__title {
@@ -35,6 +36,7 @@
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
+      text-align: center;
       font-size: fct.map-deep-get(var.$projets, "fontSize", "title--mobile");
     }
   }
