@@ -23,7 +23,7 @@ const NavBar = (): JSX.Element => {
         if (document.getElementById("navBar") !== null) {
             const componentForCssChange = [
                 {
-                    htmlElement: container.current,
+                    htmlElement: document.getElementById("navBar"),
                     name: 'container',
                     scss: styles
                 },

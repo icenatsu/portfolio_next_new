@@ -44,9 +44,9 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
         }
     }, [isDarkMode])
 
-    function changeDarkLightMode(
+    const changeDarkLightMode = (
         componentForCssChange: ChangeDarkLightModeArg[]
-    ) {
+    ) => {
 
         componentForCssChange.forEach(el => {
             if (el.htmlElement !== null) {

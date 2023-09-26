@@ -2,7 +2,7 @@
 
 import styles from "./Skills.module.scss";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect } from "react";
 import CardSkill from "@components/Skills/CardSkill/CardSkill";
 import DownloadButton from '@components/DownloadButton/DownloadButton'
 import { animationSlideScrollToRight, animationSlideScrollToBottom } from "@animation/gsapAnimation"
@@ -26,15 +26,14 @@ interface SkillDetails {
 const Skills = (): JSX.Element => {
 
     const themeContext = useContext(ThemeContext);
-    const container = useRef<HTMLDivElement>(null);
     const isDarkMode = themeContext!.isDarkMode;
 
     // Application du dark/light mode
     useEffect(() => {
-        if (container.current !== null) {
+        if (document.getElementById("skills") !== null) {
             const componentForCssChange = [
                 {
-                    htmlElement: container.current,
+                    htmlElement: document.getElementById("skills"),
                     name: 'container',
                     scss: styles
                 },
@@ -155,16 +154,12 @@ const Skills = (): JSX.Element => {
 
     // Animations gsap
     useEffect(() => {
-        animationSlideScrollToBottom("skills", 0.6, 0.5, 0)
-    }, []);
-
-    useEffect(() => {
-        animationSlideScrollToRight("skillsTitle", 0.6, 0.5, 0)
+        animationSlideScrollToRight("skillsTitle", 0.3, 0.5, 0)
     }, []);
 
 
     return (
-        <section id="skills" className={styles.container} ref={container} >
+        <section id="skills" className={styles.container}>
             <h2 id="skillsTitle" className={styles.title}>
                 Mes compétences
             </h2>

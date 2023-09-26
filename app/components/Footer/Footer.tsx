@@ -1,6 +1,6 @@
 'use client'
 import styles from "./Footer.module.scss"
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect } from "react";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 const Footer = (): JSX.Element => {

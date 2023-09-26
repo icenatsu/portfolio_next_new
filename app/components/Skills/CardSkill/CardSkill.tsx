@@ -28,10 +28,10 @@ const CardSkill = ({ inParagraphs, inIcones, inClassList }: CardSkill): JSX.Elem
 
     // Application du dark/light mode
     useEffect(() => {
-        if (cardSkill.current !== null) {
+        if (document.getElementById(inClassList)) {
             const componentForCssChange = [
                 {
-                    htmlElement: cardSkill.current,
+                    htmlElement: document.getElementById(inClassList),
                     name: inClassList,
                     scss: styles
                 },
@@ -104,13 +104,11 @@ const CardSkill = ({ inParagraphs, inIcones, inClassList }: CardSkill): JSX.Elem
 
     // Animation gsap
     useEffect(() => {
-        if (cardSkill.current !== null) {
-            animationSlideScrollToBottom(cardSkill.current, 0.9, 0.8, 100)
-        }
+        animationSlideScrollToBottom(inClassList, 0.3, 0.5, 100)
     }, []);
 
     return (
-        <div ref={cardSkill} className={styles[inClassList]} >
+        <div id={inClassList} ref={cardSkill} className={styles[inClassList]} >
             <div className={styles.container} >
                 {
                     inIcones.map((icon, index) => (

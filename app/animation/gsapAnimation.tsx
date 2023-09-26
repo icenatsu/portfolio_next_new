@@ -5,6 +5,8 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 const typeOfElementDetect = (elem: HTMLElement | string) => {
     let typeOfElem: HTMLElement | null = null;
+    console.log(elem);
+
     if (elem !== null) {
         if (typeof elem === 'string') {
             typeOfElem = document.getElementById(elem)
@@ -18,9 +20,9 @@ const typeOfElementDetect = (elem: HTMLElement | string) => {
 
 
 export const animationSlideScrollToBottom = (elem: HTMLElement | string, delay: number, duration: number, yfrom: number) => {
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
     const typeOfElem = typeOfElementDetect(elem);
+    console.log(typeOfElem);
 
     if (typeOfElem !== null && typeOfElem !== undefined) {
         let ctx = gsap.context(() => {

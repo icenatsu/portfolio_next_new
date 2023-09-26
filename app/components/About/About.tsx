@@ -13,7 +13,7 @@ const About = (): JSX.Element => {
 
     // Gestion du Dark/Light mode
     useEffect(() => {
-        if (document.getElementById("header") !== null) {
+        if (document.getElementById("about") !== null) {
             const componentForCssChange = [
                 {
                     htmlElement: document.getElementById("about"),
@@ -27,16 +27,16 @@ const About = (): JSX.Element => {
 
 
     // Animations gsap
-    // useEffect(() => {
-    //     animationSlideScrollToBottom("about", 0.5, 0.5, 0)
-    // }, []);
-
     useEffect(() => {
-        animationSlideScrollToRight("aboutTitle", 0.5, 0.5, 100)
+        animationSlideScrollToBottom("about", 0.2, 0.5, 100)
     }, []);
 
     useEffect(() => {
-        animationSlideScrollToBottom("aboutDescription", 0.5, 0.5, 0)
+        animationSlideScrollToRight("aboutTitle", 0.3, 0.5, 100)
+    }, []);
+
+    useEffect(() => {
+        animationSlideScrollToBottom("aboutDescription", 0.4, 0.5, 0)
     }, []);
 
 

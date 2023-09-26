@@ -2,7 +2,7 @@ import styles from "./CardProject.module.scss"
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
 import Link from "next/link";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect } from "react";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
 
 interface IntData {
@@ -24,28 +24,25 @@ interface CardProjectProps {
 }
 
 const CardProject = ({ inData, inStyleSlider, inBool }: CardProjectProps): JSX.Element => {
-
     const themeContext = useContext(ThemeContext);
     const isDarkMode = themeContext!.isDarkMode;
 
-    const article = useRef<HTMLElement>(null);
-
     // Gestion du Dark/Light mode
     useEffect(() => {
-        if (article.current !== null) {
+        if (document.getElementById(inData.title) !== null) {
             const componentForCssChange = [
                 {
-                    htmlElement: article.current,
+                    htmlElement: document.getElementById(inData.title),
                     name: 'flip-card',
                     scss: styles
                 },
             ]
             themeContext?.changeDarkLightMode(componentForCssChange)
         }
-    }, [themeContext, isDarkMode])
+    }, [themeContext, isDarkMode, inData.title])
 
     return (
-        <article ref={article} className={styles["flip-card"]} style={{ filter: `${inStyleSlider}` }}>
+        <article id={inData.title} className={styles["flip-card"]} style={{ filter: `${inStyleSlider}` }}>
             <div className={styles["flip-card-inner"]}>
                 <div className={styles["flip-card-front"]}>
                     <picture className={styles["flip-card-front__image"]}>

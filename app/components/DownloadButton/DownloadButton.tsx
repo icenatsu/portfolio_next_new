@@ -12,12 +12,17 @@ const DownloadButton = (): JSX.Element => {
     const container = useRef<HTMLDivElement>(null);
     const isDarkMode = themeContext!.isDarkMode;
 
+    // Animation gsap
+    // useEffect(() => {
+    //     animationSlideScrollToBottom("downloadButton", 0.5, 0.5, 0)
+    // }, []);
+
     // Apllication du dark/light mode
     useEffect(() => {
-        if (container.current !== null) {
+        if (document.getElementById("downloadButton") !== null) {
             const componentForCssChange = [
                 {
-                    htmlElement: container.current,
+                    htmlElement: document.getElementById("downloadButton"),
                     name: 'container',
                     scss: styles
                 },
@@ -36,13 +41,8 @@ const DownloadButton = (): JSX.Element => {
         link.click();
     };
 
-    // Animation gsap
-    useEffect(() => {
-        animationSlideScrollToBottom("downloadButton", 0.5, 0.5, 0)
-    }, []);
-
     return (
-        <div id={"downloadButton"} ref={container} className={styles.container}>
+        <div id="downloadButton" ref={container} className={styles.container}>
             <Icon className={styles.icone} onClick={handleDownload} icon="line-md:download-loop" />
             <button className={styles.button}>
                 Télécharger mon CV

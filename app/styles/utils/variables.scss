@@ -323,21 +323,24 @@ $downloadbutton: (
   ),
   fontSize: (
     button: 2rem,
-    icone: 4rem,
+    icon: 4rem,
+  ),
+  fontFamily: (
+    button: $inter,
   ),
 );
 
 $downloadbutton--dark: (
   colors: (
     button: $dark-color,
-    icone: $dark-color,
+    icon: $dark-color,
   ),
 );
 
 $downloadbutton--light: (
   colors: (
     button: $primary-color,
-    icone: $primary-color,
+    icon: $primary-color,
   ),
 );
 

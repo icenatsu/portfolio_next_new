@@ -8,7 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import emailjs from '@emailjs/browser';
 import useNotify from "@components/Notify/UseNotify";
-import { animationSlideScrollToBottom } from "@animation/gsapAnimation"
+import { animationSlideScrollToRight, animationSlideScrollToBottom } from "@animation/gsapAnimation"
 
 interface FormValues {
     firstname: string,
@@ -24,15 +24,14 @@ const Contact = (): JSX.Element => {
     const { showNotification, NotificationComponent } = useNotify();
 
     const themeContext = useContext(ThemeContext);
-    const container: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
     const form: RefObject<HTMLFormElement> = useRef<HTMLFormElement>(null);
     const isDarkMode = themeContext!.isDarkMode;
 
     useEffect(() => {
-        if (container.current !== null) {
+        if (document.getElementById("contact") !== null) {
             const componentForCssChange = [
                 {
-                    htmlElement: container.current,
+                    htmlElement: document.getElementById("contact"),
                     name: 'contact',
                     scss: styles
                 },
@@ -82,14 +81,13 @@ const Contact = (): JSX.Element => {
 
     // Animations gsap
     useEffect(() => {
-        animationSlideScrollToBottom("contact", 0.6, 0.5, 0)
+        animationSlideScrollToBottom("contact", 0.3, 0.5, 0)
     }, []);
 
-
     return (
-        <section id="contact" className={styles.contact} ref={container}>
+        <section id="contact" className={styles.contact}>
             <div id="container" className={styles["container-formulaire"]}>
-                <h2 className={styles.title}>Contact</h2>
+                <h2 id="contactTitle" className={styles.title}>Contact</h2>
                 <NotificationComponent />
                 <form ref={form} className={styles.form__contact} onSubmit={handleSubmit(onSubmit)}>
                     <label className={styles.label} htmlFor="lastName">Nom:

@@ -2,7 +2,7 @@
 
 import styles from "./Project.module.scss"
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useFetch } from "@Hooks/Fetch/useFetch";
 import Loader from "@components/Loader/Loader"
 import CardProject from "@/app/components/Projets/CardProject/CardProject";
@@ -33,26 +33,22 @@ const Project = () => {
 
     const { items, error } = useFetch<IntItems[]>();
 
-    const project = useRef<HTMLDivElement>(null);
-    const caroussel = useRef<HTMLDivElement>(null);
-    const errors = useRef<HTMLDivElement>(null);
-
     // Application du light/dark mode
     useEffect(() => {
-        if (project.current !== null && caroussel.current !== null || errors !== null) {
+        if (document.getElementById("projets") !== null && document.getElementById("caroussel") !== null || document.getElementById("errors") !== null) {
             const componentForCssChange = [
                 {
-                    htmlElement: project.current,
+                    htmlElement: document.getElementById("projets"),
                     name: 'projects',
                     scss: styles
                 },
                 {
-                    htmlElement: caroussel.current,
+                    htmlElement: document.getElementById("caroussel"),
                     name: 'projects__caroussel',
                     scss: styles
                 },
                 {
-                    htmlElement: errors.current,
+                    htmlElement: document.getElementById("errors"),
                     name: 'error',
                     scss: styles
                 },
@@ -64,23 +60,20 @@ const Project = () => {
 
     //Animations gsap
     useEffect(() => {
-        animationSlideScrollToRight("projetTitle", 0.4, 0.5, 100)
+        animationSlideScrollToRight("projetTitle", 0.2, 0.5, 100)
     }, []);
 
     useEffect(() => {
-        animationSlideScrollToBottom("caroussel", 0.5, 0.5, 100)
+        animationSlideScrollToBottom("caroussel", 0.2, 0.5, 100)
     }, []);
 
-    useEffect(() => {
-        animationSlideScrollToBottom("projets", 0.5, 0.5, 0)
-    }, []);
 
 
     return (
-        <section id="projets" className={styles.projects} ref={project}>
+        <section id="projets" className={styles.projects}>
             <h2 id="projetTitle" className={styles["projects__title"]}> Mes projets</h2>
             {error === undefined ? (
-                <div id="caroussel" className={styles["projects__caroussel"]} ref={caroussel}>
+                <div id="caroussel" className={styles["projects__caroussel"]}>
                     {items ? (
                         <Swiper
                             watchSlidesProgress={true}
@@ -137,7 +130,7 @@ const Project = () => {
                     )}
                 </div>
             ) : (
-                <div ref={errors} className={styles["error"]}>
+                <div id="errors" className={styles["error"]}>
                     <p>Une erreur est survenue. Veuillez réessayer ultérieurement.</p>
                 </div>
             )}
