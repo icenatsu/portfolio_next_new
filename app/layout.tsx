@@ -5,7 +5,7 @@ import ThemeContextProvider from '@context/ThemeContext/ThemeContext'
 import Header from "@components/Header/Header"
 import Footer from "@components/Footer/Footer"
 import NavBar from '@components/Navbar/NavBar'
-import { Inter, Archivo, Oswald } from "@next/font/google";
+import { Inter, Archivo, Oswald } from "next/font/google";
 
 export const metadata: Metadata = {
   title: 'Portfolio Gaëlle',

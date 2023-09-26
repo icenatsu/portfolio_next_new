@@ -14,9 +14,6 @@ dependencies:
   '@iconify/react':
     specifier: ^4.1.1
     version: 4.1.1(react@18.2.0)
-  '@next/font':
-    specifier: ^13.5.3
-    version: 13.5.3
   '@types/node':
     specifier: 20.5.9
     version: 20.5.9
@@ -171,10 +168,6 @@ packages:
     resolution: {integrity: sha512-N/O+zGb6wZQdwu6atMZHbR7T9Np5SUFUjZqCbj0sXm+MwQO35M8TazVB4otm87GkXYs2l6OPwARd3/PUWhZBVQ==}
     dependencies:
       glob: 7.1.7
-    dev: false
-
-  /@next/font@13.5.3:
-    resolution: {integrity: sha512-RniL8BuXLCtBU1chuJ/TPVT2vCA6+EdlOUEhCpMdSeInZ5/nuOShkHgLZ0QnFVbcozwK3shO5ZdqKBI5G3eMNg==}
     dev: false
 
   /@next/swc-darwin-arm64@13.4.19:
