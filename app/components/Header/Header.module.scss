@@ -22,12 +22,13 @@
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    height: calc(100vh - 60px);
   }
 
   @supports (-webkit-touch-callout: none) {
     header {
       /* The hack for Safari */
-      min-height: -webkit-fill-available;
+      height: -webkit-fill-available;
     }
   }
 
