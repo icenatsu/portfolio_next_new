@@ -2,15 +2,8 @@
 const nextConfig = {
   experimental: {
     appDir: true,
+    disableNextSizeAdjust: true,
   },
 };
 
 module.exports = nextConfig;
-
-export const config = {
-  // ...
-  experimental: {
-    // ...
-    disableNextSizeAdjust: true,
-  },
-};
