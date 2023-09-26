@@ -24,6 +24,13 @@
     gap: 3rem;
   }
 
+  @supports (-webkit-touch-callout: none) {
+    header {
+      /* The hack for Safari */
+      min-height: -webkit-fill-available;
+    }
+  }
+
   .text {
     position: relative;
     flex: 2;
