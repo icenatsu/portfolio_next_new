@@ -60,11 +60,11 @@ const Project = () => {
 
     //Animations gsap
     useEffect(() => {
-        animationSlideScrollToRight("projetTitle", 0.2, 0.5, 100)
+        animationSlideScrollToRight("projetTitle", 0, 0.3, 100)
     }, []);
 
     useEffect(() => {
-        animationSlideScrollToBottom("caroussel", 0.2, 0.5, 100)
+        animationSlideScrollToBottom("caroussel", 0.1, 0.3, 100)
     }, []);
 
 
