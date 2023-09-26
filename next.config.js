@@ -6,3 +6,11 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+export const config = {
+  // ...
+  experimental: {
+    // ...
+    disableNextSizeAdjust: true,
+  },
+};
