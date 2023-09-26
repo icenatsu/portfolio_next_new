@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  disableNextSizeAdjust: true,
   experimental: {
+    disableNextSizeAdjust: true,
     appDir: true,
   },
 };

@@ -223,8 +223,8 @@ $cardProject: (
     description--bg: $light-color,
     description--borderTop: $dark-color,
     description--borderBottom: $dark-color,
-    go-back: rgb(36, 34, 34),
-    curve: #ffffff,
+    go-back: $dark-color,
+    curve: $light-color,
   ),
   fontSize: (
     flip-card: 1.55rem,
@@ -365,7 +365,7 @@ $cardSkill: (
 $cardSkill--dark: (
   colors: (
     techno--bg: #242424,
-    techno--dropShadow: #97dffc,
+    techno--dropShadow: $third-color,
     chevron: $light-color,
     dividingBorder: $light-color,
     descriptionTechno: $light-color,
@@ -406,13 +406,14 @@ $nextjs: #64b297;
 $contact: (
   colors: (
     send: $dark-color,
-    send--bg: #97dffc,
+    send--bg: $third-color,
   ),
   fontSize: (
     title--desktop: 4.8rem,
     title--tablet: 3.5rem,
     label--desktop: 2rem,
     label--tablet: 1.8rem,
+    placeHolder: 1.5rem,
     send--desktop: 2rem,
     send--mobile: 1.6rem,
     errors: 1.6rem,
@@ -430,7 +431,7 @@ $contact--dark: (
   colors: (
     contact--bg: $dark-color,
     title: $third-color,
-    label: #97dffc,
+    label: $third-color,
     errors: $light-color,
     input--bg: $light-color,
     elipse: $light-color,
@@ -458,7 +459,7 @@ $notify: (
   colors: (
     notify--boxShadow:
       rgba(
-        $color: #000000,
+        $color: $dark-color,
         $alpha: 0.4,
       ),
     notify--bg: $light-color,

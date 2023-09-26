@@ -125,10 +125,9 @@
         padding: 2rem;
         border: none;
 
-        // &::placeholder {
-        //   color: black;
-        //   // opacity: 0.9;
-        // }
+        &::placeholder {
+          font-size: fct.map-deep-get(var.$contact, "fontSize", "placeHolder");
+        }
       }
 
       .textarea {
@@ -140,10 +139,9 @@
         height: 17rem;
         margin-bottom: 1rem;
 
-        // &::placeholder {
-        //   color: black;
-        //   // opacity: 0.9;
-        // }
+        &::placeholder {
+          font-size: fct.map-deep-get(var.$contact, "fontSize", "placeHolder");
+        }
       }
 
       .send {

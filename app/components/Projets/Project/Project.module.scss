@@ -28,7 +28,7 @@
     font-size: fct.map-deep-get(var.$projets, "fontSize", "title--desktop");
     font-family: fct.map-deep-get(var.$projets, "fontFamily", "title");
     font-weight: fct.map-deep-get(var.$projets, "fontWeight", "title");
-    padding: 0 0 0.5rem 0;
+    padding: 0 0 5rem 0;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       font-size: fct.map-deep-get(var.$projets, "fontSize", "title--tablet");
