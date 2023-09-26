@@ -6,29 +6,29 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 330px;
-  height: 100px;
-  box-shadow: 0 0 5px
+  width: 33rem;
+  height: 10rem;
+  box-shadow: 0 0 0.5rem
     fct.map-deep-get(var.$notify, "colors", "notify--boxShadow");
-  border-radius: 10px;
+  border-radius: var.$radius--10;
   overflow: hidden;
   background-color: fct.map-deep-get(var.$notify, "colors", "notify--bg");
 
   @media screen and (max-width: var.$breakpoint-tablette) {
-    width: 320px;
-    height: 95px;
+    width: 32rem;
+    height: 9.5rem;
     align-self: center;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
-    width: 300px;
-    height: 90px;
+    width: 30rem;
+    height: 9rem;
   }
 
   & p {
     flex: 4;
     color: fct.map-deep-get(var.$notify, "colors", "text");
-    padding: 5px 5px 0px 5px;
+    padding: 0.5rem 0.5rem 0 0.5rem;
     font-size: fct.map-deep-get(var.$notify, "fontSize", "text--desktop");
 
     @media screen and (max-width: var.$breakpoint-tablette) {
@@ -43,9 +43,10 @@
   .close {
     flex: 1.5;
     align-self: flex-end;
-    padding-top: 2px;
-    padding-right: 5px;
+    padding-top: 0.2rem;
+    padding-right: 0.5rem;
     cursor: pointer;
+    font-size: fct.map-deep-get(var.$notify, "fontSize", "close");
 
     &:hover {
       transform: scale(1.1);

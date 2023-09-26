@@ -2,9 +2,9 @@
 @use "../../../styles/utils/variables.scss" as var;
 
 .flip-card {
-  width: 355px;
-  height: 258px;
-  perspective: 1000px;
+  width: 35.5rem;
+  height: 25.8rem;
+  perspective: 100rem;
   border-radius: var.$radius--10;
   overflow: hidden;
   font-size: fct.map-deep-get(var.$cardProject, "fontSize", "flip-card");
@@ -15,22 +15,22 @@
   );
 
   @media screen and (max-width: "1320px") {
-    width: 300px;
-    height: 240px;
+    width: 30rem;
+    height: 24rem;
   }
 
   @media screen and (max-width: var.$breakpoint-tablette) {
-    width: 300px;
-    height: 240px;
+    width: 30rem;
+    height: 24rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
     width: 100%;
-    height: 368px;
+    height: 36.8rem;
   }
 
   &--dark {
-    border: 1px solid
+    border: 0.1rem solid
       fct.map-deep-get(var.$cardProject--dark, "colors", "flip-card--border");
 
     .flip-card-back {
@@ -43,7 +43,7 @@
   }
 
   &--light {
-    border: 1px solid
+    border: 0.1rem solid
       fct.map-deep-get(var.$cardProject--light, "colors", "flip-card--border");
 
     .flip-card-back {
@@ -65,7 +65,7 @@
     "colors",
     "flip-card--bg"
   );
-  border-radius: 10px;
+  border-radius: var.$radius--10;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
@@ -81,7 +81,7 @@
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
-  border-radius: 10px;
+  border-radius: var.$radius--10;
 }
 
 .flip-card-front {
@@ -99,15 +99,15 @@
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.5rem;
   justify-content: center;
 
   @media screen and (max-width: var.$breakpoint-tablette) {
-    gap: 10px;
+    gap: 0.1rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
-    gap: 30px;
+    gap: 3rem;
   }
 
   &__sourcesAndTitle {
@@ -117,7 +117,7 @@
 
     &__sources {
       & a {
-        padding-right: 5px;
+        padding-right: 0.5rem;
         font-size: fct.map-deep-get(
           var.$cardProject,
           "fontSize",
@@ -125,7 +125,7 @@
         );
 
         @media screen and (max-width: var.$breakpoint-mobile) {
-          padding-right: 15px;
+          padding-right: 1.5rem;
           font-size: fct.map-deep-get(
             var.$cardProject,
             "fontSize",
@@ -136,8 +136,8 @@
     }
 
     &__title {
-      border-radius: 5px;
-      padding: 5px;
+      border-radius: var.$radius--5;
+      padding: 0.5rem;
       opacity: 0.9;
       font-size: fct.map-deep-get(
         var.$cardProject,
@@ -165,7 +165,7 @@
   }
 
   &__description {
-    padding: 10px;
+    padding: 1rem;
     font-family: fct.map-deep-get(
       var.$cardProject,
       "fontFamily",
@@ -183,10 +183,10 @@
       "description--bg"
     );
     opacity: 0.8;
-    margin: 10px 0;
-    border-top: 1px solid
+    margin: 1rem 0;
+    border-top: 0.1rem solid
       fct.map-deep-get(var.$cardProject, "colors", "description--borderTop");
-    border-bottom: 1px solid
+    border-bottom: 0.1rem solid
       fct.map-deep-get(var.$cardProject, "colors", "description--borderBottom");
 
     @media screen and (max-width: 1400px) {
@@ -211,7 +211,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 2rem;
     text-align: center;
 
     .technologies {
@@ -245,8 +245,8 @@
 .go-back {
   position: absolute;
   font-size: fct.map-deep-get(var.$cardProject, "fontSize", "go-back");
-  top: 5px;
-  right: 5px;
+  top: 0.5rem;
+  right: 0.5rem;
   color: fct.map-deep-get(var.$cardProject, "colors", "go-back");
   cursor: pointer;
   background-color: white;
@@ -267,8 +267,8 @@
 .curve svg {
   position: relative;
   display: block;
-  width: calc(300% + 1.3px);
-  height: 230px;
+  width: calc(300% + 0.13rem);
+  height: 23rem;
 }
 
 .curve .shape-fill {

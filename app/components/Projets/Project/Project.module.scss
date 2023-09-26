@@ -5,30 +5,30 @@
   flex-direction: column;
   background-repeat: no-repeat;
   background-size: 80% 90%;
-  max-height: 600px;
-  padding: 100px 200px;
+  max-height: 60rem;
+  padding: 10rem 20rem;
 
   @media screen and (max-width: 1400px) {
-    padding: 100px 100px;
+    padding: 10rem 10rem;
   }
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     filter: none;
     max-width: 100%;
-    max-height: 700px;
-    padding: 100px 50px;
+    max-height: 70rem;
+    padding: 10rem 5rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
     flex-direction: column;
-    max-height: 700px;
+    max-height: 70rem;
   }
 
   &__title {
     font-size: fct.map-deep-get(var.$projets, "fontSize", "title--desktop");
     font-family: fct.map-deep-get(var.$projets, "fontFamily", "title");
     font-weight: fct.map-deep-get(var.$projets, "fontWeight", "title");
-    padding: 0px 0 50px 0px;
+    padding: 0 0 0.5rem 0;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       font-size: fct.map-deep-get(var.$projets, "fontSize", "title--tablet");
@@ -52,9 +52,9 @@
       }
 
       &__slide {
-        width: 200px;
-        min-width: 200px;
-        min-height: 190px;
+        width: 20rem;
+        min-width: 20rem;
+        min-height: 19rem;
         margin: 0;
         display: flex;
         align-items: center;
@@ -68,7 +68,7 @@
     @media screen and (max-width: var.$breakpoint-tablette) {
       display: block;
       text-align: center;
-      padding: 10px;
+      padding: 1rem;
       font-size: fct.map-deep-get(var.$projets, "fontSize", "touch");
     }
   }
@@ -111,7 +111,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding-bottom: 100px;
+  padding-bottom: 10rem;
   font-size: fct.map-deep-get(var.$projets, "fontSize", "error");
 
   &--dark {

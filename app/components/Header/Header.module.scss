@@ -5,23 +5,23 @@
 .header {
   height: 100vh;
   display: flex;
-  padding: 150px 200px 70px 200px;
+  padding: 15rem 20rem 7rem 20rem;
   justify-content: space-between;
   align-items: center;
 
   @media screen and (max-width: 1400px) {
-    padding: 100px 100px;
+    padding: 10rem 10rem;
   }
 
   @media screen and (max-width: var.$breakpoint-tablette) {
-    padding: 100px 50px;
+    padding: 10rem 5rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 3rem;
   }
 
   .text {
@@ -31,7 +31,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 5rem;
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       align-items: center;
@@ -41,8 +41,8 @@
       font-size: fct.map-deep-get(var.$header, "fontSize", "profession");
       font-family: fct.map-deep-get(var.$header, "fontFamily", "profession");
       border-radius: var.$radius--30;
-      width: 200px;
-      padding: 15px;
+      width: 20rem;
+      padding: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -85,9 +85,9 @@
         background-color: fct.map-deep-get(var.$header, "colors", "button--bg");
         border-radius: var.$radius--30;
         border: none;
-        width: 190px;
-        height: 55px;
-        margin: 20px 10px;
+        width: 19rem;
+        height: 5.5rem;
+        margin: 2rem 1rem;
         transition: filter 0.6s;
 
         &:hover {
@@ -115,17 +115,17 @@
   .wave svg {
     position: relative;
     display: block;
-    width: calc(100% + 1.3px);
-    height: 90px;
+    width: calc(100% + 0.13rem);
+    height: 9rem;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
-      width: calc(100% + 1.3px);
-      height: 70px;
+      width: calc(100% + 0.13rem);
+      height: 7rem;
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
-      width: calc(180% + 1.3px);
-      height: 60px;
+      width: calc(180% + 0.13rem);
+      height: 6rem;
     }
   }
 
@@ -142,7 +142,7 @@
 
     .profession {
       color: fct.map-deep-get(var.$header--dark, "colors", "profession--color");
-      border: 1px solid
+      border: 0.1rem solid
         fct.map-deep-get(var.$header--dark, "colors", "profession--border");
 
       &:hover {
@@ -172,7 +172,7 @@
         "colors",
         "profession--color"
       );
-      border: 1px solid
+      border: 0.1rem solid
         fct.map-deep-get(var.$header--light, "colors", "profession--border");
     }
 

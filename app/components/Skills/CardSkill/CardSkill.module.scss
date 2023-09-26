@@ -8,32 +8,32 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    width: 400px;
-    max-height: 80px;
+    width: 40rem;
+    max-height: 8rem;
     transition: max-height 0.8s ease-in-out;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: var.$radius--10;
+    padding: 1rem;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
-      max-height: 70px;
-      width: 355px;
+      max-height: 7rem;
+      width: 35.5rem;
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       width: 90%;
       margin: auto;
-      max-height: 65px;
+      max-height: 6.5rem;
     }
 
     .container {
       display: flex;
-      padding-bottom: 5px;
+      padding-bottom: 0.5rem;
       align-items: center;
       justify-content: space-between;
       height: auto;
 
       .slideToBottom {
-        font-size: 30px;
+        font-size: 3rem;
         cursor: pointer;
       }
 
@@ -45,8 +45,8 @@
           &:nth-child(#{$i}) {
             &::after {
               content: nth($technos, $i);
-              padding-left: 5px;
-              padding-right: 10px;
+              padding-left: 0.5rem;
+              padding-right: 1rem;
               font-size: fct.map-deep-get(
                 var.$cardSkill,
                 "fontSize",
@@ -54,7 +54,7 @@
               );
 
               @media screen and (max-width: var.$breakpoint-tablette) {
-                padding-left: 15px;
+                padding-left: 1.5rem;
                 font-size: fct.map-deep-get(
                   var.$cardSkill,
                   "fontSize",
@@ -74,7 +74,7 @@
         }
 
         .icone {
-          padding: 0 5px 5px 0px;
+          padding: 0 0.5rem 0.5rem 0;
           font-size: fct.map-deep-get(
             var.$cardSkill,
             "fontSize",
@@ -90,7 +90,7 @@
           }
 
           @media screen and (max-width: var.$breakpoint-mobile) {
-            padding-left: 5px;
+            padding-left: 0.5rem;
             font-size: fct.map-deep-get(
               var.$cardSkill,
               "fontSize",
@@ -139,8 +139,8 @@
       .tilt svg {
         position: relative;
         display: block;
-        width: calc(100% + 1.3px);
-        height: 80px;
+        width: calc(100% + 0.13rem);
+        height: 8rem;
         transform: rotateY(180deg);
       }
 
@@ -151,24 +151,20 @@
     }
 
     & p {
-      padding-left: 5px;
+      padding-left: 0.5rem;
 
       &:first-of-type {
-        padding: 10px 0px 0px 5px;
+        padding: 1rem 0 0 0.5rem;
       }
 
       &::before {
         content: "\2BB1";
-        padding-right: 5px;
+        padding-right: 0.5rem;
         font-size: fct.map-deep-get(var.$cardSkill, "fontSize", "iconArrow");
       }
     }
 
     &--dark {
-      // filter: drop-shadow(
-      //   2px 2px 5px
-      //     fct.map-deep-get(var.$cardSkill--dark, "colors", "techno--dropShadow")
-      // );
       background-color: fct.map-deep-get(
         var.$cardSkill--dark,
         "colors",
@@ -185,7 +181,7 @@
 
       & p {
         &:first-of-type {
-          border-top: 1px solid
+          border-top: 0.1rem solid
             fct.map-deep-get(var.$cardSkill--dark, "colors", "dividingBorder");
         }
         &::before {
@@ -239,7 +235,7 @@
 
       & p {
         &:first-of-type {
-          border-top: 1px solid
+          border-top: 0.1rem solid
             fct.map-deep-get(var.$cardSkill--light, "colors", "dividingBorder");
         }
         &::before {
@@ -294,7 +290,7 @@
 @include CardSkillStyle("typescript", ("Typescript"), var.$typescript);
 
 .visible {
-  max-height: 350px;
+  max-height: 35rem;
 }
 
 .opacity {

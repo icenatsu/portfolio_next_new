@@ -11,6 +11,10 @@
   list-style: none;
 }
 
+html {
+  font-size: 62.5%; // 10 pixel => 1.4rem = 14px (le nombre *10)
+}
+
 a {
   text-decoration: none;
   color: inherit;

@@ -5,17 +5,17 @@
   position: fixed;
   z-index: 4;
   width: 100vw;
-  height: 60px;
+  height: 6rem;
   font-size: fct.map-deep-get(var.$navbar, "fontSize", "container");
   font-weight: fct.map-deep-get(var.$navbar, "fontWeight", "container");
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 1rem;
   transition: min-height 0.8s ease-in-out;
 
   @media screen and (max-width: var.$breakpoint-tablette) {
-    padding-top: 10px;
+    padding-top: 1rem;
     align-items: self-start;
   }
 
@@ -34,32 +34,32 @@
       align-items: center;
       opacity: 0;
       transition: opacity 0.8s 1s ease;
-      transform: translateY(80px);
+      transform: translateY(8rem);
     }
 
     &__item {
-      padding: 0 20px;
+      padding: 0 2rem;
 
       @media screen and (max-width: var.$breakpoint-tablette) {
-        padding: 5px 0;
+        padding: 0.5rem 0;
       }
 
       &:before {
         content: "\269D";
-        margin-right: 10px;
+        margin-right: 1rem;
       }
 
       &:hover {
         animation: wobble-horizontal 1s ease-in-out 1;
-        transform: perspective(1px) translateZ(0);
+        transform: perspective(0.1rem) translateZ(0);
       }
     }
   }
 
   .burger {
     display: none;
-    font-size: 35px;
-    padding: 5px 20px;
+    font-size: 3.5rem;
+    padding: 0.5rem 2rem;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       display: block;
@@ -74,7 +74,7 @@
       "container--bg"
     );
     filter: drop-shadow(
-      0px 3px 3px
+      0 0.3rem 0.3rem
         fct.map-deep-get(var.$navbar--dark, "colors", "container--filter")
     );
 
@@ -103,7 +103,7 @@
       "container--bg"
     );
     filter: drop-shadow(
-      0px 3px 3px
+      0 0.3rem 0.3rem
         fct.map-deep-get(var.$navbar--light, "colors", "container--filter")
     );
 
@@ -127,23 +127,23 @@
 
 @keyframes wobble-horizontal {
   16.65% {
-    transform: translateX(8px);
+    transform: translateX(0.8rem);
   }
 
   33.3% {
-    transform: translateX(-6px);
+    transform: translateX(-0.6rem);
   }
 
   49.95% {
-    transform: translateX(4px);
+    transform: translateX(0.4rem);
   }
 
   66.6% {
-    transform: translateX(-2px);
+    transform: translateX(-0.2rem);
   }
 
   83.25% {
-    transform: translateX(1px);
+    transform: translateX(0.1rem);
   }
 
   100% {

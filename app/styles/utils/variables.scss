@@ -36,8 +36,8 @@ $global--light: (
 /*******************/
 $navbar: (
   fontSize: (
-    container: 16px,
-    list: 17px,
+    container: 1.6rem,
+    list: 1.7rem,
   ),
   fontWeight: (
     container: bold,
@@ -73,7 +73,7 @@ $switch: (
     sunmoon: $dark-color,
   ),
   fontSize: (
-    icone--mobile: 14px,
+    icone--mobile: 1.4rem,
   ),
 );
 
@@ -100,11 +100,11 @@ $header: (
     button: $light-color,
   ),
   fontSize: (
-    profession: 16px,
-    title--desktop: 80px,
-    title--tablette: 64px,
-    button: 20px,
-    button-icon: 30px,
+    profession: 1.6rem,
+    title--desktop: 8rem,
+    title--tablette: 6.4rem,
+    button: 2rem,
+    button-icon: 3rem,
   ),
   fontFamily: (
     button: $archivo,
@@ -142,9 +142,9 @@ $header--light: (
 /*****************/
 $about: (
   fontSize: (
-    about--desktop: 48px,
-    about--tablet: 32px,
-    presentation: 20px,
+    about--desktop: 4.8rem,
+    about--tablet: 3.2rem,
+    presentation: 2rem,
   ),
   fontFamily: (
     about: $oswald,
@@ -178,11 +178,11 @@ $about--light: (
 /******************/
 $projets: (
   fontSize: (
-    title--desktop: 48px,
-    title--tablet: 35px,
-    title--mobile: 30px,
-    touch: 30px,
-    error: 25px,
+    title--desktop: 4.8rem,
+    title--tablet: 3.5rem,
+    title--mobile: 3rem,
+    touch: 3rem,
+    error: 2.5rem,
   ),
   fontFamily: (
     title: $oswald,
@@ -227,19 +227,19 @@ $cardProject: (
     curve: #ffffff,
   ),
   fontSize: (
-    flip-card: 15.5px,
-    source--desktop: 30px,
-    source--mobile: 32px,
-    title--desktop: 25px,
-    title--1400: 20px,
-    title--mobile: 32px,
-    description--desktop: 18px,
-    description--1400: 15px,
-    description--mobile: 18px,
-    technologies--desktop: 30px,
-    technologies--tablet: 30px,
-    technologies--mobile: 30px,
-    go-back: 20px,
+    flip-card: 1.55rem,
+    source--desktop: 3rem,
+    source--mobile: 3.2rem,
+    title--desktop: 2.5rem,
+    title--1400: 2rem,
+    title--mobile: 3.2rem,
+    description--desktop: 1.8rem,
+    description--1400: 1.5rem,
+    description--mobile: 1.8rem,
+    technologies--desktop: 3rem,
+    technologies--tablet: 3rem,
+    technologies--mobile: 3.2rem,
+    go-back: 2rem,
   ),
   fontFamily: (
     description: var(--font--inter),
@@ -266,7 +266,7 @@ $cardProject--light: (
 $loader: (
   colors: (),
   fontSize: (
-    icon: 80px,
+    icon: 8rem,
   ),
 );
 
@@ -288,9 +288,9 @@ $loader--light: (
 
 $skills: (
   fontSize: (
-    title--desktop: 48px,
-    title--tablet: 35px,
-    title--mobile: 30px,
+    title--desktop: 4.8rem,
+    title--tablet: 3.5rem,
+    title--mobile: 3rem,
   ),
   fontFamily: (
     title: $oswald,
@@ -322,8 +322,8 @@ $downloadbutton: (
     button--bg: transparent,
   ),
   fontSize: (
-    button: 20px,
-    icone: 40px,
+    button: 2rem,
+    icone: 4rem,
   ),
 );
 
@@ -347,15 +347,15 @@ $downloadbutton--light: (
 
 $cardSkill: (
   fontSize: (
-    nameTechno--desktop: 18px,
-    nameTechno--tablet: 14px,
-    nameTechno--mobile: 13px,
-    iconTechno--desktop: 55px,
-    iconTechno--tablet: 50px,
-    iconTechno--mobile: 40px,
-    descriptionTechno--tablet: 15px,
-    descriptionTechno--mobile: 14px,
-    iconArrow: 25px,
+    nameTechno--desktop: 1.8rem,
+    nameTechno--tablet: 1.4rem,
+    nameTechno--mobile: 1.3rem,
+    iconTechno--desktop: 5.5rem,
+    iconTechno--tablet: 5rem,
+    iconTechno--mobile: 4rem,
+    descriptionTechno--tablet: 1.5rem,
+    descriptionTechno--mobile: 1.4rem,
+    iconArrow: 2.5rem,
   ),
   fontFamily: (
     descriptionTechno: $inter,
@@ -409,13 +409,13 @@ $contact: (
     send--bg: #97dffc,
   ),
   fontSize: (
-    title--desktop: 48px,
-    title--tablet: 35px,
-    label--desktop: 20px,
-    label--tablet: 18px,
-    send--desktop: 20px,
-    send--mobile: 16px,
-    errors: 16px,
+    title--desktop: 4.8rem,
+    title--tablet: 3.5rem,
+    label--desktop: 2rem,
+    label--tablet: 1.8rem,
+    send--desktop: 2rem,
+    send--mobile: 1.6rem,
+    errors: 1.6rem,
   ),
   fontWeight: (
     title: 300,
@@ -469,9 +469,10 @@ $notify: (
     bar--success--bg: green,
   ),
   fontSize: (
-    text--desktop: 15px,
-    text--tablet: 14px,
-    text--mobile: 13px,
+    text--desktop: 1.5rem,
+    text--tablet: 1.4rem,
+    text--mobile: 1.3rem,
+    close: 3rem,
   ),
 );
 
@@ -480,10 +481,10 @@ $notify: (
 /***************/
 $notfound: (
   fontSize: (
-    h2--desktop: 60px,
-    paragraph--desktop: 60px,
-    icone--desktop: 30px,
-    homeLink--desktop: 40px,
+    h2--desktop: 6rem,
+    paragraph--desktop: 6rem,
+    icone--desktop: 3rem,
+    homeLink--desktop: 4rem,
   ),
 );
 
@@ -502,11 +503,11 @@ $notfound--light: (
 /***************************************************************************************/
 // -- Radius -- //
 /****************/
-$radius--5: 5px;
-$radius--10: 10px;
-$radius--15: 15px;
-$radius--20: 20px;
-$radius--30: 30px;
+$radius--5: 0.5rem;
+$radius--10: 1rem;
+$radius--15: 1.5rem;
+$radius--20: 2rem;
+$radius--30: 3rem;
 $radius--circle: 50%;
 
 // -- Breackpoints -- //

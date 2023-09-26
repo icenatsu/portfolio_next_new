@@ -5,18 +5,18 @@
   position: relative;
   z-index: 3;
   display: inline-block;
-  width: 56px;
-  height: 29px;
+  width: 5.6rem;
+  height: 2.9rem;
 
   @media screen and (max-width: var.$breakpoint-tablette) {
-    width: 53px;
-    height: 27px;
-    margin-top: 8px;
+    width: 5.3rem;
+    height: 2.7rem;
+    margin-top: 0.8rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
-    width: 45px;
-    height: 25px;
+    width: 4.5rem;
+    height: 2.5rem;
   }
 }
 
@@ -30,15 +30,15 @@
       transition: 0.4s;
 
       &::before {
-        transform: translateX(25px);
+        transform: translateX(2.5rem);
 
         @media screen and (max-width: var.$breakpoint-tablette) {
-          transform: translateX(23px);
+          transform: translateX(2.3rem);
         }
 
         @media screen and (max-width: var.$breakpoint-mobile) {
           justify-content: left;
-          transform: translateX(20px);
+          transform: translateX(2rem);
         }
       }
     }
@@ -57,28 +57,28 @@
 
   & svg {
     position: absolute;
-    top: 7px;
+    top: 0.7rem;
     z-index: 1;
 
     @media screen and (max-width: var.$breakpoint-mobile) {
-      top: 7px;
+      top: 0.7rem;
       font-size: fct.map-deep-get(var.$switch, "fontSize", "icone--mobile");
     }
 
     &:nth-child(1) {
-      left: 5px;
+      left: 0.5rem;
 
       @media screen and (max-width: var.$breakpoint-mobile) {
-        left: 4px;
+        left: 0.4rem;
       }
     }
     &:nth-child(2) {
-      top: 6px;
-      right: 9px;
+      top: 0.6rem;
+      right: 0.9rem;
 
       @media screen and (max-width: var.$breakpoint-mobile) {
-        right: 5px;
-        top: 5px;
+        right: 0.5rem;
+        top: 0.5rem;
       }
     }
   }
@@ -86,17 +86,17 @@
   &::before {
     position: absolute;
     content: "";
-    bottom: 3px;
-    left: 3px;
-    width: calc(50% - 6px);
-    height: calc(100% - 6px);
+    bottom: 0.3rem;
+    left: 0.3rem;
+    width: calc(50% - 0.6rem);
+    height: calc(100% - 0.6rem);
     border-radius: var.$radius--20;
     transition: 0.4s;
     z-index: 2;
   }
 
   &--dark {
-    border: 1px outset black;
+    border: 0.1rem outset black;
     background-color: fct.map-deep-get(
       var.$switch--dark,
       "colors",

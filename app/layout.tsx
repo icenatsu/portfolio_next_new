@@ -16,6 +16,7 @@ const oswald = Oswald({
   variable: "--font--oswald",
 })
 
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font--inter",

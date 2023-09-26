@@ -3,15 +3,15 @@
 
 .contact {
   display: flex;
-  padding: 50px 200px 100px 200px;
+  padding: 5rem 20rem 10rem 20rem;
 
   @media screen and (max-width: 1400px) {
-    padding: 100px 100px 0px 100px;
+    padding: 10rem 10rem 0 10rem;
   }
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     flex-direction: column;
-    padding: 100px 50px 30px 50px;
+    padding: 10rem 5rem 3rem 5rem;
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
@@ -46,7 +46,7 @@
       position: relative;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 2rem;
       grid-area: form-contact;
       grid-template-areas:
         "lastname firstname"
@@ -55,12 +55,11 @@
         "message message"
         "send send";
 
-      padding: 20px;
+      padding: 2rem;
       border-radius: var.$radius--10;
       justify-items: center;
       align-items: center;
-      // z-index: 1;
-      width: 750px;
+      width: 75rem;
 
       @media screen and (max-width: var.$breakpoint-tablette) {
         width: 90%;
@@ -68,9 +67,9 @@
 
       @media screen and (max-width: var.$breakpoint-mobile) {
         width: 100%;
-        grid-template-columns: repeat(1, minmax(200px, 370px));
+        grid-template-columns: repeat(1, minmax(20rem, 37rem));
         grid-template-rows: 7fr;
-        gap: 20px;
+        gap: 2rem;
         grid-template-areas:
           "lastname"
           "firstname"
@@ -96,7 +95,7 @@
         flex-direction: column;
         font-family: var(--font--archivo);
         font-size: fct.map-deep-get(var.$contact, "fontSize", "label--desktop");
-        gap: 5px;
+        gap: 0.5rem;
 
         @media screen and (max-width: var.$breakpoint-tablette) {
           font-size: fct.map-deep-get(
@@ -111,8 +110,8 @@
         );
 
         .errors {
-          margin-bottom: 10px;
-          margin-top: 5px;
+          margin-bottom: 1rem;
+          margin-top: 0.5rem;
           font-size: fct.map-deep-get(var.$contact, "fontSize", "errors");
           color: fct.map-deep-get(var.$contact, "colors", "errors");
           font-style: italic;
@@ -122,8 +121,8 @@
       .input {
         border-radius: var.$radius--10;
         width: 100%;
-        height: 30px;
-        padding: 20px;
+        height: 3rem;
+        padding: 2rem;
         border: none;
 
         // &::placeholder {
@@ -133,13 +132,13 @@
       }
 
       .textarea {
-        padding: 10px;
+        padding: 1rem;
         resize: none;
         border-radius: var.$radius--10;
         width: 100%;
         border: none;
-        height: 170px;
-        margin-bottom: 10px;
+        height: 17rem;
+        margin-bottom: 1rem;
 
         // &::placeholder {
         //   color: black;
@@ -149,13 +148,13 @@
 
       .send {
         width: 30%;
-        height: 40px;
+        height: 4rem;
         font-family: fct.map-deep-get(var.$contact, "fontFamily", "send");
         font-size: fct.map-deep-get(var.$contact, "fontSize", "send--desktop");
         border-radius: var.$radius--10;
         background-color: fct.map-deep-get(var.$contact, "colors", "send--bg");
         color: fct.map-deep-get(var.$contact, "colors", "send--desktop");
-        margin-top: 10px;
+        margin-top: 1rem;
         cursor: pointer;
         grid-area: send;
 
@@ -169,11 +168,11 @@
   .elipse {
     position: absolute;
     z-index: -1;
-    top: -60px;
-    left: -30px;
-    width: 200px;
-    height: 650px;
-    border-radius: 50%;
+    top: -6rem;
+    left: -3rem;
+    width: 20rem;
+    height: 65rem;
+    border-radius: var.$radius--circle;
     transform: rotate(-30deg);
 
     @media screen and (max-width: var.$breakpoint-tablette) {
@@ -195,17 +194,17 @@
   .wave svg {
     position: relative;
     display: block;
-    width: calc(100% + 1.3px);
-    height: 90px;
+    width: calc(100% + 0.13rem);
+    height: 9rem;
 
     @media screen and (max-width: var.$breakpoint-tablette) {
-      width: calc(100% + 1.3px);
-      height: 70px;
+      width: calc(100% + 0.13rem);
+      height: 7rem;
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
-      width: calc(180% + 1.3px);
-      height: 60px;
+      width: calc(180% + 0.13rem);
+      height: 6rem;
     }
   }
 
@@ -245,7 +244,8 @@
     }
 
     .elipse {
-      border: 1px solid fct.map-deep-get(var.$contact--dark, "colors", "elipse");
+      border: 0.1rem solid
+        fct.map-deep-get(var.$contact--dark, "colors", "elipse");
     }
 
     .wave .shape-fill {
@@ -289,7 +289,7 @@
     }
 
     .elipse {
-      border: 1px solid
+      border: 0.1rem solid
         fct.map-deep-get(var.$contact--light, "colors", "elipse");
     }
 

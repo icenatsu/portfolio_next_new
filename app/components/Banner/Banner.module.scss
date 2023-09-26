@@ -1,9 +1,7 @@
 @use "../../styles/utils/variables.scss" as var;
 
 .banner {
-  margin-top: 0px;
   flex: 0.5;
-  margin-bottom: 0px;
   display: flex;
   flex-direction: column;
 
@@ -12,10 +10,10 @@
   }
 
   .logo {
-    width: 80px;
-    height: 80px;
+    width: 8rem;
+    height: 8rem;
     z-index: 3;
-    margin-bottom: 50px;
+    margin-bottom: 5rem;
     animation: jug 1.5s 0.5s ease-in-out forwards;
     filter: brightness(1.4);
 
@@ -29,20 +27,19 @@
 
     & .logoImg {
       border-radius: var.$radius--circle;
-      width: 80px;
-      height: 80px;
-      margin-left: 0px;
+      width: 8rem;
+      height: 8rem;
     }
   }
 
   .rain {
     opacity: 0;
     animation: rain 2s 1.2s ease-in both infinite;
-    width: 89px;
-    height: 550px;
+    width: 8.9rem;
+    height: 55rem;
 
     & .bannerbg {
-      margin-left: 10px;
+      margin-left: 1rem;
       object-fit: cover;
       width: 100%;
       height: auto;
@@ -50,12 +47,12 @@
   }
 
   .pot {
-    width: 140px;
+    width: 14rem;
     height: auto;
     animation: bascule 3.5s 2.3s ease-in-out infinite;
 
     & .PotImg {
-      margin-top: 20px;
+      margin-top: 2rem;
       width: 100%;
       height: auto;
     }
@@ -104,11 +101,11 @@
 @keyframes rain {
   0% {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: translateY(-10rem);
   }
   25% {
     opacity: 0.5;
-    transform: translateY(-90px);
+    transform: translateY(-9rem);
   }
   50% {
     opacity: 1;
@@ -116,7 +113,7 @@
   }
   100% {
     opacity: 0.5;
-    transform: translateY(180px);
+    transform: translateY(18rem);
   }
 }
 

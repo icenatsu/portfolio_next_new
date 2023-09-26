@@ -3,15 +3,15 @@
 
 .container {
   display: flex;
-  padding: 100px 200px;
+  padding: 10rem 20rem;
 
   @media screen and (max-width: 1400px) {
-    padding: 100px 100px;
+    padding: 10rem 10rem;
   }
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     flex-direction: column;
-    padding: 100px 50px;
+    padding: 10rem 5rem;
   }
 
   .about {
@@ -22,7 +22,7 @@
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       font-size: fct.map-deep-get(var.$about, "fontSize", "about--tablet");
-      padding-bottom: 20px;
+      padding-bottom: 2rem;
     }
   }
 
@@ -31,7 +31,7 @@
     font-family: fct.map-deep-get(var.$about, "fontFamily", "presentation");
     font-size: fct.map-deep-get(var.$about, "fontSize", "presentation");
     border-radius: var.$radius--5;
-    padding: 40px 20px;
+    padding: 4rem 2rem;
 
     & p {
       max-width: 95%;
@@ -43,7 +43,7 @@
       }
 
       &:nth-child(1) {
-        padding: 10px 0;
+        padding: 1rem 0;
       }
     }
   }
@@ -66,9 +66,9 @@
         "colors",
         "presentation--bg"
       );
-      border: 1px solid
+      border: 0.1rem solid
         fct.map-deep-get(var.$about--dark, "colors", "presentation--border");
-      filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+      filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5));
     }
   }
 
