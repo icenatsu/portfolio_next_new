@@ -14,6 +14,11 @@
     padding: 10rem 5rem;
   }
 
+  @media screen and (max-width: var.$breakpoint-mobile) {
+    flex-direction: column;
+    padding: 5rem 5rem;
+  }
+
   .about {
     flex: 1;
     font-family: fct.map-deep-get(var.$about, "fontFamily", "about");
@@ -27,6 +32,7 @@
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       text-align: center;
+      padding-bottom: 3rem;
     }
   }
 
