@@ -3,7 +3,7 @@
 @use "../../styles/utils/mixins.scss" as mix;
 
 .header {
-  height: 100dvh;
+  height: 100vh;
   display: flex;
   padding: 15rem 20rem 7rem 20rem;
   justify-content: space-between;
@@ -22,14 +22,7 @@
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    height: calc(100vh - 60px);
-  }
-
-  @supports (-webkit-touch-callout: none) {
-    header {
-      /* The hack for Safari */
-      height: -webkit-fill-available;
-    }
+    height: 100svh;
   }
 
   .text {
