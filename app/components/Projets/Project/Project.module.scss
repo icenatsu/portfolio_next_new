@@ -46,6 +46,7 @@
     max-width: 100%;
 
     .swiper {
+      width: 100%;
       padding: 2rem;
       @media screen and (max-width: var.$breakpoint-tablette) {
         padding: 2rem 0rem;
