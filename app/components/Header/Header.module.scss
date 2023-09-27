@@ -56,9 +56,6 @@
 
     .title {
       display: flex;
-      font-family: fct.map-deep-get(var.$header, "fontFamily", "title");
-      font-weight: fct.map-deep-get(var.$header, "fontWeight", "title");
-      font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
       flex-wrap: wrap;
 
       @media screen and (max-width: var.$breakpoint-tablette) {
@@ -152,6 +149,12 @@
       color: fct.map-deep-get(var.$header--dark, "colors", "title");
     }
 
+    .link {
+      font-family: fct.map-deep-get(var.$header, "fontFamily", "title");
+      font-weight: fct.map-deep-get(var.$header, "fontWeight", "title");
+      font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
+    }
+
     .button {
       color: fct.map-deep-get(var.$header, "colors", "button");
       background-color: fct.map-deep-get(var.$header, "colors", "button--bg");
@@ -177,6 +180,12 @@
       );
       border: 0.1rem solid
         fct.map-deep-get(var.$header--light, "colors", "profession--border");
+    }
+
+    .link {
+      font-family: fct.map-deep-get(var.$header, "fontFamily", "title");
+      font-weight: fct.map-deep-get(var.$header, "fontWeight", "title");
+      font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
     }
 
     .button {
