@@ -61,32 +61,20 @@ const NavBar = (): JSX.Element => {
             }
         }
 
-    }, [windowSize.windowWidth])
+    }, [windowSize.windowWidth,])
 
-
-    const scrollToAnchorProjets = () => {
-        const projets = document.getElementById("projets")
-        projets?.scrollIntoView({ behavior: "smooth" })
+    const scrollToAnchor = (id: string) => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+        setShowMenu(false)
     }
-
-    const scrollToAnchorSkills = () => {
-        const skills = document.getElementById("skills")
-        skills?.scrollIntoView({ behavior: "smooth" })
-    }
-
-    const scrollToAnchorContact = () => {
-        const contact = document.getElementById("contact")
-        contact?.scrollIntoView({ behavior: "smooth" })
-    }
-
 
     return (
         <nav id='navBar' className={styles.container} ref={container}>
             <Switch />
             <ul className={styles.list} ref={list}>
-                <li className={styles.list__item} ><Link onClick={scrollToAnchorProjets} scroll={false} href="/#projets">Projets</Link></li>
-                <li className={styles.list__item} ><Link onClick={scrollToAnchorSkills} href="/#skills" scroll={false}>Compétences</Link></li>
-                <li className={styles.list__item} ><Link onClick={scrollToAnchorContact} href="/#contact" scroll={false}>Contact</Link></li>
+                <li className={styles.list__item} ><Link onClick={() => scrollToAnchor('projets')} scroll={false} href="/#projets">Projets</Link></li>
+                <li className={styles.list__item} ><Link onClick={() => scrollToAnchor('skills')} href="/#skills" scroll={false}>Compétences</Link></li>
+                <li className={styles.list__item} ><Link onClick={() => scrollToAnchor('contact')} href="/#contact" scroll={false}>Contact</Link></li>
             </ul>
             <div className={styles.burger} onClick={handleClick}><Icon aria-label="Afficher le menu" icon="icon-park-outline:hamburger-button" hFlip={true} /></div>
         </nav>
