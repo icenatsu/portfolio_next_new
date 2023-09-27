@@ -21,10 +21,6 @@
       display: none;
     }
 
-    &--start {
-      animation: jug 1.5s ease-in-out forwards;
-    }
-
     & .logoImg {
       border-radius: var.$radius--circle;
       width: 8rem;
@@ -63,40 +59,10 @@
   0% {
     transform: rotate(0deg);
   }
-
-  // 10% {
-  //   transform: rotate(30deg);
-  // }
-  // 20% {
-  //   transform: rotate(40deg);
-  // }
-  // 30% {
-  //   transform: rotate(30deg);
-  // }
-  // 40% {
-  //   transform: rotate(20deg);
-  // }
-  // 50% {
-  //   transform: rotate(30deg);
-  // }
-  // 60% {
-  //   transform: rotate(40deg);
-  // }
-  // 70% {
-  //   transform: rotate(20deg);
-  // }
-  // 80% {
-  //   transform: rotate(30deg);
-  // }
-  // 90% {
-  //   transform: rotate(40deg);
-  // }
   100% {
     transform: rotate(35deg);
   }
 }
-
-// inAnimation={{ animation: `${styles.rain} ${1.5}s ${600}ms ease-in forwards`
 
 @keyframes rain {
   0% {
