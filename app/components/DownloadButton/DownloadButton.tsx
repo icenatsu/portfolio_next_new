@@ -37,7 +37,7 @@ const DownloadButton = (): JSX.Element => {
 
     // Animation gsap
     useEffect(() => {
-        animationSlideScrollToBottom("downloadButton", 0.3, 0.2, 0)
+        animationSlideScrollToBottom("downloadButton", 0.3, 0.2, 0, 75, 25)
     }, []);
 
     return (

@@ -27,16 +27,17 @@ const About = (): JSX.Element => {
 
 
     // Animations gsap
-    // useEffect(() => {
-    //     animationSlideScrollToBottom("about", 0, 0.1, 5)
-    // }, []);
-
+    // animationSlideScrollToBottom(delay, durée, yfrom, topscroll, bottom scroll)
     useEffect(() => {
-        animationSlideScrollToRight("aboutTitle", 0.1, 0.2, 0)
+        animationSlideScrollToBottom("about", 0, 0.1, 20, 85, 40)
     }, []);
 
     useEffect(() => {
-        animationSlideScrollToBottom("aboutDescription", 0.2, 0.2, 0)
+        animationSlideScrollToBottom("aboutTitle", 0.1, 0.2, 0, 75, 25)
+    }, []);
+
+    useEffect(() => {
+        animationSlideScrollToBottom("aboutDescription", 0.2, 0.3, 0, 75, 25)
     }, []);
 
 

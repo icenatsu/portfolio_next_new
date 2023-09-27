@@ -154,7 +154,11 @@ const Skills = (): JSX.Element => {
 
     // Animations gsap
     useEffect(() => {
-        animationSlideScrollToRight("skillsTitle", 0.3, 0.5, 0)
+        animationSlideScrollToBottom("skills", 0, 0.1, 20, 85, 40)
+    }, []);
+
+    useEffect(() => {
+        animationSlideScrollToBottom("skillsTitle", 0.1, 0.3, 0, 75, 25)
     }, []);
 
 

@@ -18,7 +18,7 @@ const typeOfElementDetect = (elem: HTMLElement | string) => {
 }
 
 
-export const animationSlideScrollToBottom = (elem: HTMLElement | string, delay: number, duration: number, yfrom: number) => {
+export const animationSlideScrollToBottom = (elem: HTMLElement | string, delay: number, duration: number, yfrom: number, topScroll: number, bottomScroll: number) => {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
     const typeOfElem = typeOfElementDetect(elem);
 
@@ -37,8 +37,8 @@ export const animationSlideScrollToBottom = (elem: HTMLElement | string, delay: 
                     duration: duration,
                     scrollTrigger: {
                         trigger: typeOfElem,
-                        start: "top center",
-                        end: "bottom center",
+                        start: `top ${topScroll}%`,
+                        end: `bottom ${bottomScroll}%`
                     },
                 }
             )
@@ -69,8 +69,8 @@ export const animationSlideScrollToRight = (elem: HTMLElement | string, delay: n
                     duration: duration,
                     scrollTrigger: {
                         trigger: typeOfElem,
-                        start: "top center",
-                        end: "bottom center",
+                        start: "top 25%",
+                        end: "bottom 25%",
                     },
                 }
             )

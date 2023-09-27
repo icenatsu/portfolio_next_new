@@ -81,7 +81,7 @@ const Contact = (): JSX.Element => {
 
     // Animations gsap
     useEffect(() => {
-        animationSlideScrollToBottom("contact", 0.3, 0.5, 0)
+        animationSlideScrollToBottom("contact", 0.3, 0.5, 0, 75, 25)
     }, []);
 
     return (

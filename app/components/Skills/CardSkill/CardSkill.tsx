@@ -104,7 +104,7 @@ const CardSkill = ({ inParagraphs, inIcones, inClassList }: CardSkill): JSX.Elem
 
     // Animation gsap
     useEffect(() => {
-        animationSlideScrollToBottom(inClassList, 0.3, 0.5, 100)
+        animationSlideScrollToBottom(inClassList, 0.3, 0.5, 100, 75, 20)
     }, []);
 
     return (
