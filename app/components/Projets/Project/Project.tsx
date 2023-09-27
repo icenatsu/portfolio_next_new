@@ -60,7 +60,7 @@ const Project = () => {
 
     //Animations gsap
     useEffect(() => {
-        animationSlideScrollToRight("projetTitle", 0, 0.3, 100)
+        animationSlideScrollToRight("projetTitle", 0, 0.3, 0)
     }, []);
 
     useEffect(() => {
