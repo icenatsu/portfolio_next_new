@@ -19,6 +19,7 @@
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
+    opacity: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -84,8 +85,6 @@
         font-family: fct.map-deep-get(var.$header, "fontFamily", "button");
         font-size: fct.map-deep-get(var.$header, "fontSize", "button");
         font-weight: fct.map-deep-get(var.$header, "fontWeight", "button");
-        color: fct.map-deep-get(var.$header, "colors", "button");
-        background-color: fct.map-deep-get(var.$header, "colors", "button--bg");
         border-radius: var.$radius--30;
         border: none;
         width: 19rem;
@@ -139,10 +138,6 @@
       "header--bg"
     );
 
-    .title {
-      color: fct.map-deep-get(var.$header--dark, "colors", "title");
-    }
-
     .profession {
       color: fct.map-deep-get(var.$header--dark, "colors", "profession--color");
       border: 0.1rem solid
@@ -151,6 +146,15 @@
       &:hover {
         filter: brightness(160%);
       }
+    }
+
+    .title {
+      color: fct.map-deep-get(var.$header--dark, "colors", "title");
+    }
+
+    .button {
+      color: fct.map-deep-get(var.$header, "colors", "button");
+      background-color: fct.map-deep-get(var.$header, "colors", "button--bg");
     }
 
     .wave .shape-fill {
@@ -165,10 +169,6 @@
       "header--bg"
     );
 
-    .title {
-      color: fct.map-deep-get(var.$header--light, "colors", "title");
-    }
-
     .profession {
       color: fct.map-deep-get(
         var.$header--light,
@@ -177,6 +177,15 @@
       );
       border: 0.1rem solid
         fct.map-deep-get(var.$header--light, "colors", "profession--border");
+    }
+
+    .button {
+      color: fct.map-deep-get(var.$header, "colors", "button");
+      background-color: fct.map-deep-get(var.$header, "colors", "button--bg");
+    }
+
+    .title {
+      color: fct.map-deep-get(var.$header--light, "colors", "title");
     }
 
     .wave .shape-fill {
