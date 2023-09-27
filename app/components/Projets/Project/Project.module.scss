@@ -49,7 +49,7 @@
 
     .swiper {
       width: 100%;
-      padding: 2rem;
+      padding: 2rem 0;
       @media screen and (max-width: var.$breakpoint-tablette) {
         padding: 2rem 0rem;
       }
@@ -67,12 +67,12 @@
   }
 
   .touch {
-    display: none;
+    text-align: center;
+    padding: 3rem 0 0 0;
+    font-size: fct.map-deep-get(var.$projets, "fontSize", "touch");
+
     @media screen and (max-width: var.$breakpoint-tablette) {
       display: block;
-      text-align: center;
-      padding: 1rem;
-      font-size: fct.map-deep-get(var.$projets, "fontSize", "touch");
     }
   }
 

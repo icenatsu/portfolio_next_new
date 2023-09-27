@@ -84,14 +84,6 @@ const Project = () => {
                             spaceBetween={2}
                             slidesPerView={1}
                             centeredSlides={true}
-                            // effect={"coverflow"}
-                            // coverflowEffect={{
-                            //     rotate: 50,
-                            //     stretch: 0,
-                            //     depth: 50,
-                            //     modifier: 1,
-                            //     slideShadows: false,
-                            // }}
                             breakpoints={{
                                 768: {
                                     slidesPerView: 2,
@@ -100,7 +92,7 @@ const Project = () => {
                                 },
                                 992: {
                                     slidesPerView: 3,
-                                    spaceBetween: 10,
+                                    spaceBetween: 22,
                                     centeredSlides: true,
                                 },
                             }}
@@ -113,14 +105,14 @@ const Project = () => {
                                         <CardProject
                                             inId={item.title}
                                             inData={item}
-                                            inStyleSlider={isActive ? 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(0%)' : 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(100%)'}
+                                            inStyleSlider={isActive ? 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))' : 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(100%)'}
                                             inBool={isVisible ? true : false}
                                         />
                                     )}
                                 </SwiperSlide>
                             ))}
-                            <PrevArrow />
-                            <NextArrow />
+                            {/* <PrevArrow />
+                            <NextArrow /> */}
                             <div className={styles["touch"]}>
                                 <Icon icon="icon-park-solid:move" aria-label="touch" />
                             </div>

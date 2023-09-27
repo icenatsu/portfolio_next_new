@@ -3,6 +3,7 @@
 .arrow {
   font-size: 4rem;
   z-index: 90000;
+  display: none;
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     display: none;
@@ -23,6 +24,7 @@
   top: 50%;
   display: inline-block;
   transform: translateY(-50%);
+  display: none;
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     display: none;
@@ -30,6 +32,7 @@
 }
 
 .next {
+  display: none;
   position: absolute;
   right: 1rem;
   top: 50%;
