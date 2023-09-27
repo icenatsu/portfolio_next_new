@@ -147,9 +147,6 @@
 
     .title {
       color: fct.map-deep-get(var.$header--dark, "colors", "title");
-    }
-
-    .link {
       font-family: fct.map-deep-get(var.$header, "fontFamily", "title");
       font-weight: fct.map-deep-get(var.$header, "fontWeight", "title");
       font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
@@ -182,12 +179,6 @@
         fct.map-deep-get(var.$header--light, "colors", "profession--border");
     }
 
-    .link {
-      font-family: fct.map-deep-get(var.$header, "fontFamily", "title");
-      font-weight: fct.map-deep-get(var.$header, "fontWeight", "title");
-      font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
-    }
-
     .button {
       color: fct.map-deep-get(var.$header, "colors", "button");
       background-color: fct.map-deep-get(var.$header, "colors", "button--bg");
@@ -195,6 +186,9 @@
 
     .title {
       color: fct.map-deep-get(var.$header--light, "colors", "title");
+      font-family: fct.map-deep-get(var.$header, "fontFamily", "title");
+      font-weight: fct.map-deep-get(var.$header, "fontWeight", "title");
+      font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
     }
 
     .wave .shape-fill {
