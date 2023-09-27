@@ -16,20 +16,15 @@ export interface ThemeContext {
 export const ThemeContext = createContext<ThemeContext | null>(null);
 
 const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
-    const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-
-    useEffect(() => {
-        if (typeof window !== 'undefined' && window.matchMedia) {
-            window.matchMedia('(prefers-color-scheme: dark)').matches && setIsDarkMode(true);
-        }
-    }, [])
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
     useEffect(() => {
         if (typeof window !== "undefined") {
             window
                 .matchMedia("(prefers-color-scheme: dark)")
-                .addEventListener('change', e => setIsDarkMode(e.matches));
-        }
+                .addEventListener('change', e => (setIsDarkMode(e.matches)))
+
+        };
     }, []);
 
     useEffect(() => {
