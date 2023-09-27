@@ -36,7 +36,7 @@ const About = (): JSX.Element => {
     }, []);
 
     useEffect(() => {
-        animationSlideScrollToBottom("aboutDescription", 0.1, 0.2, 0)
+        animationSlideScrollToBottom("aboutDescription", 0.2, 0.2, 0)
     }, []);
 
 
