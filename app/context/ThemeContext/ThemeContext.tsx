@@ -18,7 +18,7 @@ export const ThemeContext = createContext<ThemeContext | null>(null);
 const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (typeof window !== 'undefined' && window.matchMedia) {
             window.matchMedia('(prefers-color-scheme: dark)').matches && setIsDarkMode(true);
         }
