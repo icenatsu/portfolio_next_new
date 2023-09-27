@@ -37,17 +37,17 @@ const Header = (): JSX.Element => {
         animationSlideScrollToBottom("header", 0, 0.3, 0, 100, 75)
     }, []);
 
-    useEffect(() => {
-        animationSlideToBottom("headerProfession", 0.1, 0.5, 40)
-    }, []);
+    // useEffect(() => {
+    //     animationSlideToBottom("headerProfession", 0.1, 0.5, 40)
+    // }, []);
 
-    useEffect(() => {
-        animationSlideToBottom("headerTitle", 0.2, 0.5, 20)
-    }, []);
+    // useEffect(() => {
+    //     animationSlideToBottom("headerTitle", 0.2, 0.5, 20)
+    // }, []);
 
-    useEffect(() => {
-        animationSlideToBottom("headerLink", 0.3, 0.5, 20)
-    }, []);
+    // useEffect(() => {
+    //     animationSlideToBottom("headerLink", 0.3, 0.5, 20)
+    // }, []);
 
     return (
         <header id="header" className={styles.header}>
