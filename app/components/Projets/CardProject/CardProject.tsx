@@ -19,11 +19,11 @@ interface IntData {
 interface CardProjectProps {
     inData: IntData,
     inId: string,
-    inStyleSlider: string
-    inBool: boolean
+    inActive: string
+    inVisible: boolean
 }
 
-const CardProject = ({ inData, inStyleSlider, inBool }: CardProjectProps): JSX.Element => {
+const CardProject = ({ inData, inActive, inVisible }: CardProjectProps): JSX.Element => {
     const themeContext = useContext(ThemeContext);
     const isDarkMode = themeContext!.isDarkMode;
 
@@ -42,13 +42,13 @@ const CardProject = ({ inData, inStyleSlider, inBool }: CardProjectProps): JSX.E
     }, [themeContext, isDarkMode, inData.title])
 
     return (
-        <article id={inData.title} className={styles["flip-card"]} style={{ filter: `${inStyleSlider}` }}>
+        <article id={inData.title} className={styles["flip-card"]} style={{ filter: `${inActive}` }}>
             <div className={styles["flip-card-inner"]}>
                 <div className={styles["flip-card-front"]}>
                     <picture className={styles["flip-card-front__image"]}>
                         <source media={`(max-width: 768px)`} srcSet={inData.cover.mobile} />
                         <source media={`(min-width: 769px)`} srcSet={inData.cover.tablette} />
-                        <Image src={inData.cover.tablette} alt={inData.title} fill={true} {...(inBool ? { priority: true } : { loading: "lazy" })} style={{ objectFit: 'cover', borderRadius: '1rem' }}
+                        <Image src={inData.cover.tablette} alt={inData.title} fill={true} {...(inVisible ? { priority: true } : { loading: "lazy" })} style={{ objectFit: 'cover', borderRadius: '1rem' }}
                         />
                     </picture>
                     <Icon className={styles["go-back"]} icon="pepicons-pop:arrow-spin" rotate={2} />
