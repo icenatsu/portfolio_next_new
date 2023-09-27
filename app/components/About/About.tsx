@@ -28,15 +28,15 @@ const About = (): JSX.Element => {
 
     // Animations gsap
     useEffect(() => {
-        animationSlideScrollToBottom("about", 0.1, 0.4, 50)
+        animationSlideScrollToBottom("about", 0, 0.2, 10)
     }, []);
 
     useEffect(() => {
-        animationSlideScrollToRight("aboutTitle", 0.1, 0.4, 0)
+        animationSlideScrollToRight("aboutTitle", 0.1, 0.3, 0)
     }, []);
 
     useEffect(() => {
-        animationSlideScrollToBottom("aboutDescription", 0.1, 0.4, 0)
+        animationSlideScrollToBottom("aboutDescription", 0.1, 0.3, 0)
     }, []);
 
 
