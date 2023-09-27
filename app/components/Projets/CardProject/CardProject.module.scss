@@ -63,7 +63,7 @@
   background-color: fct.map-deep-get(
     var.$cardProject,
     "colors",
-    "flip-card--bg"
+    "flip-card-inner--bg"
   );
   border-radius: var.$radius--10;
   transition: transform 0.8s;
