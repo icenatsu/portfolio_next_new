@@ -19,7 +19,6 @@
   }
 
   @media screen and (max-width: var.$breakpoint-mobile) {
-    opacity: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -57,6 +56,9 @@
     .title {
       display: flex;
       flex-wrap: wrap;
+      font-family: fct.map-deep-get(var.$header, "fontFamily", "title");
+      font-weight: fct.map-deep-get(var.$header, "fontWeight", "title");
+      font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
 
       @media screen and (max-width: var.$breakpoint-tablette) {
         font-size: fct.map-deep-get(var.$header, "fontSize", "title--tablette");
@@ -75,6 +77,8 @@
       z-index: 2;
 
       .button {
+        color: fct.map-deep-get(var.$header, "colors", "button");
+        background-color: fct.map-deep-get(var.$header, "colors", "button--bg");
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -147,14 +151,6 @@
 
     .title {
       color: fct.map-deep-get(var.$header--dark, "colors", "title");
-      font-family: fct.map-deep-get(var.$header, "fontFamily", "title");
-      font-weight: fct.map-deep-get(var.$header, "fontWeight", "title");
-      font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
-    }
-
-    .button {
-      color: fct.map-deep-get(var.$header, "colors", "button");
-      background-color: fct.map-deep-get(var.$header, "colors", "button--bg");
     }
 
     .wave .shape-fill {
@@ -179,16 +175,8 @@
         fct.map-deep-get(var.$header--light, "colors", "profession--border");
     }
 
-    .button {
-      color: fct.map-deep-get(var.$header, "colors", "button");
-      background-color: fct.map-deep-get(var.$header, "colors", "button--bg");
-    }
-
     .title {
       color: fct.map-deep-get(var.$header--light, "colors", "title");
-      font-family: fct.map-deep-get(var.$header, "fontFamily", "title");
-      font-weight: fct.map-deep-get(var.$header, "fontWeight", "title");
-      font-size: fct.map-deep-get(var.$header, "fontSize", "title--desktop");
     }
 
     .wave .shape-fill {
