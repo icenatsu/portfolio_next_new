@@ -59,6 +59,12 @@
     position: absolute;
     top: 0.7rem;
     z-index: 1;
+    font-size: fct.map-deep-get(var.$switch, "fontSize", "icone--desktop");
+
+    @media screen and (max-width: var.$breakpoint-tablette) {
+      top: 0.7rem;
+      font-size: fct.map-deep-get(var.$switch, "fontSize", "icone--tablet");
+    }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       top: 0.7rem;

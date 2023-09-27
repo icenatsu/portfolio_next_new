@@ -36,11 +36,13 @@ $global--light: (
 /*******************/
 $navbar: (
   fontSize: (
-    container: 1.6rem,
-    list: 1.7rem,
+    link: 1.7rem,
+  ),
+  fontFamily: (
+    link: $archivo,
   ),
   fontWeight: (
-    container: bold,
+    link: bold,
   ),
 );
 
@@ -73,6 +75,8 @@ $switch: (
     sunmoon: $dark-color,
   ),
   fontSize: (
+    icone--desktop: 1.6rem,
+    icone--tablet: 1.5rem,
     icone--mobile: 1.4rem,
   ),
 );

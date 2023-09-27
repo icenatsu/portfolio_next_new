@@ -9,8 +9,6 @@
   z-index: 4;
   width: 100%;
   height: 6rem;
-  font-size: fct.map-deep-get(var.$navbar, "fontSize", "container");
-  font-weight: fct.map-deep-get(var.$navbar, "fontWeight", "container");
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,7 +25,6 @@
     display: flex;
     justify-content: center;
     opacity: 1;
-    font-size: fct.map-deep-get(var.$navbar, "fontSize", "list");
 
     @media screen and (max-width: var.$breakpoint-tablette) {
       flex: 10;
@@ -41,6 +38,9 @@
 
     &__item {
       padding: 0 2rem;
+      font-size: fct.map-deep-get(var.$navbar, "fontSize", "link");
+      font-family: fct.map-deep-get(var.$navbar, "fontFamily", "link");
+      font-weight: fct.map-deep-get(var.$navbar, "fontWeight", "link");
 
       @media screen and (max-width: var.$breakpoint-tablette) {
         padding: 0.5rem 0;
