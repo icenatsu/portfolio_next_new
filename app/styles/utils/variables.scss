@@ -387,12 +387,21 @@ $cardSkill--light: (
     techno--bg: $light-color,
     chevron: $primary-color,
     dividingBorder: $primary-color,
-    descriptionTechno: $primary-color,
+    descriptionTechno: $four-color,
     iconArrow: rgb(38, 187, 158),
-    iconTechno: $primary-color,
-    nameTechno: $primary-color,
+    iconTechno: $second-color,
+    nameTechno: $four-color,
   ),
 );
+
+$primary-color: #858ae3;
+$second-color: #4e148c;
+$third-color: #97dffc;
+$four-color: #2c0735;
+$light-color: white;
+$dark-color: black;
+$transparent-color: transparent;
+$white-color: white;
 
 $html: rgb(211, 100, 60);
 $css: rgb(26, 99, 208);
@@ -440,6 +449,7 @@ $contact--dark: (
     title: $third-color,
     label: $third-color,
     errors: $light-color,
+    input: $dark-color,
     input--bg: $light-color,
     elipse: $light-color,
     wave: $primary-color,
@@ -452,6 +462,7 @@ $contact--light: (
     title: $second-color,
     label: $dark-color,
     errors: $dark-color,
+    input: $light-color,
     input--bg: #242424,
     elipse: $second-color,
     wave: $second-color,

@@ -227,6 +227,7 @@
     }
 
     .input {
+      color: fct.map-deep-get(var.$contact--dark, "colors", "input");
       background-color: fct.map-deep-get(
         var.$contact--dark,
         "colors",
@@ -272,6 +273,7 @@
     }
 
     .input {
+      color: fct.map-deep-get(var.$contact--light, "colors", "input");
       background-color: fct.map-deep-get(
         var.$contact--light,
         "colors",

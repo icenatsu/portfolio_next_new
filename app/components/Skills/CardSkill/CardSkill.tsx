@@ -134,6 +134,3 @@ const CardSkill = ({ inParagraphs, inIcones, inClassList }: CardSkill): JSX.Elem
 };
 
 export default CardSkill;
-// rotate={rotateArrow}
-// className={[styles.paragraphs, toggleShowSkillDetails ? styles.active : ""].join(' ')}
-// style={showSkillDetails || toggleShowSkillDetails ? { opacity: 1 } : { opacity: 0 }}
