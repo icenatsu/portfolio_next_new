@@ -22,6 +22,7 @@ export const animationSlideScrollToBottom = (elem: HTMLElement | string, delay: 
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
     const typeOfElem = typeOfElementDetect(elem);
 
+
     if (typeOfElem !== null && typeOfElem !== undefined) {
         let ctx = gsap.context(() => {
             gsap.fromTo(

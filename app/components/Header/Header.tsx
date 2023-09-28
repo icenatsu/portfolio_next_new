@@ -34,15 +34,15 @@ const Header = (): JSX.Element => {
     // Animations gsap
     /******************/
     useEffect(() => {
-        animationSlideToBottom("headerProfession", 0.1, 0.5, 40)
+        animationSlideToBottom("headerProfession", 0.1, 0.4, 20)
     }, []);
 
     useEffect(() => {
-        animationSlideToBottom("headerTitle", 0.2, 0.5, 20)
+        animationSlideToBottom("headerTitle", 0.2, 0.4, 20)
     }, []);
 
     useEffect(() => {
-        animationSlideToBottom("headerLink", 0.3, 0.5, 20)
+        animationSlideToBottom("headerLink", 0.3, 0.4, 20)
     }, []);
 
     return (
