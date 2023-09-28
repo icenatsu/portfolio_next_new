@@ -45,7 +45,7 @@
     }
 
     .icone {
-      color: fct.map-deep-get(var.$downloadbutton--light, "colors", "icone");
+      color: fct.map-deep-get(var.$downloadbutton--light, "colors", "icon");
     }
   }
 }
