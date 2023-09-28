@@ -188,10 +188,6 @@
     line-height: 0;
     transform: rotate(180deg);
     opacity: 0.2;
-
-    @media screen and (max-width: var.$breakpoint-mobile) {
-      display: none;
-    }
   }
 
   .wave svg {
@@ -205,10 +201,10 @@
       height: 7rem;
     }
 
-    // @media screen and (max-width: var.$breakpoint-mobile) {
-    //   width: calc(180% + 0.13rem);
-    //   height: 6rem;
-    // }
+    @media screen and (max-width: var.$breakpoint-mobile) {
+      width: 170%;
+      height: 6rem;
+    }
   }
 
   &--dark {

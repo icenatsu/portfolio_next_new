@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useContext, useEffect } from "react";
 import { ThemeContext } from "@context/ThemeContext/ThemeContext";
+import { useWindowSizeResize } from "@Hooks/Window/useWindowSizeResize";
 
 interface IntData {
     id: number,
@@ -27,6 +28,10 @@ const CardProject = ({ inData, inActive, inVisible }: CardProjectProps): JSX.Ele
     const themeContext = useContext(ThemeContext);
     const isDarkMode = themeContext!.isDarkMode;
 
+    const { windowWidth } = useWindowSizeResize()
+
+    const isMobile = windowWidth <= 768;
+
     // Gestion du Dark/Light mode
     useEffect(() => {
         if (document.getElementById(inData.title) !== null) {
@@ -48,7 +53,7 @@ const CardProject = ({ inData, inActive, inVisible }: CardProjectProps): JSX.Ele
                     <picture className={styles["flip-card-front__image"]}>
                         <source media={`(max-width: 768px)`} srcSet={inData.cover.mobile} />
                         <source media={`(min-width: 769px)`} srcSet={inData.cover.tablette} />
-                        <Image src={inData.cover.tablette} alt={inData.title} fill={true} {...(inVisible ? { priority: true } : { loading: "lazy" })} style={{ objectFit: 'cover', borderRadius: '1rem' }}
+                        <Image src={isMobile ? inData.cover.mobile : inData.cover.tablette} alt={inData.title} fill={true} {...(inVisible ? { priority: true } : { loading: "lazy" })} style={{ objectFit: 'cover', borderRadius: '1rem' }}
                         />
                     </picture>
                     <Icon className={styles["go-back"]} icon="pepicons-pop:arrow-spin" rotate={2} />

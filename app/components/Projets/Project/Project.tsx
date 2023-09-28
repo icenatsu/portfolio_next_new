@@ -12,9 +12,7 @@ import { Navigation, Pagination, Scrollbar, A11y, EffectCoverflow } from 'swiper
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
-import { NextArrow, PrevArrow } from "@components/SwipperNavButtons/SwipperNavButtons";
-import { animationSlideScrollToRight, animationSlideScrollToBottom } from "@animation/gsapAnimation"
-
+import { animationSlideScrollToBottom } from "@animation/gsapAnimation"
 
 interface IntItems {
     id: number,
