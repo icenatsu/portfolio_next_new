@@ -26,7 +26,6 @@ a {
     "colors",
     "background--desktop"
   );
-  color: fct.map-deep-get(var.$global--light, "colors", "color--desktop");
 }
 
 .dark {
