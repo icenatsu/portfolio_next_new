@@ -52,7 +52,7 @@ const CardProject = ({ inData, inActive, inVisible }: CardProjectProps): JSX.Ele
                 <div className={styles["flip-card-front"]}>
                     <picture className={styles["flip-card-front__image"]}>
                         <source media={`(max-width: 768px)`} srcSet={inData.cover.mobile} />
-                        <source media={`(min-width: 769px)`} srcSet={inData.cover.tablette} />
+                        <source media={`(min-width: 769px)`} srcSet={isMobile ? inData.cover.mobile : inData.cover.tablette} />
                         <Image src={isMobile ? inData.cover.mobile : inData.cover.tablette} alt={inData.title} fill={true} {...(inVisible ? { priority: true } : { loading: "lazy" })} style={{ objectFit: 'cover', borderRadius: '1rem' }}
                         />
                     </picture>
