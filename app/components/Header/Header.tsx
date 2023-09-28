@@ -34,10 +34,6 @@ const Header = (): JSX.Element => {
     // Animations gsap
     /******************/
     useEffect(() => {
-        animationSlideScrollToBottom("header", 0, 0.3, 0, 100, 75)
-    }, []);
-
-    useEffect(() => {
         animationSlideToBottom("headerProfession", 0.1, 0.5, 40)
     }, []);
 
