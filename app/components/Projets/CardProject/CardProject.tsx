@@ -20,7 +20,8 @@ interface IntData {
 interface CardProjectProps {
     inData: IntData,
     inId: string,
-    inActive: string
+    // inActive: string
+    inActive: boolean
     inVisible: boolean
 }
 
@@ -46,8 +47,30 @@ const CardProject = ({ inData, inActive, inVisible }: CardProjectProps): JSX.Ele
         }
     }, [themeContext, isDarkMode, inData.title])
 
+
+    // Application du style de la card en fonction du light mode et de la carte active
+    const getDynamicStyles = (inActive: boolean, isDarkMode: boolean) => {
+        if (windowWidth > 992) {
+            return {
+                filter: isDarkMode && inActive
+                    ? 'drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5))'
+                    : !isDarkMode && inActive ? 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))'
+                        : isDarkMode && !inActive ? 'drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5)) grayscale(100%)'
+                            : !isDarkMode && !inActive ? 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(100%)'
+                                : 'none'
+            };
+        } else {
+            return {
+                filter: isDarkMode ? 'drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.5))' : 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))'
+            };
+        }
+    }
+
+    const dynamicStyles = getDynamicStyles(inActive, isDarkMode);
+
+
     return (
-        <article id={inData.title} className={styles["flip-card"]} style={{ filter: `${inActive}` }}>
+        <article id={inData.title} className={styles["flip-card"]} style={dynamicStyles}>
             <div className={styles["flip-card-inner"]}>
                 <div className={styles["flip-card-front"]}>
                     <picture className={styles["flip-card-front__image"]}>

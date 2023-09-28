@@ -108,7 +108,8 @@ const Project = () => {
                                         <CardProject
                                             inId={item.title}
                                             inData={item}
-                                            inActive={isActive ? 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))' : 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(100%)'}
+                                            inActive={isActive ? true : false}
+                                            // inActive={isActive ? 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5))' : 'drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)) grayscale(100%)'}
                                             inVisible={isVisible ? true : false}
                                         />
                                     )}

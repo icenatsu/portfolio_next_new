@@ -274,3 +274,7 @@
 .curve .shape-fill {
   fill: fct.map-deep-get(var.$cardProject, "colors", "curve");
 }
+
+.active {
+  color: red;
+}
