@@ -20,7 +20,18 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
 
     window
         .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener('change', e => (setIsDarkMode(e.matches)))
+        .addEventListener('change', e => {
+            setIsDarkMode(e.matches)
+            if (e.matches) {
+                document.body.classList.add('dark');
+                document.body.classList.remove("light");
+            } else {
+                document.body.classList.add('light');
+                document.body.classList.remove("dark");
+            }
+        })
+
+
 
     useEffect(() => {
         if (isDarkMode) {
