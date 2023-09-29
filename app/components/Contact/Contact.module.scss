@@ -41,6 +41,10 @@
       @media screen and (max-width: var.$breakpoint-tablette) {
         font-size: fct.map-deep-get(var.$contact, "fontSize", "title--tablet");
       }
+
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        font-size: fct.map-deep-get(var.$contact, "fontSize", "title--mobile");
+      }
     }
 
     .form__contact {

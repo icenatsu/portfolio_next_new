@@ -32,6 +32,7 @@
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       text-align: center;
+      font-size: fct.map-deep-get(var.$about, "fontSize", "about--mobile");
       padding-bottom: 3rem;
     }
   }
@@ -39,7 +40,11 @@
   .presentation {
     flex: 1;
     font-family: fct.map-deep-get(var.$about, "fontFamily", "presentation");
-    font-size: fct.map-deep-get(var.$about, "fontSize", "presentation");
+    font-size: fct.map-deep-get(
+      var.$about,
+      "fontSize",
+      "presentation--desktop"
+    );
     border-radius: var.$radius--5;
     padding: 4rem 2rem;
 
@@ -50,6 +55,20 @@
       @media screen and (max-width: var.$breakpoint-tablette) {
         margin: 0;
         max-width: 100%;
+        font-size: fct.map-deep-get(
+          var.$about,
+          "fontSize",
+          "presentation--tablet"
+        );
+      }
+
+      @media screen and (max-width: var.$breakpoint-mobile) {
+        text-align: center;
+        font-size: fct.map-deep-get(
+          var.$about,
+          "fontSize",
+          "presentation--mobile"
+        );
       }
     }
   }

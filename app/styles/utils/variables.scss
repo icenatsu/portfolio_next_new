@@ -5,18 +5,11 @@ $primary-color: #6c6e8d;
 $second-color: #4e148c;
 $third-color: #70c197;
 $four-color: #7d90ae;
-$five-color: #97dffc;
+// $five-color: #97dffc;
 $six-color: #1e4481;
 $light-color: white;
 $dark-color: black;
 $transparent-color: transparent;
-
-// $primary-color: #858ae3;
-// $second-color: #4e148c;
-// $third-color: #97dffc;
-// $four-color: #2c0735;
-// $light-color: white;
-// $dark-color: black;
 
 // FontFamily
 /**************/
@@ -171,8 +164,11 @@ $shape--light: (
 $about: (
   fontSize: (
     about--desktop: 4.8rem,
-    about--tablet: 3.2rem,
-    presentation: 2.2rem,
+    about--tablet: 3.5rem,
+    about--mobile: 3.4rem,
+    presentation--desktop: 2.2rem,
+    presentation--tablet: 2.1rem,
+    presentation--mobile: 1.9rem,
   ),
   fontFamily: (
     about: $oswald,
@@ -206,7 +202,7 @@ $projets: (
   fontSize: (
     title--desktop: 4.8rem,
     title--tablet: 3.5rem,
-    title--mobile: 3rem,
+    title--mobile: 3.4rem,
     touch: 3rem,
     error: 2.5rem,
   ),
@@ -316,7 +312,7 @@ $skills: (
   fontSize: (
     title--desktop: 4.8rem,
     title--tablet: 3.5rem,
-    title--mobile: 3rem,
+    title--mobile: 3.4rem,
   ),
   fontFamily: (
     title: $oswald,
@@ -435,6 +431,7 @@ $contact: (
   fontSize: (
     title--desktop: 4.8rem,
     title--tablet: 3.5rem,
+    title--mobile: 3.4rem,
     label--desktop: 2rem,
     label--tablet: 1.8rem,
     placeHolder: 1.5rem,
