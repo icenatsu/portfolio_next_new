@@ -1,13 +1,22 @@
 // Repeated Color
 /**************/
-$primary-color: #858ae3;
+// $primary-color: #6c6e8d;
+$primary-color: #6c6e8d;
 $second-color: #4e148c;
-$third-color: #97dffc;
-$four-color: #2c0735;
+$third-color: #70c197;
+$four-color: #7d90ae;
+$five-color: #97dffc;
+$six-color: #1e4481;
 $light-color: white;
 $dark-color: black;
 $transparent-color: transparent;
-$white-color: white;
+
+// $primary-color: #858ae3;
+// $second-color: #4e148c;
+// $third-color: #97dffc;
+// $four-color: #2c0735;
+// $light-color: white;
+// $dark-color: black;
 
 // FontFamily
 /**************/
@@ -84,7 +93,7 @@ $switch: (
 $switch--dark: (
   colors: (
     sunmoon--bg: $light-color,
-    sunmoon--icone: rgb(8, 8, 154),
+    sunmoon--icone: $primary-color,
   ),
 );
 
@@ -99,10 +108,6 @@ $switch--light: (
 // Composant header
 /*******************/
 $header: (
-  colors: (
-    button--bg: $second-color,
-    button: $light-color,
-  ),
   fontSize: (
     profession: 1.6rem,
     title--desktop: 8rem,
@@ -124,9 +129,11 @@ $header: (
 $header--dark: (
   colors: (
     header--bg: $dark-color,
-    title: $primary-color,
-    profession--color: $primary-color,
-    profession--border: $primary-color,
+    profession--color: $light-color,
+    profession--border: $light-color,
+    title: $light-color,
+    button--bg: $primary-color,
+    button: $light-color,
     wave: $primary-color,
   ),
 );
@@ -134,10 +141,27 @@ $header--dark: (
 $header--light: (
   colors: (
     header--bg: $light-color,
-    title: $dark-color,
-    profession--color: $dark-color,
-    profession--border: $dark-color,
-    wave: $second-color,
+    profession--color: $six-color,
+    profession--border: $six-color,
+    title: $six-color,
+    button--bg: $four-color,
+    button: $light-color,
+    wave: $four-color,
+  ),
+);
+
+/**************************************************************************************
+// Composant shape
+/******************/
+$shape--dark: (
+  colors: (
+    shape: $primary-color,
+  ),
+);
+
+$shape--light: (
+  colors: (
+    shape: $primary-color,
   ),
 );
 
@@ -148,11 +172,11 @@ $about: (
   fontSize: (
     about--desktop: 4.8rem,
     about--tablet: 3.2rem,
-    presentation: 2rem,
+    presentation: 2.2rem,
   ),
   fontFamily: (
     about: $oswald,
-    presentation: $archivo,
+    presentation: $inter,
   ),
   fontWeight: (
     about: 300,
@@ -163,9 +187,7 @@ $about--dark: (
   colors: (
     container--bg: $primary-color,
     about: $dark-color,
-    presentation: $second-color,
-    presentation--bg: $light-color,
-    presentation--border: $dark-color,
+    presentation: $light-color,
   ),
 );
 
@@ -173,7 +195,7 @@ $about--light: (
   colors: (
     container--bg: $four-color,
     about: $light-color,
-    presentation: $third-color,
+    presentation: $light-color,
   ),
 );
 
@@ -199,7 +221,7 @@ $projets: (
 $projets--dark: (
   colors: (
     projects--bg: $dark-color,
-    title: $primary-color,
+    title: $four-color,
     touch: $light-color,
     error: $light-color,
   ),
@@ -208,8 +230,8 @@ $projets--dark: (
 $projets--light: (
   colors: (
     projects--bg: $light-color,
-    title: $second-color,
-    touch: $second-color,
+    title: $four-color,
+    touch: $four-color,
     error: $primary-color,
   ),
 );
@@ -259,7 +281,7 @@ $cardProject--dark: (
 
 $cardProject--light: (
   colors: (
-    flip-card--border: $second-color,
+    flip-card--border: $four-color,
     flip-card-back--bg: $four-color,
   ),
 );
@@ -336,15 +358,15 @@ $downloadbutton: (
 
 $downloadbutton--dark: (
   colors: (
-    button: $dark-color,
-    icon: $dark-color,
+    button: $light-color,
+    icon: $light-color,
   ),
 );
 
 $downloadbutton--light: (
   colors: (
-    button: $primary-color,
-    icon: $primary-color,
+    button: $light-color,
+    icon: $light-color,
   ),
 );
 
@@ -372,12 +394,11 @@ $cardSkill: (
 $cardSkill--dark: (
   colors: (
     techno--bg: #242424,
-    techno--dropShadow: $third-color,
     chevron: $light-color,
     dividingBorder: $light-color,
     descriptionTechno: $light-color,
     iconArrow: $primary-color,
-    iconTechno: $third-color,
+    iconTechno: $four-color,
     nameTechno: $light-color,
   ),
 );
@@ -387,21 +408,12 @@ $cardSkill--light: (
     techno--bg: $light-color,
     chevron: $primary-color,
     dividingBorder: $primary-color,
-    descriptionTechno: $four-color,
-    iconArrow: rgb(38, 187, 158),
-    iconTechno: $second-color,
-    nameTechno: $four-color,
+    descriptionTechno: $dark-color,
+    iconArrow: $four-color,
+    iconTechno: $primary-color,
+    nameTechno: $dark-color,
   ),
 );
-
-$primary-color: #858ae3;
-$second-color: #4e148c;
-$third-color: #97dffc;
-$four-color: #2c0735;
-$light-color: white;
-$dark-color: black;
-$transparent-color: transparent;
-$white-color: white;
 
 $html: rgb(211, 100, 60);
 $css: rgb(26, 99, 208);
@@ -420,18 +432,14 @@ $nextjs: #64b297;
 /*******************/
 
 $contact: (
-  colors: (
-    send: $dark-color,
-    send--bg: $third-color,
-  ),
   fontSize: (
     title--desktop: 4.8rem,
     title--tablet: 3.5rem,
     label--desktop: 2rem,
     label--tablet: 1.8rem,
     placeHolder: 1.5rem,
-    send--desktop: 2rem,
-    send--mobile: 1.6rem,
+    send--desktop: 2.2rem,
+    send--mobile: 1.8rem,
     errors: 1.6rem,
   ),
   fontWeight: (
@@ -439,19 +447,22 @@ $contact: (
   ),
   fontFamily: (
     title: $oswald,
-    send: $archivo,
+    send: $oswald,
   ),
 );
 
 $contact--dark: (
   colors: (
     contact--bg: $dark-color,
-    title: $third-color,
-    label: $third-color,
+    title: $four-color,
+    label: $four-color,
     errors: $light-color,
     input: $dark-color,
-    input--bg: $light-color,
-    elipse: $light-color,
+    input--bg: $primary-color,
+    send--bg: $four-color,
+    send: $light-color,
+    placeHolder: $light-color,
+    elipse: $primary-color,
     wave: $primary-color,
   ),
 );
@@ -459,13 +470,16 @@ $contact--dark: (
 $contact--light: (
   colors: (
     contact--bg: $light-color,
-    title: $second-color,
+    title: $four-color,
     label: $dark-color,
     errors: $dark-color,
     input: $light-color,
-    input--bg: #242424,
-    elipse: $second-color,
-    wave: $second-color,
+    input--bg: $four-color,
+    send--bg: $primary-color,
+    send: $light-color,
+    placeHolder: $light-color,
+    elipse: $four-color,
+    wave: $four-color,
   ),
 );
 

@@ -16,6 +16,7 @@
 
   .button {
     border: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
     font-size: fct.map-deep-get(var.$downloadbutton, "fontSize", "button");
     font-family: fct.map-deep-get(var.$downloadbutton, "fontFamily", "button");
     background-color: fct.map-deep-get(
@@ -27,6 +28,7 @@
 
   .icone {
     font-size: fct.map-deep-get(var.$downloadbutton, "fontSize", "icon");
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6));
   }
 
   &--dark {

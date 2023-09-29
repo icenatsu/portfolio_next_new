@@ -1,6 +1,5 @@
 @use "../../styles/utils/functions.scss" as fct;
 @use "../../styles/utils/variables.scss" as var;
-@use "../../styles/utils/mixins.scss" as mix;
 
 .header {
   height: 100vh;
@@ -76,8 +75,6 @@
       z-index: 2;
 
       .button {
-        color: fct.map-deep-get(var.$header, "colors", "button");
-        background-color: fct.map-deep-get(var.$header, "colors", "button--bg");
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -93,7 +90,7 @@
         transition: filter 0.6s;
 
         &:hover {
-          filter: brightness(140%);
+          filter: brightness(110%);
         }
 
         .icon {
@@ -156,6 +153,15 @@
       color: fct.map-deep-get(var.$header--dark, "colors", "title");
     }
 
+    .button {
+      color: fct.map-deep-get(var.$header--dark, "colors", "button");
+      background-color: fct.map-deep-get(
+        var.$header--dark,
+        "colors",
+        "button--bg"
+      );
+    }
+
     .wave .shape-fill {
       fill: fct.map-deep-get(var.$header--dark, "colors", "wave");
     }
@@ -180,6 +186,15 @@
 
     .title {
       color: fct.map-deep-get(var.$header--light, "colors", "title");
+    }
+
+    .button {
+      color: fct.map-deep-get(var.$header--light, "colors", "button");
+      background-color: fct.map-deep-get(
+        var.$header--light,
+        "colors",
+        "button--bg"
+      );
     }
 
     .wave .shape-fill {

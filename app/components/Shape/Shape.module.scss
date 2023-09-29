@@ -1,10 +1,10 @@
+@use "../../styles/utils/functions.scss" as fct;
 @use "../../styles/utils/variables.scss" as var;
-@use "../../styles/utils/mixins.scss" as mix;
 
 .bubble {
   position: absolute;
-  top: -25rem;
-  left: -2rem;
+  top: -20rem;
+  left: -3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,6 +19,15 @@
 
   @media screen and (max-width: var.$breakpoint-mobile) {
     display: none;
+  }
+
+  &--dark {
+    fill: fct.map-deep-get(var.$shape--dark, "colors", "shape");
+    filter: brightness(150%);
+  }
+
+  &--light {
+    fill: fct.map-deep-get(var.$shape--light, "colors", "shape");
   }
 }
 

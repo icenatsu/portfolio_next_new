@@ -45,7 +45,6 @@ const About = (): JSX.Element => {
         <section id="about" className={styles.container}>
             <h2 id="aboutTitle" className={styles.about}>A propos de moi</h2>
             <div id='aboutDescription' className={styles.presentation}>
-                <p>Bonjour,</p>
                 <p>
                     Je me nomme Gaëlle et suis passionnée par la création de sites web et de nouvelles technologies.<br /><br />
                     Vous trouverez ici les projets que j&apos;ai pu mener autant lors de ma formation qu&apos;à titre personnel ainsi que les compétences que j&apos;ai pu acquérir au fil du temps.<br />

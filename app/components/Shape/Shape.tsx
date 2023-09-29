@@ -1,8 +1,28 @@
+'use client'
 import styles from "./Shape.module.scss";
+import { ThemeContext } from "@context/ThemeContext/ThemeContext";
+import { useContext, useEffect } from "react";
 
 const Shape = () => {
+
+    const themeContext = useContext(ThemeContext);
+    const isDarkMode = themeContext!.isDarkMode;
+
+    useEffect(() => {
+        if (document.getElementById("bubble") !== null) {
+            const componentForCssChange = [
+                {
+                    htmlElement: document.getElementById("bubble"),
+                    name: 'bubble',
+                    scss: styles
+                },
+            ]
+            themeContext?.changeDarkLightMode(componentForCssChange)
+        }
+    }, [themeContext, isDarkMode])
+
     return (
-        <div className={styles.bubble}>
+        <div id="bubble" className={styles.bubble}>
             <svg
                 id="visual"
                 className={styles["blob-motion"]}
@@ -17,7 +37,6 @@ const Shape = () => {
                     <path
                         id="blob1"
                         d="M157.6 -251.3C195.5 -220.8 211.4 -162.3 223.9 -109.7C236.4 -57 245.4 -10.2 246.5 40.9C247.7 92.1 241 147.5 213.9 193.6C186.8 239.6 139.3 276.2 83.7 299C28 321.7 -35.9 330.7 -97 318.3C-158.2 305.9 -216.6 272.1 -241.6 221.5C-266.5 170.9 -258 103.4 -272.8 35.9C-287.6 -31.5 -325.7 -98.8 -311.8 -147.8C-297.9 -196.9 -231.9 -227.6 -171.3 -247.7C-110.7 -267.8 -55.3 -277.4 2.3 -280.9C59.8 -284.4 119.7 -281.9 157.6 -251.3"
-                        fill="#13589f"
                     ></path>
                 </g>
             </svg>
