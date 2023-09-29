@@ -218,7 +218,6 @@
     }
 
     &--light {
-      // font-weight: 500;
       background-color: fct.map-deep-get(
         var.$cardSkill--light,
         "colors",
@@ -251,6 +250,7 @@
         &__icones {
           @for $i from 1 through length($technos) {
             &:nth-child(#{$i}) {
+              // color: nth($colors, $i);
               color: fct.map-deep-get(
                 var.$cardSkill--light,
                 "colors",
