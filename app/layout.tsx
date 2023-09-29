@@ -17,6 +17,9 @@ const oswald = Oswald({
   weight: ["300"],
   subsets: ["latin"],
   variable: "--font--oswald",
+  fallback: ['Arial', 'sans serif'],
+  preload: true,
+  adjustFontFallback: false
 })
 
 
@@ -24,12 +27,18 @@ const inter = Inter({
   weight: ["300"],
   subsets: ["latin"],
   variable: "--font--inter",
+  fallback: ['Arial', 'sans serif'],
+  preload: true,
+  adjustFontFallback: false
 })
 
 const archivo = Archivo({
   weight: ["300", "700"],
   subsets: ["latin"],
   variable: "--font--archivo",
+  fallback: ['Arial', 'sans serif'],
+  preload: true,
+  adjustFontFallback: false
 })
 
 const ThemeContextProvider = dynamic(() =>
