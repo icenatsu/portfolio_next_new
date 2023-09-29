@@ -14,17 +14,20 @@ export const metadata: Metadata = {
 }
 
 const oswald = Oswald({
+  weight: ["300"],
   subsets: ["latin"],
   variable: "--font--oswald",
 })
 
 
 const inter = Inter({
+  weight: ["300"],
   subsets: ["latin"],
   variable: "--font--inter",
 })
 
 const archivo = Archivo({
+  weight: ["300", "700"],
   subsets: ["latin"],
   variable: "--font--archivo",
 })

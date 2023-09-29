@@ -2,7 +2,7 @@
 
 const nextConfig = {
   experimental: {
-    fontOptimization: false,
+    // fontOptimization: false,
     // disableNextSizeAdjust: true,
     appDir: true,
   },
