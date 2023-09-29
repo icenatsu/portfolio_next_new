@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  trailingSlash: false,
   experimental: {
-    // fontOptimization: false,
-    // disableNextSizeAdjust: true,
     appDir: true,
   },
 };
