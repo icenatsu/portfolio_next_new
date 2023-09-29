@@ -116,6 +116,7 @@
           font-size: fct.map-deep-get(var.$contact, "fontSize", "errors");
           color: fct.map-deep-get(var.$contact, "colors", "errors");
           font-style: italic;
+          text-align: center;
         }
       }
 

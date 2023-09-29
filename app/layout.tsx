@@ -1,7 +1,6 @@
 import './globals.scss'
 import 'normalize.css/normalize.css';
 import type { Metadata } from 'next'
-// import ThemeContextProvider from '@context/ThemeContext/ThemeContext'
 import Header from "@components/Header/Header"
 import Footer from "@components/Footer/Footer"
 import NavBar from '@components/Navbar/NavBar'
@@ -18,7 +17,7 @@ const oswald = Oswald({
   subsets: ["latin"],
   variable: "--font--oswald",
   fallback: ['Arial', 'sans serif'],
-  // preload: true,
+  preload: true,
   adjustFontFallback: false,
   display: 'swap'
 })
@@ -29,7 +28,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font--inter",
   fallback: ['Arial', 'sans serif'],
-  // preload: true,
+  preload: true,
   adjustFontFallback: false,
   display: 'swap'
 })
@@ -39,7 +38,7 @@ const archivo = Archivo({
   subsets: ["latin"],
   variable: "--font--archivo",
   fallback: ['Arial', 'sans serif'],
-  // preload: true,
+  preload: true,
   adjustFontFallback: false,
   display: 'swap'
 })

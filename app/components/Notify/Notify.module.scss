@@ -13,6 +13,7 @@
   border-radius: var.$radius--10;
   overflow: hidden;
   background-color: fct.map-deep-get(var.$notify, "colors", "notify--bg");
+  margin-top: 1rem;
 
   @media screen and (max-width: var.$breakpoint-tablette) {
     width: 32rem;
@@ -29,6 +30,7 @@
     flex: 4;
     color: fct.map-deep-get(var.$notify, "colors", "text");
     padding: 0.5rem 0.5rem 0 0.5rem;
+    font-family: fct.map-deep-get(var.$notify, "fontFamily", "text");
     font-size: fct.map-deep-get(var.$notify, "fontSize", "text--desktop");
 
     @media screen and (max-width: var.$breakpoint-tablette) {
@@ -44,7 +46,7 @@
     flex: 1.5;
     align-self: flex-end;
     padding-top: 0.2rem;
-    padding-right: 0.5rem;
+    padding-right: 0.1rem;
     cursor: pointer;
     font-size: fct.map-deep-get(var.$notify, "fontSize", "close");
 

@@ -488,10 +488,13 @@ $notify: (
     bar--success--bg: green,
   ),
   fontSize: (
-    text--desktop: 1.5rem,
-    text--tablet: 1.4rem,
+    text--desktop: 1.4rem,
+    text--tablet: 1.3rem,
     text--mobile: 1.3rem,
     close: 3rem,
+  ),
+  fontFamily: (
+    text: $inter,
   ),
 );
 
