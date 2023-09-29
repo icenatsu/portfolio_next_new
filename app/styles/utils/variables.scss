@@ -5,11 +5,14 @@ $primary-color: #6c6e8d;
 $second-color: #4e148c;
 $third-color: #70c197;
 $four-color: #7d90ae;
-// $five-color: #97dffc;
-$six-color: #1e4481;
+$five-color: #1e4481;
 $light-color: white;
 $dark-color: black;
 $transparent-color: transparent;
+
+$h2-title-desktop: 4.8rem;
+$h2-title-tablet: 3.5rem;
+$h2-title-mobile: 3.4rem;
 
 // FontFamily
 /**************/
@@ -134,9 +137,9 @@ $header--dark: (
 $header--light: (
   colors: (
     header--bg: $light-color,
-    profession--color: $six-color,
-    profession--border: $six-color,
-    title: $six-color,
+    profession--color: $five-color,
+    profession--border: $five-color,
+    title: $five-color,
     button--bg: $four-color,
     button: $light-color,
     wave: $four-color,
@@ -163,19 +166,19 @@ $shape--light: (
 /*****************/
 $about: (
   fontSize: (
-    about--desktop: 4.8rem,
-    about--tablet: 3.5rem,
-    about--mobile: 3.4rem,
+    title--desktop: $h2-title-desktop,
+    title--tablet: $h2-title-tablet,
+    title--mobile: $h2-title-mobile,
     presentation--desktop: 2.2rem,
     presentation--tablet: 2.1rem,
     presentation--mobile: 1.9rem,
   ),
   fontFamily: (
-    about: $oswald,
+    title: $oswald,
     presentation: $inter,
   ),
   fontWeight: (
-    about: 300,
+    title: 300,
   ),
 );
 
@@ -200,9 +203,9 @@ $about--light: (
 /******************/
 $projets: (
   fontSize: (
-    title--desktop: 4.8rem,
-    title--tablet: 3.5rem,
-    title--mobile: 3.4rem,
+    title--desktop: $h2-title-desktop,
+    title--tablet: $h2-title-tablet,
+    title--mobile: $h2-title-mobile,
     touch: 3rem,
     error: 2.5rem,
   ),
@@ -310,9 +313,9 @@ $loader--light: (
 
 $skills: (
   fontSize: (
-    title--desktop: 4.8rem,
-    title--tablet: 3.5rem,
-    title--mobile: 3.4rem,
+    title--desktop: $h2-title-desktop,
+    title--tablet: $h2-title-tablet,
+    title--mobile: $h2-title-mobile,
   ),
   fontFamily: (
     title: $oswald,
@@ -429,9 +432,9 @@ $nextjs: #64b297;
 
 $contact: (
   fontSize: (
-    title--desktop: 4.8rem,
-    title--tablet: 3.5rem,
-    title--mobile: 3.4rem,
+    title--desktop: $h2-title-desktop,
+    title--tablet: $h2-title-tablet,
+    title--mobile: $h2-title-mobile,
     label--desktop: 2rem,
     label--tablet: 1.8rem,
     placeHolder: 1.5rem,

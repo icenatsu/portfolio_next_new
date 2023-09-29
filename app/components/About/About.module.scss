@@ -21,18 +21,18 @@
 
   .about {
     flex: 1;
-    font-family: fct.map-deep-get(var.$about, "fontFamily", "about");
-    font-size: fct.map-deep-get(var.$about, "fontSize", "about--desktop");
-    font-weight: fct.map-deep-get(var.$about, "fontWeight", "about");
+    font-family: fct.map-deep-get(var.$about, "fontFamily", "title");
+    font-size: fct.map-deep-get(var.$about, "fontSize", "title--desktop");
+    font-weight: fct.map-deep-get(var.$about, "fontWeight", "title");
 
     @media screen and (max-width: var.$breakpoint-tablette) {
-      font-size: fct.map-deep-get(var.$about, "fontSize", "about--tablet");
+      font-size: fct.map-deep-get(var.$about, "fontSize", "title--tablet");
       padding-bottom: 2rem;
     }
 
     @media screen and (max-width: var.$breakpoint-mobile) {
       text-align: center;
-      font-size: fct.map-deep-get(var.$about, "fontSize", "about--mobile");
+      font-size: fct.map-deep-get(var.$about, "fontSize", "title--mobile");
       padding-bottom: 3rem;
     }
   }
