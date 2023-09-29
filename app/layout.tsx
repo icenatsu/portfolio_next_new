@@ -18,7 +18,7 @@ const oswald = Oswald({
   subsets: ["latin"],
   variable: "--font--oswald",
   fallback: ['Arial', 'sans serif'],
-  preload: true,
+  // preload: true,
   adjustFontFallback: false,
   display: 'swap'
 })
@@ -29,7 +29,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font--inter",
   fallback: ['Arial', 'sans serif'],
-  preload: true,
+  // preload: true,
   adjustFontFallback: false,
   display: 'swap'
 })
@@ -39,7 +39,7 @@ const archivo = Archivo({
   subsets: ["latin"],
   variable: "--font--archivo",
   fallback: ['Arial', 'sans serif'],
-  preload: true,
+  // preload: true,
   adjustFontFallback: false,
   display: 'swap'
 })
