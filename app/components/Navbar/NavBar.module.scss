@@ -49,6 +49,7 @@
       &:before {
         content: "\269D";
         margin-right: 1rem;
+        font-size: 1.9rem;
       }
 
       &:hover {
@@ -82,12 +83,10 @@
 
     .list {
       &__item {
+        color: fct.map-deep-get(var.$navbar--light, "colors", "link");
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
         &:before {
-          color: fct.map-deep-get(
-            var.$navbar--dark,
-            "colors",
-            "list__item--before"
-          );
+          color: fct.map-deep-get(var.$navbar--dark, "colors", "link--before");
           text-shadow: 0.1rem 0.1rem 0.1rem rgb(0, 0, 0);
         }
       }
@@ -112,13 +111,11 @@
 
     .list {
       &__item {
+        color: fct.map-deep-get(var.$navbar--light, "colors", "link");
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
         &:before {
-          color: fct.map-deep-get(
-            var.$navbar--light,
-            "colors",
-            "list__item--before"
-          );
-          text-shadow: 0.1rem 0.1rem 0.1rem rgb(255, 255, 255);
+          color: fct.map-deep-get(var.$navbar--light, "colors", "link--before");
+          text-shadow: 0.1rem 0rem 0.1rem rgb(255, 255, 255);
         }
       }
     }

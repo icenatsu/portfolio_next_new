@@ -56,7 +56,8 @@ $navbar--dark: (
     container: $dark-color,
     container--bg: $primary-color,
     container--filter: $primary-color,
-    list__item--before: $light-color,
+    link: $light-color,
+    link--before: $four-color,
     burger: $dark-color,
   ),
 );
@@ -66,7 +67,8 @@ $navbar--light: (
     container: $light-color,
     container--bg: $four-color,
     container--filter: $four-color,
-    list__item--before: $five-color,
+    link: $light-color,
+    link--before: $five-color,
     burger: $light-color,
   ),
 );
