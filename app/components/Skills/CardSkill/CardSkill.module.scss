@@ -25,6 +25,36 @@
       max-height: 6.5rem;
     }
 
+    @media (hover: none) {
+      &:hover {
+        max-height: 6.5rem;
+
+        & > .descriptionTechno {
+          opacity: 1;
+        }
+
+        & > .container {
+          .slideToBottom {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      max-height: 35rem;
+
+      & > .descriptionTechno {
+        opacity: 1;
+      }
+
+      & > .container {
+        .slideToBottom {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
     .container {
       display: flex;
       padding-bottom: 0.5rem;
