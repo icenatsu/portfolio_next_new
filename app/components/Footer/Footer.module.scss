@@ -58,6 +58,7 @@
   &--dark {
     .infos {
       color: fct.map-deep-get(var.$footer--dark, "colors", "infos");
+      font-weight: 500;
     }
 
     .wave .shape-fill {
@@ -68,6 +69,7 @@
   &--light {
     .infos {
       color: fct.map-deep-get(var.$footer--light, "colors", "infos");
+      font-weight: 700;
     }
 
     .wave .shape-fill {
