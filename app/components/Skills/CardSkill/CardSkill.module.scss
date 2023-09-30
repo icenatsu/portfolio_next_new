@@ -2,7 +2,7 @@
 @use "../../../styles/utils/functions.scss" as fct;
 @use "../../../styles/utils/variables.scss" as var;
 
-@mixin CardSkillStyle($class, $technos, $colors) {
+@mixin CardSkillStyle($class) {
   .#{$class} {
     position: relative;
     display: flex;
@@ -23,22 +23,6 @@
       width: 90%;
       margin: auto;
       max-height: 6.5rem;
-    }
-
-    @media (hover: none) {
-      &:hover {
-        max-height: 6.5rem;
-
-        & > .descriptionTechno {
-          opacity: 1;
-        }
-
-        & > .container {
-          .slideToBottom {
-            transform: rotate(0deg);
-          }
-        }
-      }
     }
 
     &:hover {
@@ -71,38 +55,6 @@
         display: flex;
         align-items: center;
 
-        @for $i from 1 through length($technos) {
-          &:nth-child(#{$i}) {
-            &::after {
-              content: nth($technos, $i);
-              padding-left: 0.5rem;
-              padding-right: 1rem;
-              font-size: fct.map-deep-get(
-                var.$cardSkill,
-                "fontSize",
-                "nameTechno--desktop"
-              );
-
-              @media screen and (max-width: var.$breakpoint-tablette) {
-                padding-left: 1.5rem;
-                font-size: fct.map-deep-get(
-                  var.$cardSkill,
-                  "fontSize",
-                  "nameTechno--tablet"
-                );
-              }
-
-              @media screen and (max-width: var.$breakpoint-mobile) {
-                font-size: fct.map-deep-get(
-                  var.$cardSkill,
-                  "fontSize",
-                  "nameTechno--mobile"
-                );
-              }
-            }
-          }
-        }
-
         .icone {
           padding: 0 0.5rem 0.5rem 0;
           font-size: fct.map-deep-get(
@@ -128,10 +80,40 @@
             );
           }
         }
+
+        .nameTechno {
+          padding-left: 2rem;
+          font-family: fct.map-deep-get(
+            var.$cardSkill,
+            "fontFamily",
+            "nameTechno"
+          );
+          font-size: fct.map-deep-get(
+            var.$cardSkill,
+            "fontSize",
+            "nameTechno--desktop"
+          );
+
+          @media screen and (max-width: var.$breakpoint-tablette) {
+            font-size: fct.map-deep-get(
+              var.$cardSkill,
+              "fontSize",
+              "nameTechno--tablet"
+            );
+          }
+
+          @media screen and (max-width: var.$breakpoint-mobile) {
+            font-size: fct.map-deep-get(
+              var.$cardSkill,
+              "fontSize",
+              "nameTechno--mobile"
+            );
+          }
+        }
       }
     }
 
-    .paragraphs {
+    .descriptionTechno {
       opacity: 0;
       transition: opacity 1s ease-in-out;
       font-size: fct.map-deep-get(
@@ -139,7 +121,6 @@
         "fontSize",
         "descriptionTechno--tablet"
       );
-
       font-family: fct.map-deep-get(
         var.$cardSkill,
         "fontFamily",
@@ -222,7 +203,7 @@
         "techno--bg"
       );
 
-      .paragraphs {
+      .descriptionTechno {
         color: fct.map-deep-get(
           var.$cardSkill--dark,
           "colors",
@@ -246,23 +227,20 @@
         }
 
         &__icones {
-          @for $i from 1 through length($technos) {
-            &:nth-child(#{$i}) {
-              // color: nth($colors, $i);
-              color: fct.map-deep-get(
-                var.$cardSkill--dark,
-                "colors",
-                "iconTechno"
-              );
+          .icone {
+            color: fct.map-deep-get(
+              var.$cardSkill--dark,
+              "colors",
+              "iconTechno"
+            );
+          }
 
-              &::after {
-                color: fct.map-deep-get(
-                  var.$cardSkill--dark,
-                  "colors",
-                  "nameTechno"
-                );
-              }
-            }
+          .nameTechno {
+            color: fct.map-deep-get(
+              var.$cardSkill--dark,
+              "colors",
+              "nameTechno"
+            );
           }
         }
       }
@@ -275,7 +253,7 @@
         "techno--bg"
       );
 
-      .paragraphs {
+      .descriptionTechno {
         color: fct.map-deep-get(
           var.$cardSkill--light,
           "colors",
@@ -299,23 +277,20 @@
         }
 
         &__icones {
-          @for $i from 1 through length($technos) {
-            &:nth-child(#{$i}) {
-              // color: nth($colors, $i);
-              color: fct.map-deep-get(
-                var.$cardSkill--light,
-                "colors",
-                "iconTechno"
-              );
+          .icone {
+            color: fct.map-deep-get(
+              var.$cardSkill--light,
+              "colors",
+              "iconTechno"
+            );
+          }
 
-              &::after {
-                color: fct.map-deep-get(
-                  var.$cardSkill--light,
-                  "colors",
-                  "nameTechno"
-                );
-              }
-            }
+          .nameTechno {
+            color: fct.map-deep-get(
+              var.$cardSkill--light,
+              "colors",
+              "nameTechno"
+            );
           }
         }
       }
@@ -323,27 +298,11 @@
   }
 }
 
-@include CardSkillStyle("html-css", ("html", "css"), (var.$html, var.$css));
-@include CardSkillStyle("css", ("css", "sass"), (var.$css, var.$sass));
-@include CardSkillStyle("github", ("Github"), var.$github);
-@include CardSkillStyle("seo", ("SEO"), var.$seo);
-@include CardSkillStyle("javascript", ("Javascript"), var.$javascript);
-@include CardSkillStyle(
-  "nodejs",
-  ("Nodejs", "mongodb"),
-  (var.$nodejs, var.$mongodb)
-);
-@include CardSkillStyle(
-  "react",
-  ("React", "nextjs"),
-  (var.$react, var.$nextjs)
-);
-@include CardSkillStyle("typescript", ("Typescript"), var.$typescript);
-
-.visible {
-  max-height: 35rem;
-}
-
-.opacity {
-  opacity: 1 !important;
-}
+@include CardSkillStyle("html-css");
+@include CardSkillStyle("css");
+@include CardSkillStyle("github");
+@include CardSkillStyle("seo");
+@include CardSkillStyle("javascript");
+@include CardSkillStyle("nodejs");
+@include CardSkillStyle("react");
+@include CardSkillStyle("typescript");
