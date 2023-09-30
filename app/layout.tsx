@@ -4,13 +4,23 @@ import type { Metadata } from 'next'
 import Header from "@components/Header/Header"
 import Footer from "@components/Footer/Footer"
 import NavBar from '@components/Navbar/NavBar'
-import { Inter, Archivo, Oswald } from "next/font/google";
+import { Inter, Archivo, Oswald, Noto_Sans_Symbols_2 } from "next/font/google";
 import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
   title: 'Portfolio Gaëlle',
   description: "Bienvenue sur mon portfolio me présentant ainsi que les projets sur lesquels j'ai travaillé au cours de ma formation et à titre personnel.",
 }
+
+const noto = Noto_Sans_Symbols_2({
+  weight: ["400"],
+  subsets: ["latin"],
+  fallback: ['Arial', 'sans serif'],
+  preload: true,
+  adjustFontFallback: false,
+  display: 'swap',
+  variable: "--font--noto",
+})
 
 const oswald = Oswald({
   weight: ["300"],
@@ -30,7 +40,7 @@ const inter = Inter({
   fallback: ['Arial', 'sans serif'],
   preload: true,
   adjustFontFallback: false,
-  display: 'swap'
+  display: 'swap',
 })
 
 const archivo = Archivo({
@@ -55,7 +65,7 @@ export default function RootLayout({
 }) {
 
   return (
-    <html lang="fr" className={`${inter.variable} ${archivo.variable} ${oswald.variable}`} >
+    <html lang="fr" className={`${inter.variable} ${archivo.variable} ${oswald.variable} ${noto.variable}`} >
       <body>
         <ThemeContextProvider>
           <NavBar />
