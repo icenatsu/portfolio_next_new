@@ -465,7 +465,6 @@ $contact--dark: (
     send: $light-color,
     placeHolder: $light-color,
     elipse: $primary-color,
-    wave: $primary-color,
   ),
 );
 
@@ -481,7 +480,6 @@ $contact--light: (
     send: $light-color,
     placeHolder: $light-color,
     elipse: $four-color,
-    wave: $four-color,
   ),
 );
 
@@ -515,26 +513,29 @@ $notify: (
 );
 
 /***************************************************************************************/
-// Page notFound
-/***************/
-$notfound: (
+// Component Footer
+/******************/
+
+$footer: (
   fontSize: (
-    h2--desktop: 6rem,
-    paragraph--desktop: 6rem,
-    icone--desktop: 3rem,
-    homeLink--desktop: 4rem,
+    infos: 1.5rem,
+  ),
+  fontFamily: (
+    infos: $inter,
   ),
 );
 
-$notfound--dark: (
+$footer--dark: (
   colors: (
-    notfound--desktop: $light-color,
+    infos: $light-color,
+    wave: $primary-color,
   ),
 );
 
-$notfound--light: (
+$footer--light: (
   colors: (
-    notfound--desktop: $primary-color,
+    infos: $light-color,
+    wave: $four-color,
   ),
 );
 
