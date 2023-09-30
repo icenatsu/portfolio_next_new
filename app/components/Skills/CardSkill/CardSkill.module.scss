@@ -151,7 +151,7 @@
     }
 
     & p {
-      padding-left: 0.5rem;
+      padding: 1rem 0rem 0.5rem 0.5rem;
 
       &:first-of-type {
         padding: 1rem 0 0 0.5rem;
@@ -161,7 +161,27 @@
         font-family: var(--font--noto);
         content: "\2BB1";
         padding-right: 0.5rem;
-        font-size: fct.map-deep-get(var.$cardSkill, "fontSize", "iconArrow");
+        font-size: fct.map-deep-get(
+          var.$cardSkill,
+          "fontSize",
+          "iconArrow--desktop"
+        );
+
+        @media screen and (max-width: var.$breakpoint-tablette) {
+          font-size: fct.map-deep-get(
+            var.$cardSkill,
+            "fontSize",
+            "iconArrow--tablet"
+          );
+        }
+
+        @media screen and (max-width: var.$breakpoint-mobile) {
+          font-size: fct.map-deep-get(
+            var.$cardSkill,
+            "fontSize",
+            "iconArrow--mobile"
+          );
+        }
       }
     }
 
